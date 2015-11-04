@@ -1,0 +1,15 @@
+--------------- Build Started: 08/02/2015 22:36:16 Project: Project1_acc, Configuration: ARM GCC 4.8.4 Debug ---------------
+The code generation step is up to date.
+arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -Wno-main -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_484\Debug/main.lst -g -D DEBUG -Wall -ffunction-sections -Og -c .\main.c -o .\CortexM0\ARM_GCC_484\Debug\main.o
+.\main.c:13:0: warning: "DEBUG" redefined [enabled by default]
+ #define DEBUG
+ ^
+<command-line>:0:0: note: this is the location of the previous definition
+arm-none-eabi-ar.exe -rs .\CortexM0\ARM_GCC_484\Debug\Project1_acc.a .\CortexM0\ARM_GCC_484\Debug\cyfitter_cfg.o .\CortexM0\ARM_GCC_484\Debug\DEBUG.o .\CortexM0\ARM_GCC_484\Debug\DEBUG_SPI_UART.o .\CortexM0\ARM_GCC_484\Debug\DEBUG_SPI_UART_INT.o .\CortexM0\ARM_GCC_484\Debug\DEBUG_PM.o .\CortexM0\ARM_GCC_484\Debug\DEBUG_UART.o .\CortexM0\ARM_GCC_484\Debug\DEBUG_BOOT.o .\CortexM0\ARM_GCC_484\Debug\DEBUG_UART_BOOT.o .\CortexM0\ARM_GCC_484\Debug\I2C.o .\CortexM0\ARM_GCC_484\Debug\I2C_I2C_INT.o .\CortexM0\ARM_GCC_484\Debug\I2C_I2C.o .\CortexM0\ARM_GCC_484\Debug\I2C_I2C_BOOT.o .\CortexM0\ARM_GCC_484\Debug\I2C_I2C_MASTER.o .\CortexM0\ARM_GCC_484\Debug\I2C_PM.o .\CortexM0\ARM_GCC_484\Debug\I2C_BOOT.o .\CortexM0\ARM_GCC_484\Debug\DEBUG_SCBCLK.o .\CortexM0\ARM_GCC_484\Debug\DEBUG_tx.o .\CortexM0\ARM_GCC_484\Debug\DEBUG_rx.o .\CortexM0\ARM_GCC_484\Debug\I2C_SCBCLK.o .\CortexM0\ARM_GCC_484\Debug\I2C_sda.o .\CortexM0\ARM_GCC_484\Debug\I2C_scl.o .\CortexM0\ARM_GCC_484\Debug\I2C_SCB_IRQ.o .\CortexM0\ARM_GCC_484\Debug\CyBootAsmGnu.o .\CortexM0\ARM_GCC_484\Debug\CyFlash.o .\CortexM0\ARM_GCC_484\Debug\CyLib.o .\CortexM0\ARM_GCC_484\Debug\cyPm.o .\CortexM0\ARM_GCC_484\Debug\cyutils.o .\CortexM0\ARM_GCC_484\Debug\CyLFClk.o
+arm-none-eabi-ar.exe: creating .\CortexM0\ARM_GCC_484\Debug\Project1_acc.a
+arm-none-eabi-gcc.exe -Wl,--start-group -o .\CortexM0\ARM_GCC_484\Debug\Project1_acc.elf .\CortexM0\ARM_GCC_484\Debug\main.o .\CortexM0\ARM_GCC_484\Debug\cymetadata.o .\CortexM0\ARM_GCC_484\Debug\Cm0Start.o .\CortexM0\ARM_GCC_484\Debug\Project1_acc.a "C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CortexM0\ARM_GCC_484\Debug\CyComponentLibrary.a" -mcpu=cortex-m0 -mthumb -g -ffunction-sections -Og -Wl,-Map,.\CortexM0\ARM_GCC_484\Debug/Project1_acc.map -T Generated_Source\PSoC4\cm0gcc.ld -specs=nano.specs -Wl,--gc-sections -Wl,--end-group
+cyelftool.exe -C D:\PSOC\Project1_acc\Project1_acc.cydsn\CortexM0\ARM_GCC_484\Debug\Project1_acc.elf --flash_row_size 128 --flash_size 131072
+cyelftool.exe -S D:\PSOC\Project1_acc\Project1_acc.cydsn\CortexM0\ARM_GCC_484\Debug\Project1_acc.elf
+Flash used: 4480 of 131072 bytes (3,4%).
+SRAM used: 1492 of 16384 bytes (9,1%). Stack: 1024 bytes. Heap: 128 bytes.
+--------------- Build Succeeded: 08/02/2015 22:36:28 ---------------

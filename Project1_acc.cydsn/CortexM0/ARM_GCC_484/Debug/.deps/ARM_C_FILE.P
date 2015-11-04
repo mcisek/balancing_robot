@@ -1,0 +1,180 @@
+D:/PSOC/Project1_acc/Project1_acc.cydsn/CortexM0/ARM_GCC_484/Debug/Cm0Start.o : D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/Cm0Start.c D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/CyLFClk.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/CyLib.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cyfitter.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cyfitter_cfg.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/Cm0Start.c : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/CyLFClk.h : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/CyLib.h : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cydevice_trm.h : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cyfitter.h : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cyfitter_cfg.h : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cytypes.h : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/CortexM0/ARM_GCC_484/Debug/CyFlash.o : D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/CyFlash.c D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/CyFlash.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/CyLFClk.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/CyLib.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cyfitter.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/CyFlash.c : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/CyFlash.h : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/CortexM0/ARM_GCC_484/Debug/CyLFClk.o : D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/CyLFClk.c D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/CyLFClk.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/CyLib.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cyfitter.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/CyLFClk.c : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/CortexM0/ARM_GCC_484/Debug/CyLib.o : D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/CyFlash.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/CyLFClk.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/CyLib.c D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/CyLib.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cyfitter.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/CyLib.c : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/CortexM0/ARM_GCC_484/Debug/DEBUG.o : D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/CyLFClk.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/CyLib.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG.c D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_PINS.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_PVT.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_SCBCLK.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_SPI_UART.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_SPI_UART_PVT.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_rx.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_rx_aliases.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_tx.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_tx_aliases.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cyfitter.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cypins.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG.c : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG.h : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_PINS.h : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_PVT.h : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_SCBCLK.h : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_SPI_UART.h : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_SPI_UART_PVT.h : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_rx.h : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_rx_aliases.h : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_tx.h : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_tx_aliases.h : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cypins.h : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/CortexM0/ARM_GCC_484/Debug/DEBUG_BOOT.o : D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/CyLFClk.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/CyLib.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_BOOT.c D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_BOOT.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_PINS.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_PVT.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_SCBCLK.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_SPI_UART.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_rx.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_rx_aliases.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_tx.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_tx_aliases.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cyfitter.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cypins.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_BOOT.c : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_BOOT.h : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/CortexM0/ARM_GCC_484/Debug/DEBUG_PM.o : D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/CyLFClk.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/CyLib.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_PINS.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_PM.c D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_PVT.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_SCBCLK.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_SPI_UART.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_SPI_UART_PVT.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_rx.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_rx_aliases.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_tx.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_tx_aliases.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cyfitter.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cypins.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_PM.c : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/CortexM0/ARM_GCC_484/Debug/DEBUG_SCBCLK.o : D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_SCBCLK.c D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_SCBCLK.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cyfitter.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_SCBCLK.c : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/CortexM0/ARM_GCC_484/Debug/DEBUG_SPI_UART.o : D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/CyLFClk.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/CyLib.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_PINS.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_PVT.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_SCBCLK.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_SPI_UART.c D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_SPI_UART.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_SPI_UART_PVT.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_rx.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_rx_aliases.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_tx.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_tx_aliases.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cyfitter.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cypins.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_SPI_UART.c : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/CortexM0/ARM_GCC_484/Debug/DEBUG_SPI_UART_INT.o : D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/CyLFClk.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/CyLib.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_PINS.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_PVT.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_SCBCLK.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_SPI_UART.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_SPI_UART_INT.c D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_SPI_UART_PVT.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_rx.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_rx_aliases.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_tx.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_tx_aliases.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cyfitter.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cypins.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_SPI_UART_INT.c : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/CortexM0/ARM_GCC_484/Debug/DEBUG_UART.o : D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/CyLFClk.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/CyLib.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_PINS.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_PVT.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_SCBCLK.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_SPI_UART.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_SPI_UART_PVT.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_UART.c D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_rx.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_rx_aliases.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_tx.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_tx_aliases.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cyfitter.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cypins.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_UART.c : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/CortexM0/ARM_GCC_484/Debug/DEBUG_UART_BOOT.o : D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/CyLFClk.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/CyLib.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_BOOT.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_PINS.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_PVT.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_SCBCLK.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_SPI_UART.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_UART_BOOT.c D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_rx.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_rx_aliases.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_tx.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_tx_aliases.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cyfitter.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cypins.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_UART_BOOT.c : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/CortexM0/ARM_GCC_484/Debug/DEBUG_rx.o : D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_rx.c D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_rx.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_rx_aliases.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cyfitter.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cypins.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_rx.c : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/CortexM0/ARM_GCC_484/Debug/DEBUG_tx.o : D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_tx.c D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_tx.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_tx_aliases.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cyfitter.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cypins.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_tx.c : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/CortexM0/ARM_GCC_484/Debug/I2C.o : D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/CyLFClk.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/CyLib.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C.c D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_I2C.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_I2C_PVT.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_PINS.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_PVT.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_SCBCLK.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_scl.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_scl_aliases.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_sda.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_sda_aliases.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cyfitter.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cypins.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C.c : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C.h : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_I2C.h : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_I2C_PVT.h : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_PINS.h : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_PVT.h : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_SCBCLK.h : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_scl.h : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_scl_aliases.h : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_sda.h : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_sda_aliases.h : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/CortexM0/ARM_GCC_484/Debug/I2C_BOOT.o : D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/CyLFClk.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/CyLib.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_BOOT.c D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_BOOT.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_I2C.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_PINS.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_PVT.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_SCBCLK.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_scl.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_scl_aliases.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_sda.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_sda_aliases.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cyfitter.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cypins.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_BOOT.c : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_BOOT.h : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/CortexM0/ARM_GCC_484/Debug/I2C_I2C.o : D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/CyLFClk.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/CyLib.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_I2C.c D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_I2C.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_I2C_PVT.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_PINS.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_PVT.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_SCBCLK.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_scl.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_scl_aliases.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_sda.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_sda_aliases.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cyfitter.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cypins.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_I2C.c : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/CortexM0/ARM_GCC_484/Debug/I2C_I2C_BOOT.o : D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/CyLFClk.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/CyLib.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_BOOT.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_I2C.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_I2C_BOOT.c D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_I2C_PVT.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_PINS.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_PVT.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_SCBCLK.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_scl.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_scl_aliases.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_sda.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_sda_aliases.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cyfitter.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cypins.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_I2C_BOOT.c : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/CortexM0/ARM_GCC_484/Debug/I2C_I2C_INT.o : D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/CyLFClk.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/CyLib.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_I2C.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_I2C_INT.c D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_I2C_PVT.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_PINS.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_PVT.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_SCBCLK.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_scl.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_scl_aliases.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_sda.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_sda_aliases.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cyfitter.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cypins.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_I2C_INT.c : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/CortexM0/ARM_GCC_484/Debug/I2C_I2C_MASTER.o : D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/CyLFClk.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/CyLib.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_I2C.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_I2C_MASTER.c D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_I2C_PVT.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_PINS.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_PVT.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_SCBCLK.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_scl.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_scl_aliases.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_sda.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_sda_aliases.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cyfitter.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cypins.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_I2C_MASTER.c : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/CortexM0/ARM_GCC_484/Debug/I2C_PM.o : D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/CyLFClk.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/CyLib.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_I2C.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_I2C_PVT.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_PINS.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_PM.c D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_PVT.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_SCBCLK.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_scl.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_scl_aliases.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_sda.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_sda_aliases.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cyfitter.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cypins.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_PM.c : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/CortexM0/ARM_GCC_484/Debug/I2C_SCBCLK.o : D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_SCBCLK.c D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_SCBCLK.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cyfitter.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_SCBCLK.c : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/CortexM0/ARM_GCC_484/Debug/I2C_SCB_IRQ.o : D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/CyLFClk.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/CyLib.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_SCB_IRQ.c D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_SCB_IRQ.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cyfitter.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_SCB_IRQ.c : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_SCB_IRQ.h : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/CortexM0/ARM_GCC_484/Debug/I2C_scl.o : D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_scl.c D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_scl.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_scl_aliases.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cyfitter.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cypins.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_scl.c : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/CortexM0/ARM_GCC_484/Debug/I2C_sda.o : D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_sda.c D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_sda.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_sda_aliases.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cyfitter.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cypins.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_sda.c : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/CortexM0/ARM_GCC_484/Debug/cyPm.o : D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/CyLFClk.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/CyLib.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cyPm.c D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cyPm.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cyfitter.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cyPm.c : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cyPm.h : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/CortexM0/ARM_GCC_484/Debug/cyfitter_cfg.o : D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/CyLFClk.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/CyLib.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cyfitter.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cyfitter_cfg.c D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cyfitter_cfg.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cyfitter_cfg.c : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/CortexM0/ARM_GCC_484/Debug/cymetadata.o : D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cyfitter.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cymetadata.c D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cytypes.h 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cymetadata.c : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/CortexM0/ARM_GCC_484/Debug/cyutils.o : D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cyfitter.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cytypes.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cyutils.c 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cyutils.c : 
+

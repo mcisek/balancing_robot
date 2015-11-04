@@ -1,0 +1,80 @@
+D:/PSOC/Project1_acc/Project1_acc.cydsn/CortexM0/ARM_GCC_484/Debug/main.o : D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/CyFlash.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/CyLFClk.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/CyLib.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_BOOT.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_PINS.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_PVT.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_SCBCLK.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_SPI_UART.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_SPI_UART_PVT.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_rx.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_rx_aliases.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_tx.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_tx_aliases.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_BOOT.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_I2C.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_I2C_PVT.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_PINS.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_PVT.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_SCBCLK.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_SCB_IRQ.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_scl.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_scl_aliases.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_sda.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_sda_aliases.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/core_cm0.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/core_cm0_psoc4.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/core_cmFunc.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/core_cmInstr.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cyPm.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cydevice_trm.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cydisabledsheets.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cyfitter.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cyfitter_cfg.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cypins.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cytypes.h D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/project.h D:/PSOC/Project1_acc/Project1_acc.cydsn/main.c 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/CyFlash.h : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/CyLFClk.h : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/CyLib.h : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG.h : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_BOOT.h : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_PINS.h : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_PVT.h : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_SCBCLK.h : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_SPI_UART.h : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_SPI_UART_PVT.h : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_rx.h : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_rx_aliases.h : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_tx.h : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/DEBUG_tx_aliases.h : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C.h : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_BOOT.h : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_I2C.h : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_I2C_PVT.h : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_PINS.h : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_PVT.h : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_SCBCLK.h : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_SCB_IRQ.h : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_scl.h : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_scl_aliases.h : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_sda.h : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/I2C_sda_aliases.h : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/core_cm0.h : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/core_cm0_psoc4.h : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/core_cmFunc.h : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/core_cmInstr.h : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cyPm.h : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cydevice_trm.h : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cydisabledsheets.h : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cyfitter.h : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cyfitter_cfg.h : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cypins.h : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/cytypes.h : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/Generated_Source/PSoC4/project.h : 
+
+D:/PSOC/Project1_acc/Project1_acc.cydsn/main.c : 
+

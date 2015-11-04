@@ -1,0 +1,1736 @@
+ARM GAS  C:\Users\Kombajny\AppData\Local\Temp\ccmjgWa6.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 1
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"main.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.Read_accelerometer_values,"ax",%progbits
+  18              		.align	2
+  19              		.global	Read_accelerometer_values
+  20              		.code	16
+  21              		.thumb_func
+  22              		.type	Read_accelerometer_values, %function
+  23              	Read_accelerometer_values:
+  24              	.LFB35:
+  25              		.file 1 ".\\main.c"
+   1:.\main.c      **** /* ========================================
+   2:.\main.c      ****  *
+   3:.\main.c      ****  * Copyright YOUR COMPANY, THE YEAR
+   4:.\main.c      ****  * All Rights Reserved
+   5:.\main.c      ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:.\main.c      ****  *
+   7:.\main.c      ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:.\main.c      ****  * WHICH IS THE PROPERTY OF your company.
+   9:.\main.c      ****  *
+  10:.\main.c      ****  * ========================================
+  11:.\main.c      **** */
+  12:.\main.c      **** #include <project.h>
+  13:.\main.c      **** #define DEBUG
+  14:.\main.c      **** 
+  15:.\main.c      **** const uint8 acc_adr = 0x68;
+  16:.\main.c      **** 
+  17:.\main.c      **** volatile uint16 acX = 0;
+  18:.\main.c      **** volatile uint16 acY = 0;
+  19:.\main.c      **** volatile uint16 acZ = 0;
+  20:.\main.c      **** 
+  21:.\main.c      **** volatile uint8 gyX [2];
+  22:.\main.c      **** volatile uint8 gyY [2];
+  23:.\main.c      **** volatile uint8 gyZ [2];
+  24:.\main.c      **** 
+  25:.\main.c      **** void Read_accelerometer_values()
+  26:.\main.c      **** {
+  26              		.loc 1 26 0
+  27              		.cfi_startproc
+  28 0000 00B5     		push	{lr}
+  29              		.cfi_def_cfa_offset 4
+  30              		.cfi_offset 14, -4
+  31 0002 83B0     		sub	sp, sp, #12
+ARM GAS  C:\Users\Kombajny\AppData\Local\Temp\ccmjgWa6.s 			page 2
+
+
+  32              		.cfi_def_cfa_offset 16
+  27:.\main.c      **** 	I2C_I2CMasterSendStart(acc_adr, I2C_I2C_WRITE_XFER_MODE);
+  33              		.loc 1 27 0
+  34 0004 6820     		mov	r0, #104
+  35 0006 0021     		mov	r1, #0
+  36 0008 FFF7FEFF 		bl	I2C_I2CMasterSendStart
+  37              	.LVL0:
+  28:.\main.c      **** 	I2C_I2CMasterWriteByte(0x3B);
+  38              		.loc 1 28 0
+  39 000c 3B20     		mov	r0, #59
+  40 000e FFF7FEFF 		bl	I2C_I2CMasterWriteByte
+  41              	.LVL1:
+  29:.\main.c      **** 	I2C_I2CMasterSendStop();
+  42              		.loc 1 29 0
+  43 0012 FFF7FEFF 		bl	I2C_I2CMasterSendStop
+  44              	.LVL2:
+  30:.\main.c      **** 	
+  31:.\main.c      **** 	//I2C_I2CMasterSendStart(acc_adr, I2C_I2C_MODE_NO_STOP);
+  32:.\main.c      **** 	uint8 buf[6];
+  33:.\main.c      **** 	I2C_I2CMasterReadBuf(acc_adr, buf, 6, I2C_I2C_WRITE_XFER_MODE);
+  45              		.loc 1 33 0
+  46 0016 6820     		mov	r0, #104
+  47 0018 6946     		mov	r1, sp
+  48 001a 0622     		mov	r2, #6
+  49 001c 0023     		mov	r3, #0
+  50 001e FFF7FEFF 		bl	I2C_I2CMasterReadBuf
+  51              	.LVL3:
+  34:.\main.c      **** 	I2C_I2CMasterSendStop();
+  52              		.loc 1 34 0
+  53 0022 FFF7FEFF 		bl	I2C_I2CMasterSendStop
+  54              	.LVL4:
+  35:.\main.c      **** 	
+  36:.\main.c      **** 	acX = buf[0]<<8 | buf[1];
+  55              		.loc 1 36 0
+  56 0026 6846     		mov	r0, sp
+  57 0028 0278     		ldrb	r2, [r0]
+  58 002a 1202     		lsl	r2, r2, #8
+  59 002c 4378     		ldrb	r3, [r0, #1]
+  60 002e 1A43     		orr	r2, r3
+  61 0030 064B     		ldr	r3, .L2
+  62 0032 1A80     		strh	r2, [r3]
+  37:.\main.c      **** 	acY = buf[2]<<8 | buf[3];
+  63              		.loc 1 37 0
+  64 0034 8278     		ldrb	r2, [r0, #2]
+  65 0036 1202     		lsl	r2, r2, #8
+  66 0038 C178     		ldrb	r1, [r0, #3]
+  67 003a 0A43     		orr	r2, r1
+  68 003c 5A80     		strh	r2, [r3, #2]
+  38:.\main.c      **** 	acZ = buf[4]<<8 | buf[5];
+  69              		.loc 1 38 0
+  70 003e 0279     		ldrb	r2, [r0, #4]
+  71 0040 1202     		lsl	r2, r2, #8
+  72 0042 4179     		ldrb	r1, [r0, #5]
+  73 0044 0A43     		orr	r2, r1
+  74 0046 9A80     		strh	r2, [r3, #4]
+  39:.\main.c      **** }
+  75              		.loc 1 39 0
+ARM GAS  C:\Users\Kombajny\AppData\Local\Temp\ccmjgWa6.s 			page 3
+
+
+  76 0048 03B0     		add	sp, sp, #12
+  77              		@ sp needed
+  78 004a 00BD     		pop	{pc}
+  79              	.L3:
+  80              		.align	2
+  81              	.L2:
+  82 004c 00000000 		.word	.LANCHOR0
+  83              		.cfi_endproc
+  84              	.LFE35:
+  85              		.size	Read_accelerometer_values, .-Read_accelerometer_values
+  86              		.section	.text.Read_gyroscope_values,"ax",%progbits
+  87              		.align	2
+  88              		.global	Read_gyroscope_values
+  89              		.code	16
+  90              		.thumb_func
+  91              		.type	Read_gyroscope_values, %function
+  92              	Read_gyroscope_values:
+  93              	.LFB36:
+  40:.\main.c      **** 
+  41:.\main.c      **** void Read_gyroscope_values()
+  42:.\main.c      **** {
+  94              		.loc 1 42 0
+  95              		.cfi_startproc
+  96 0000 00B5     		push	{lr}
+  97              		.cfi_def_cfa_offset 4
+  98              		.cfi_offset 14, -4
+  99 0002 83B0     		sub	sp, sp, #12
+ 100              		.cfi_def_cfa_offset 16
+  43:.\main.c      **** 	I2C_I2CMasterSendStart(acc_adr, I2C_I2C_WRITE_XFER_MODE);
+ 101              		.loc 1 43 0
+ 102 0004 6820     		mov	r0, #104
+ 103 0006 0021     		mov	r1, #0
+ 104 0008 FFF7FEFF 		bl	I2C_I2CMasterSendStart
+ 105              	.LVL5:
+  44:.\main.c      **** 	I2C_I2CMasterWriteByte(0x43);
+ 106              		.loc 1 44 0
+ 107 000c 4320     		mov	r0, #67
+ 108 000e FFF7FEFF 		bl	I2C_I2CMasterWriteByte
+ 109              	.LVL6:
+  45:.\main.c      **** 	I2C_I2CMasterSendStop();
+ 110              		.loc 1 45 0
+ 111 0012 FFF7FEFF 		bl	I2C_I2CMasterSendStop
+ 112              	.LVL7:
+  46:.\main.c      **** 	
+  47:.\main.c      **** 	//I2C_I2CMasterSendStart(acc_adr, I2C_I2C_MODE_NO_STOP);
+  48:.\main.c      **** 	uint8 buf[6];
+  49:.\main.c      **** 	I2C_I2CMasterReadBuf(acc_adr, buf, 6, I2C_I2C_WRITE_XFER_MODE);
+ 113              		.loc 1 49 0
+ 114 0016 6820     		mov	r0, #104
+ 115 0018 6946     		mov	r1, sp
+ 116 001a 0622     		mov	r2, #6
+ 117 001c 0023     		mov	r3, #0
+ 118 001e FFF7FEFF 		bl	I2C_I2CMasterReadBuf
+ 119              	.LVL8:
+  50:.\main.c      **** 	I2C_I2CMasterSendStop();
+ 120              		.loc 1 50 0
+ 121 0022 FFF7FEFF 		bl	I2C_I2CMasterSendStop
+ARM GAS  C:\Users\Kombajny\AppData\Local\Temp\ccmjgWa6.s 			page 4
+
+
+ 122              	.LVL9:
+  51:.\main.c      **** 	
+  52:.\main.c      **** 	gyX[0] = buf[0]; gyX[1] = buf[1];
+ 123              		.loc 1 52 0
+ 124 0026 6946     		mov	r1, sp
+ 125 0028 0A78     		ldrb	r2, [r1]
+ 126 002a 084B     		ldr	r3, .L5
+ 127 002c 1A70     		strb	r2, [r3]
+ 128 002e 4A78     		ldrb	r2, [r1, #1]
+ 129 0030 5A70     		strb	r2, [r3, #1]
+  53:.\main.c      **** 	gyY[0] = buf[2]; gyY[1] = buf[3];
+ 130              		.loc 1 53 0
+ 131 0032 8A78     		ldrb	r2, [r1, #2]
+ 132 0034 064B     		ldr	r3, .L5+4
+ 133 0036 1A70     		strb	r2, [r3]
+ 134 0038 CA78     		ldrb	r2, [r1, #3]
+ 135 003a 5A70     		strb	r2, [r3, #1]
+  54:.\main.c      **** 	gyZ[0] = buf[4]; gyZ[1] = buf[5];
+ 136              		.loc 1 54 0
+ 137 003c 0A79     		ldrb	r2, [r1, #4]
+ 138 003e 054B     		ldr	r3, .L5+8
+ 139 0040 1A70     		strb	r2, [r3]
+ 140 0042 4A79     		ldrb	r2, [r1, #5]
+ 141 0044 5A70     		strb	r2, [r3, #1]
+  55:.\main.c      **** }
+ 142              		.loc 1 55 0
+ 143 0046 03B0     		add	sp, sp, #12
+ 144              		@ sp needed
+ 145 0048 00BD     		pop	{pc}
+ 146              	.L6:
+ 147 004a C046     		.align	2
+ 148              	.L5:
+ 149 004c 00000000 		.word	gyX
+ 150 0050 00000000 		.word	gyY
+ 151 0054 00000000 		.word	gyZ
+ 152              		.cfi_endproc
+ 153              	.LFE36:
+ 154              		.size	Read_gyroscope_values, .-Read_gyroscope_values
+ 155              		.section	.text.Init_MPU,"ax",%progbits
+ 156              		.align	2
+ 157              		.global	Init_MPU
+ 158              		.code	16
+ 159              		.thumb_func
+ 160              		.type	Init_MPU, %function
+ 161              	Init_MPU:
+ 162              	.LFB37:
+  56:.\main.c      **** 
+  57:.\main.c      **** void Init_MPU()
+  58:.\main.c      **** {
+ 163              		.loc 1 58 0
+ 164              		.cfi_startproc
+ 165 0000 08B5     		push	{r3, lr}
+ 166              		.cfi_def_cfa_offset 8
+ 167              		.cfi_offset 3, -8
+ 168              		.cfi_offset 14, -4
+  59:.\main.c      **** 	I2C_I2CMasterSendStart(acc_adr, I2C_I2C_WRITE_XFER_MODE);
+ 169              		.loc 1 59 0
+ARM GAS  C:\Users\Kombajny\AppData\Local\Temp\ccmjgWa6.s 			page 5
+
+
+ 170 0002 6820     		mov	r0, #104
+ 171 0004 0021     		mov	r1, #0
+ 172 0006 FFF7FEFF 		bl	I2C_I2CMasterSendStart
+ 173              	.LVL10:
+  60:.\main.c      **** 	I2C_I2CMasterWriteByte(0x6B);
+ 174              		.loc 1 60 0
+ 175 000a 6B20     		mov	r0, #107
+ 176 000c FFF7FEFF 		bl	I2C_I2CMasterWriteByte
+ 177              	.LVL11:
+  61:.\main.c      **** 	I2C_I2CMasterWriteByte(0x00);
+ 178              		.loc 1 61 0
+ 179 0010 0020     		mov	r0, #0
+ 180 0012 FFF7FEFF 		bl	I2C_I2CMasterWriteByte
+ 181              	.LVL12:
+  62:.\main.c      **** 	I2C_I2CMasterSendStop();	
+ 182              		.loc 1 62 0
+ 183 0016 FFF7FEFF 		bl	I2C_I2CMasterSendStop
+ 184              	.LVL13:
+  63:.\main.c      **** }
+ 185              		.loc 1 63 0
+ 186              		@ sp needed
+ 187 001a 08BD     		pop	{r3, pc}
+ 188              		.cfi_endproc
+ 189              	.LFE37:
+ 190              		.size	Init_MPU, .-Init_MPU
+ 191              		.section	.text.Debug_send_accelerometer_values,"ax",%progbits
+ 192              		.align	2
+ 193              		.global	Debug_send_accelerometer_values
+ 194              		.code	16
+ 195              		.thumb_func
+ 196              		.type	Debug_send_accelerometer_values, %function
+ 197              	Debug_send_accelerometer_values:
+ 198              	.LFB38:
+  64:.\main.c      **** 
+  65:.\main.c      **** void Debug_send_accelerometer_values()
+  66:.\main.c      **** {
+ 199              		.loc 1 66 0
+ 200              		.cfi_startproc
+  67:.\main.c      **** 	
+  68:.\main.c      **** }
+ 201              		.loc 1 68 0
+ 202              		@ sp needed
+ 203 0000 7047     		bx	lr
+ 204              		.cfi_endproc
+ 205              	.LFE38:
+ 206              		.size	Debug_send_accelerometer_values, .-Debug_send_accelerometer_values
+ 207 0002 C046     		.section	.text.Debug_send_gyroscope_values,"ax",%progbits
+ 208              		.align	2
+ 209              		.global	Debug_send_gyroscope_values
+ 210              		.code	16
+ 211              		.thumb_func
+ 212              		.type	Debug_send_gyroscope_values, %function
+ 213              	Debug_send_gyroscope_values:
+ 214              	.LFB39:
+  69:.\main.c      **** 
+  70:.\main.c      **** void Debug_send_gyroscope_values()
+  71:.\main.c      **** {
+ARM GAS  C:\Users\Kombajny\AppData\Local\Temp\ccmjgWa6.s 			page 6
+
+
+ 215              		.loc 1 71 0
+ 216              		.cfi_startproc
+ 217 0000 10B5     		push	{r4, lr}
+ 218              		.cfi_def_cfa_offset 8
+ 219              		.cfi_offset 4, -8
+ 220              		.cfi_offset 14, -4
+  72:.\main.c      **** 	DEBUG_tx_Write(gyX[0]);
+ 221              		.loc 1 72 0
+ 222 0002 0E4C     		ldr	r4, .L10
+ 223 0004 2078     		ldrb	r0, [r4]
+ 224 0006 C0B2     		uxtb	r0, r0
+ 225 0008 FFF7FEFF 		bl	DEBUG_tx_Write
+ 226              	.LVL14:
+  73:.\main.c      **** 	DEBUG_tx_Write(gyX[1]);
+ 227              		.loc 1 73 0
+ 228 000c 6078     		ldrb	r0, [r4, #1]
+ 229 000e C0B2     		uxtb	r0, r0
+ 230 0010 FFF7FEFF 		bl	DEBUG_tx_Write
+ 231              	.LVL15:
+  74:.\main.c      **** 	DEBUG_tx_Write(gyY[0]);
+ 232              		.loc 1 74 0
+ 233 0014 0A4C     		ldr	r4, .L10+4
+ 234 0016 2078     		ldrb	r0, [r4]
+ 235 0018 C0B2     		uxtb	r0, r0
+ 236 001a FFF7FEFF 		bl	DEBUG_tx_Write
+ 237              	.LVL16:
+  75:.\main.c      **** 	DEBUG_tx_Write(gyY[1]);
+ 238              		.loc 1 75 0
+ 239 001e 6078     		ldrb	r0, [r4, #1]
+ 240 0020 C0B2     		uxtb	r0, r0
+ 241 0022 FFF7FEFF 		bl	DEBUG_tx_Write
+ 242              	.LVL17:
+  76:.\main.c      **** 	DEBUG_tx_Write(gyZ[0]);
+ 243              		.loc 1 76 0
+ 244 0026 074C     		ldr	r4, .L10+8
+ 245 0028 2078     		ldrb	r0, [r4]
+ 246 002a C0B2     		uxtb	r0, r0
+ 247 002c FFF7FEFF 		bl	DEBUG_tx_Write
+ 248              	.LVL18:
+  77:.\main.c      **** 	DEBUG_tx_Write(gyZ[1]);
+ 249              		.loc 1 77 0
+ 250 0030 6078     		ldrb	r0, [r4, #1]
+ 251 0032 C0B2     		uxtb	r0, r0
+ 252 0034 FFF7FEFF 		bl	DEBUG_tx_Write
+ 253              	.LVL19:
+  78:.\main.c      **** }
+ 254              		.loc 1 78 0
+ 255              		@ sp needed
+ 256 0038 10BD     		pop	{r4, pc}
+ 257              	.L11:
+ 258 003a C046     		.align	2
+ 259              	.L10:
+ 260 003c 00000000 		.word	gyX
+ 261 0040 00000000 		.word	gyY
+ 262 0044 00000000 		.word	gyZ
+ 263              		.cfi_endproc
+ 264              	.LFE39:
+ARM GAS  C:\Users\Kombajny\AppData\Local\Temp\ccmjgWa6.s 			page 7
+
+
+ 265              		.size	Debug_send_gyroscope_values, .-Debug_send_gyroscope_values
+ 266              		.section	.text.Initialize_System,"ax",%progbits
+ 267              		.align	2
+ 268              		.global	Initialize_System
+ 269              		.code	16
+ 270              		.thumb_func
+ 271              		.type	Initialize_System, %function
+ 272              	Initialize_System:
+ 273              	.LFB40:
+  79:.\main.c      **** 
+  80:.\main.c      **** void Initialize_System()
+  81:.\main.c      **** {
+ 274              		.loc 1 81 0
+ 275              		.cfi_startproc
+ 276 0000 08B5     		push	{r3, lr}
+ 277              		.cfi_def_cfa_offset 8
+ 278              		.cfi_offset 3, -8
+ 279              		.cfi_offset 14, -4
+  82:.\main.c      ****     #ifdef DEBUG
+  83:.\main.c      ****         DEBUG_Start();
+ 280              		.loc 1 83 0
+ 281 0002 FFF7FEFF 		bl	DEBUG_Start
+ 282              	.LVL20:
+  84:.\main.c      **** 		DEBUG_UartInit();
+ 283              		.loc 1 84 0
+ 284 0006 FFF7FEFF 		bl	DEBUG_UartInit
+ 285              	.LVL21:
+  85:.\main.c      ****     #endif
+  86:.\main.c      **** 	
+  87:.\main.c      **** 	I2C_Start();
+ 286              		.loc 1 87 0
+ 287 000a FFF7FEFF 		bl	I2C_Start
+ 288              	.LVL22:
+  88:.\main.c      **** 	Init_MPU();
+ 289              		.loc 1 88 0
+ 290 000e FFF7FEFF 		bl	Init_MPU
+ 291              	.LVL23:
+  89:.\main.c      **** }
+ 292              		.loc 1 89 0
+ 293              		@ sp needed
+ 294 0012 08BD     		pop	{r3, pc}
+ 295              		.cfi_endproc
+ 296              	.LFE40:
+ 297              		.size	Initialize_System, .-Initialize_System
+ 298              		.section	.text.main,"ax",%progbits
+ 299              		.align	2
+ 300              		.global	main
+ 301              		.code	16
+ 302              		.thumb_func
+ 303              		.type	main, %function
+ 304              	main:
+ 305              	.LFB41:
+  90:.\main.c      **** 
+  91:.\main.c      **** int main()
+  92:.\main.c      **** {
+ 306              		.loc 1 92 0
+ 307              		.cfi_startproc
+ARM GAS  C:\Users\Kombajny\AppData\Local\Temp\ccmjgWa6.s 			page 8
+
+
+ 308 0000 08B5     		push	{r3, lr}
+ 309              		.cfi_def_cfa_offset 8
+ 310              		.cfi_offset 3, -8
+ 311              		.cfi_offset 14, -4
+  93:.\main.c      ****     CyGlobalIntEnable;      /* Enable global interrupts */
+ 312              		.loc 1 93 0
+ 313              	@ 93 ".\main.c" 1
+ 314 0002 62B6     		CPSIE   i
+ 315              	@ 0 "" 2
+  94:.\main.c      ****     
+  95:.\main.c      ****     Initialize_System();
+ 316              		.loc 1 95 0
+ 317              		.code	16
+ 318 0004 FFF7FEFF 		bl	Initialize_System
+ 319              	.LVL24:
+  96:.\main.c      **** 	
+  97:.\main.c      **** 	DEBUG_UartPutString("START");
+ 320              		.loc 1 97 0
+ 321 0008 0548     		ldr	r0, .L15
+ 322 000a FFF7FEFF 		bl	DEBUG_UartPutString
+ 323              	.LVL25:
+ 324              	.L14:
+  98:.\main.c      ****     
+  99:.\main.c      ****     for(;;)
+ 100:.\main.c      ****     {
+ 101:.\main.c      ****          Read_accelerometer_values();
+ 325              		.loc 1 101 0 discriminator 1
+ 326 000e FFF7FEFF 		bl	Read_accelerometer_values
+ 327              	.LVL26:
+ 102:.\main.c      **** 		CyDelay(100);
+ 328              		.loc 1 102 0 discriminator 1
+ 329 0012 6420     		mov	r0, #100
+ 330 0014 FFF7FEFF 		bl	CyDelay
+ 331              	.LVL27:
+ 103:.\main.c      **** 		#ifdef DEBUG
+ 104:.\main.c      **** 			Debug_send_gyroscope_values();
+ 332              		.loc 1 104 0 discriminator 1
+ 333 0018 FFF7FEFF 		bl	Debug_send_gyroscope_values
+ 334              	.LVL28:
+ 335 001c F7E7     		b	.L14
+ 336              	.L16:
+ 337 001e C046     		.align	2
+ 338              	.L15:
+ 339 0020 00000000 		.word	.LC7
+ 340              		.cfi_endproc
+ 341              	.LFE41:
+ 342              		.size	main, .-main
+ 343              		.comm	gyZ,2,4
+ 344              		.comm	gyY,2,4
+ 345              		.comm	gyX,2,4
+ 346              		.global	acZ
+ 347              		.global	acY
+ 348              		.global	acX
+ 349              		.global	acc_adr
+ 350              		.section	.rodata
+ 351              		.type	acc_adr, %object
+ 352              		.size	acc_adr, 1
+ARM GAS  C:\Users\Kombajny\AppData\Local\Temp\ccmjgWa6.s 			page 9
+
+
+ 353              	acc_adr:
+ 354 0000 68       		.byte	104
+ 355              		.section	.rodata.str1.4,"aMS",%progbits,1
+ 356              		.align	2
+ 357              	.LC7:
+ 358 0000 53544152 		.ascii	"START\000"
+ 358      5400
+ 359 0006 0000     		.bss
+ 360              		.align	1
+ 361              		.set	.LANCHOR0,. + 0
+ 362              		.type	acX, %object
+ 363              		.size	acX, 2
+ 364              	acX:
+ 365 0000 0000     		.space	2
+ 366              		.type	acY, %object
+ 367              		.size	acY, 2
+ 368              	acY:
+ 369 0002 0000     		.space	2
+ 370              		.type	acZ, %object
+ 371              		.size	acZ, 2
+ 372              	acZ:
+ 373 0004 0000     		.space	2
+ 374              		.text
+ 375              	.Letext0:
+ 376              		.file 2 "Generated_Source\\PSoC4/cytypes.h"
+ 377              		.file 3 "Generated_Source\\PSoC4/I2C_I2C.h"
+ 378              		.file 4 "Generated_Source\\PSoC4/DEBUG.h"
+ 379              		.file 5 "Generated_Source\\PSoC4/DEBUG_SPI_UART_PVT.h"
+ 380              		.file 6 "Generated_Source\\PSoC4/I2C.h"
+ 381              		.file 7 "Generated_Source\\PSoC4/DEBUG_tx.h"
+ 382              		.file 8 "Generated_Source\\PSoC4/DEBUG_SPI_UART.h"
+ 383              		.file 9 "Generated_Source\\PSoC4/CyLib.h"
+ 384              		.section	.debug_info,"",%progbits
+ 385              	.Ldebug_info0:
+ 386 0000 78040000 		.4byte	0x478
+ 387 0004 0400     		.2byte	0x4
+ 388 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 389 000a 04       		.byte	0x4
+ 390 000b 01       		.uleb128 0x1
+ 391 000c 26010000 		.4byte	.LASF31
+ 392 0010 01       		.byte	0x1
+ 393 0011 DD000000 		.4byte	.LASF32
+ 394 0015 17000000 		.4byte	.LASF33
+ 395 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 396 001d 00000000 		.4byte	0
+ 397 0021 00000000 		.4byte	.Ldebug_line0
+ 398 0025 02       		.uleb128 0x2
+ 399 0026 01       		.byte	0x1
+ 400 0027 06       		.byte	0x6
+ 401 0028 64020000 		.4byte	.LASF0
+ 402 002c 02       		.uleb128 0x2
+ 403 002d 01       		.byte	0x1
+ 404 002e 08       		.byte	0x8
+ 405 002f 6E000000 		.4byte	.LASF1
+ 406 0033 02       		.uleb128 0x2
+ 407 0034 02       		.byte	0x2
+ 408 0035 05       		.byte	0x5
+ARM GAS  C:\Users\Kombajny\AppData\Local\Temp\ccmjgWa6.s 			page 10
+
+
+ 409 0036 00020000 		.4byte	.LASF2
+ 410 003a 02       		.uleb128 0x2
+ 411 003b 02       		.byte	0x2
+ 412 003c 07       		.byte	0x7
+ 413 003d 4B000000 		.4byte	.LASF3
+ 414 0041 02       		.uleb128 0x2
+ 415 0042 04       		.byte	0x4
+ 416 0043 05       		.byte	0x5
+ 417 0044 4C020000 		.4byte	.LASF4
+ 418 0048 02       		.uleb128 0x2
+ 419 0049 04       		.byte	0x4
+ 420 004a 07       		.byte	0x7
+ 421 004b 82000000 		.4byte	.LASF5
+ 422 004f 02       		.uleb128 0x2
+ 423 0050 08       		.byte	0x8
+ 424 0051 05       		.byte	0x5
+ 425 0052 D6010000 		.4byte	.LASF6
+ 426 0056 02       		.uleb128 0x2
+ 427 0057 08       		.byte	0x8
+ 428 0058 07       		.byte	0x7
+ 429 0059 06010000 		.4byte	.LASF7
+ 430 005d 03       		.uleb128 0x3
+ 431 005e 04       		.byte	0x4
+ 432 005f 05       		.byte	0x5
+ 433 0060 696E7400 		.ascii	"int\000"
+ 434 0064 02       		.uleb128 0x2
+ 435 0065 04       		.byte	0x4
+ 436 0066 07       		.byte	0x7
+ 437 0067 F9000000 		.4byte	.LASF8
+ 438 006b 04       		.uleb128 0x4
+ 439 006c 26020000 		.4byte	.LASF9
+ 440 0070 02       		.byte	0x2
+ 441 0071 B3       		.byte	0xb3
+ 442 0072 2C000000 		.4byte	0x2c
+ 443 0076 04       		.uleb128 0x4
+ 444 0077 E6000000 		.4byte	.LASF10
+ 445 007b 02       		.byte	0x2
+ 446 007c B4       		.byte	0xb4
+ 447 007d 3A000000 		.4byte	0x3a
+ 448 0081 04       		.uleb128 0x4
+ 449 0082 ED000000 		.4byte	.LASF11
+ 450 0086 02       		.byte	0x2
+ 451 0087 B5       		.byte	0xb5
+ 452 0088 48000000 		.4byte	0x48
+ 453 008c 02       		.uleb128 0x2
+ 454 008d 04       		.byte	0x4
+ 455 008e 04       		.byte	0x4
+ 456 008f 68000000 		.4byte	.LASF12
+ 457 0093 02       		.uleb128 0x2
+ 458 0094 08       		.byte	0x8
+ 459 0095 04       		.byte	0x4
+ 460 0096 D6000000 		.4byte	.LASF13
+ 461 009a 04       		.uleb128 0x4
+ 462 009b 7C000000 		.4byte	.LASF14
+ 463 009f 02       		.byte	0x2
+ 464 00a0 C4       		.byte	0xc4
+ 465 00a1 A5000000 		.4byte	0xa5
+ARM GAS  C:\Users\Kombajny\AppData\Local\Temp\ccmjgWa6.s 			page 11
+
+
+ 466 00a5 02       		.uleb128 0x2
+ 467 00a6 01       		.byte	0x1
+ 468 00a7 08       		.byte	0x8
+ 469 00a8 E4010000 		.4byte	.LASF15
+ 470 00ac 05       		.uleb128 0x5
+ 471 00ad 76000000 		.4byte	0x76
+ 472 00b1 02       		.uleb128 0x2
+ 473 00b2 04       		.byte	0x4
+ 474 00b3 07       		.byte	0x7
+ 475 00b4 CD010000 		.4byte	.LASF16
+ 476 00b8 06       		.uleb128 0x6
+ 477 00b9 04       		.byte	0x4
+ 478 00ba 6B000000 		.4byte	0x6b
+ 479 00be 07       		.uleb128 0x7
+ 480 00bf BC000000 		.4byte	.LASF17
+ 481 00c3 01       		.byte	0x1
+ 482 00c4 19       		.byte	0x19
+ 483 00c5 00000000 		.4byte	.LFB35
+ 484 00c9 50000000 		.4byte	.LFE35-.LFB35
+ 485 00cd 01       		.uleb128 0x1
+ 486 00ce 9C       		.byte	0x9c
+ 487 00cf 45010000 		.4byte	0x145
+ 488 00d3 08       		.uleb128 0x8
+ 489 00d4 62756600 		.ascii	"buf\000"
+ 490 00d8 01       		.byte	0x1
+ 491 00d9 20       		.byte	0x20
+ 492 00da 45010000 		.4byte	0x145
+ 493 00de 02       		.uleb128 0x2
+ 494 00df 91       		.byte	0x91
+ 495 00e0 70       		.sleb128 -16
+ 496 00e1 09       		.uleb128 0x9
+ 497 00e2 0C000000 		.4byte	.LVL0
+ 498 00e6 CD030000 		.4byte	0x3cd
+ 499 00ea FA000000 		.4byte	0xfa
+ 500 00ee 0A       		.uleb128 0xa
+ 501 00ef 01       		.uleb128 0x1
+ 502 00f0 51       		.byte	0x51
+ 503 00f1 01       		.uleb128 0x1
+ 504 00f2 30       		.byte	0x30
+ 505 00f3 0A       		.uleb128 0xa
+ 506 00f4 01       		.uleb128 0x1
+ 507 00f5 50       		.byte	0x50
+ 508 00f6 02       		.uleb128 0x2
+ 509 00f7 08       		.byte	0x8
+ 510 00f8 68       		.byte	0x68
+ 511 00f9 00       		.byte	0
+ 512 00fa 09       		.uleb128 0x9
+ 513 00fb 12000000 		.4byte	.LVL1
+ 514 00ff E7030000 		.4byte	0x3e7
+ 515 0103 0E010000 		.4byte	0x10e
+ 516 0107 0A       		.uleb128 0xa
+ 517 0108 01       		.uleb128 0x1
+ 518 0109 50       		.byte	0x50
+ 519 010a 02       		.uleb128 0x2
+ 520 010b 08       		.byte	0x8
+ 521 010c 3B       		.byte	0x3b
+ 522 010d 00       		.byte	0
+ARM GAS  C:\Users\Kombajny\AppData\Local\Temp\ccmjgWa6.s 			page 12
+
+
+ 523 010e 0B       		.uleb128 0xb
+ 524 010f 16000000 		.4byte	.LVL2
+ 525 0113 FC030000 		.4byte	0x3fc
+ 526 0117 09       		.uleb128 0x9
+ 527 0118 22000000 		.4byte	.LVL3
+ 528 011c 07040000 		.4byte	0x407
+ 529 0120 3B010000 		.4byte	0x13b
+ 530 0124 0A       		.uleb128 0xa
+ 531 0125 01       		.uleb128 0x1
+ 532 0126 53       		.byte	0x53
+ 533 0127 01       		.uleb128 0x1
+ 534 0128 30       		.byte	0x30
+ 535 0129 0A       		.uleb128 0xa
+ 536 012a 01       		.uleb128 0x1
+ 537 012b 52       		.byte	0x52
+ 538 012c 01       		.uleb128 0x1
+ 539 012d 36       		.byte	0x36
+ 540 012e 0A       		.uleb128 0xa
+ 541 012f 01       		.uleb128 0x1
+ 542 0130 51       		.byte	0x51
+ 543 0131 02       		.uleb128 0x2
+ 544 0132 7D       		.byte	0x7d
+ 545 0133 00       		.sleb128 0
+ 546 0134 0A       		.uleb128 0xa
+ 547 0135 01       		.uleb128 0x1
+ 548 0136 50       		.byte	0x50
+ 549 0137 02       		.uleb128 0x2
+ 550 0138 08       		.byte	0x8
+ 551 0139 68       		.byte	0x68
+ 552 013a 00       		.byte	0
+ 553 013b 0B       		.uleb128 0xb
+ 554 013c 26000000 		.4byte	.LVL4
+ 555 0140 FC030000 		.4byte	0x3fc
+ 556 0144 00       		.byte	0
+ 557 0145 0C       		.uleb128 0xc
+ 558 0146 6B000000 		.4byte	0x6b
+ 559 014a 55010000 		.4byte	0x155
+ 560 014e 0D       		.uleb128 0xd
+ 561 014f B1000000 		.4byte	0xb1
+ 562 0153 05       		.byte	0x5
+ 563 0154 00       		.byte	0
+ 564 0155 07       		.uleb128 0x7
+ 565 0156 A6000000 		.4byte	.LASF18
+ 566 015a 01       		.byte	0x1
+ 567 015b 29       		.byte	0x29
+ 568 015c 00000000 		.4byte	.LFB36
+ 569 0160 58000000 		.4byte	.LFE36-.LFB36
+ 570 0164 01       		.uleb128 0x1
+ 571 0165 9C       		.byte	0x9c
+ 572 0166 DC010000 		.4byte	0x1dc
+ 573 016a 08       		.uleb128 0x8
+ 574 016b 62756600 		.ascii	"buf\000"
+ 575 016f 01       		.byte	0x1
+ 576 0170 30       		.byte	0x30
+ 577 0171 45010000 		.4byte	0x145
+ 578 0175 02       		.uleb128 0x2
+ 579 0176 91       		.byte	0x91
+ARM GAS  C:\Users\Kombajny\AppData\Local\Temp\ccmjgWa6.s 			page 13
+
+
+ 580 0177 70       		.sleb128 -16
+ 581 0178 09       		.uleb128 0x9
+ 582 0179 0C000000 		.4byte	.LVL5
+ 583 017d CD030000 		.4byte	0x3cd
+ 584 0181 91010000 		.4byte	0x191
+ 585 0185 0A       		.uleb128 0xa
+ 586 0186 01       		.uleb128 0x1
+ 587 0187 51       		.byte	0x51
+ 588 0188 01       		.uleb128 0x1
+ 589 0189 30       		.byte	0x30
+ 590 018a 0A       		.uleb128 0xa
+ 591 018b 01       		.uleb128 0x1
+ 592 018c 50       		.byte	0x50
+ 593 018d 02       		.uleb128 0x2
+ 594 018e 08       		.byte	0x8
+ 595 018f 68       		.byte	0x68
+ 596 0190 00       		.byte	0
+ 597 0191 09       		.uleb128 0x9
+ 598 0192 12000000 		.4byte	.LVL6
+ 599 0196 E7030000 		.4byte	0x3e7
+ 600 019a A5010000 		.4byte	0x1a5
+ 601 019e 0A       		.uleb128 0xa
+ 602 019f 01       		.uleb128 0x1
+ 603 01a0 50       		.byte	0x50
+ 604 01a1 02       		.uleb128 0x2
+ 605 01a2 08       		.byte	0x8
+ 606 01a3 43       		.byte	0x43
+ 607 01a4 00       		.byte	0
+ 608 01a5 0B       		.uleb128 0xb
+ 609 01a6 16000000 		.4byte	.LVL7
+ 610 01aa FC030000 		.4byte	0x3fc
+ 611 01ae 09       		.uleb128 0x9
+ 612 01af 22000000 		.4byte	.LVL8
+ 613 01b3 07040000 		.4byte	0x407
+ 614 01b7 D2010000 		.4byte	0x1d2
+ 615 01bb 0A       		.uleb128 0xa
+ 616 01bc 01       		.uleb128 0x1
+ 617 01bd 53       		.byte	0x53
+ 618 01be 01       		.uleb128 0x1
+ 619 01bf 30       		.byte	0x30
+ 620 01c0 0A       		.uleb128 0xa
+ 621 01c1 01       		.uleb128 0x1
+ 622 01c2 52       		.byte	0x52
+ 623 01c3 01       		.uleb128 0x1
+ 624 01c4 36       		.byte	0x36
+ 625 01c5 0A       		.uleb128 0xa
+ 626 01c6 01       		.uleb128 0x1
+ 627 01c7 51       		.byte	0x51
+ 628 01c8 02       		.uleb128 0x2
+ 629 01c9 7D       		.byte	0x7d
+ 630 01ca 00       		.sleb128 0
+ 631 01cb 0A       		.uleb128 0xa
+ 632 01cc 01       		.uleb128 0x1
+ 633 01cd 50       		.byte	0x50
+ 634 01ce 02       		.uleb128 0x2
+ 635 01cf 08       		.byte	0x8
+ 636 01d0 68       		.byte	0x68
+ARM GAS  C:\Users\Kombajny\AppData\Local\Temp\ccmjgWa6.s 			page 14
+
+
+ 637 01d1 00       		.byte	0
+ 638 01d2 0B       		.uleb128 0xb
+ 639 01d3 26000000 		.4byte	.LVL9
+ 640 01d7 FC030000 		.4byte	0x3fc
+ 641 01db 00       		.byte	0
+ 642 01dc 07       		.uleb128 0x7
+ 643 01dd 1D010000 		.4byte	.LASF19
+ 644 01e1 01       		.byte	0x1
+ 645 01e2 39       		.byte	0x39
+ 646 01e3 00000000 		.4byte	.LFB37
+ 647 01e7 1C000000 		.4byte	.LFE37-.LFB37
+ 648 01eb 01       		.uleb128 0x1
+ 649 01ec 9C       		.byte	0x9c
+ 650 01ed 3B020000 		.4byte	0x23b
+ 651 01f1 09       		.uleb128 0x9
+ 652 01f2 0A000000 		.4byte	.LVL10
+ 653 01f6 CD030000 		.4byte	0x3cd
+ 654 01fa 0A020000 		.4byte	0x20a
+ 655 01fe 0A       		.uleb128 0xa
+ 656 01ff 01       		.uleb128 0x1
+ 657 0200 51       		.byte	0x51
+ 658 0201 01       		.uleb128 0x1
+ 659 0202 30       		.byte	0x30
+ 660 0203 0A       		.uleb128 0xa
+ 661 0204 01       		.uleb128 0x1
+ 662 0205 50       		.byte	0x50
+ 663 0206 02       		.uleb128 0x2
+ 664 0207 08       		.byte	0x8
+ 665 0208 68       		.byte	0x68
+ 666 0209 00       		.byte	0
+ 667 020a 09       		.uleb128 0x9
+ 668 020b 10000000 		.4byte	.LVL11
+ 669 020f E7030000 		.4byte	0x3e7
+ 670 0213 1E020000 		.4byte	0x21e
+ 671 0217 0A       		.uleb128 0xa
+ 672 0218 01       		.uleb128 0x1
+ 673 0219 50       		.byte	0x50
+ 674 021a 02       		.uleb128 0x2
+ 675 021b 08       		.byte	0x8
+ 676 021c 6B       		.byte	0x6b
+ 677 021d 00       		.byte	0
+ 678 021e 09       		.uleb128 0x9
+ 679 021f 16000000 		.4byte	.LVL12
+ 680 0223 E7030000 		.4byte	0x3e7
+ 681 0227 31020000 		.4byte	0x231
+ 682 022b 0A       		.uleb128 0xa
+ 683 022c 01       		.uleb128 0x1
+ 684 022d 50       		.byte	0x50
+ 685 022e 01       		.uleb128 0x1
+ 686 022f 30       		.byte	0x30
+ 687 0230 00       		.byte	0
+ 688 0231 0B       		.uleb128 0xb
+ 689 0232 1A000000 		.4byte	.LVL13
+ 690 0236 FC030000 		.4byte	0x3fc
+ 691 023a 00       		.byte	0
+ 692 023b 0E       		.uleb128 0xe
+ 693 023c 2C020000 		.4byte	.LASF34
+ARM GAS  C:\Users\Kombajny\AppData\Local\Temp\ccmjgWa6.s 			page 15
+
+
+ 694 0240 01       		.byte	0x1
+ 695 0241 41       		.byte	0x41
+ 696 0242 00000000 		.4byte	.LFB38
+ 697 0246 02000000 		.4byte	.LFE38-.LFB38
+ 698 024a 01       		.uleb128 0x1
+ 699 024b 9C       		.byte	0x9c
+ 700 024c 07       		.uleb128 0x7
+ 701 024d 0A020000 		.4byte	.LASF20
+ 702 0251 01       		.byte	0x1
+ 703 0252 46       		.byte	0x46
+ 704 0253 00000000 		.4byte	.LFB39
+ 705 0257 48000000 		.4byte	.LFE39-.LFB39
+ 706 025b 01       		.uleb128 0x1
+ 707 025c 9C       		.byte	0x9c
+ 708 025d 98020000 		.4byte	0x298
+ 709 0261 0B       		.uleb128 0xb
+ 710 0262 0C000000 		.4byte	.LVL14
+ 711 0266 2B040000 		.4byte	0x42b
+ 712 026a 0B       		.uleb128 0xb
+ 713 026b 14000000 		.4byte	.LVL15
+ 714 026f 2B040000 		.4byte	0x42b
+ 715 0273 0B       		.uleb128 0xb
+ 716 0274 1E000000 		.4byte	.LVL16
+ 717 0278 2B040000 		.4byte	0x42b
+ 718 027c 0B       		.uleb128 0xb
+ 719 027d 26000000 		.4byte	.LVL17
+ 720 0281 2B040000 		.4byte	0x42b
+ 721 0285 0B       		.uleb128 0xb
+ 722 0286 30000000 		.4byte	.LVL18
+ 723 028a 2B040000 		.4byte	0x42b
+ 724 028e 0B       		.uleb128 0xb
+ 725 028f 38000000 		.4byte	.LVL19
+ 726 0293 2B040000 		.4byte	0x42b
+ 727 0297 00       		.byte	0
+ 728 0298 07       		.uleb128 0x7
+ 729 0299 94000000 		.4byte	.LASF21
+ 730 029d 01       		.byte	0x1
+ 731 029e 50       		.byte	0x50
+ 732 029f 00000000 		.4byte	.LFB40
+ 733 02a3 14000000 		.4byte	.LFE40-.LFB40
+ 734 02a7 01       		.uleb128 0x1
+ 735 02a8 9C       		.byte	0x9c
+ 736 02a9 D2020000 		.4byte	0x2d2
+ 737 02ad 0B       		.uleb128 0xb
+ 738 02ae 06000000 		.4byte	.LVL20
+ 739 02b2 3C040000 		.4byte	0x43c
+ 740 02b6 0B       		.uleb128 0xb
+ 741 02b7 0A000000 		.4byte	.LVL21
+ 742 02bb 43040000 		.4byte	0x443
+ 743 02bf 0B       		.uleb128 0xb
+ 744 02c0 0E000000 		.4byte	.LVL22
+ 745 02c4 4A040000 		.4byte	0x44a
+ 746 02c8 0B       		.uleb128 0xb
+ 747 02c9 12000000 		.4byte	.LVL23
+ 748 02cd DC010000 		.4byte	0x1dc
+ 749 02d1 00       		.byte	0
+ 750 02d2 0F       		.uleb128 0xf
+ARM GAS  C:\Users\Kombajny\AppData\Local\Temp\ccmjgWa6.s 			page 16
+
+
+ 751 02d3 F4000000 		.4byte	.LASF35
+ 752 02d7 01       		.byte	0x1
+ 753 02d8 5B       		.byte	0x5b
+ 754 02d9 5D000000 		.4byte	0x5d
+ 755 02dd 00000000 		.4byte	.LFB41
+ 756 02e1 24000000 		.4byte	.LFE41-.LFB41
+ 757 02e5 01       		.uleb128 0x1
+ 758 02e6 9C       		.byte	0x9c
+ 759 02e7 32030000 		.4byte	0x332
+ 760 02eb 0B       		.uleb128 0xb
+ 761 02ec 08000000 		.4byte	.LVL24
+ 762 02f0 98020000 		.4byte	0x298
+ 763 02f4 09       		.uleb128 0x9
+ 764 02f5 0E000000 		.4byte	.LVL25
+ 765 02f9 51040000 		.4byte	0x451
+ 766 02fd 0B030000 		.4byte	0x30b
+ 767 0301 0A       		.uleb128 0xa
+ 768 0302 01       		.uleb128 0x1
+ 769 0303 50       		.byte	0x50
+ 770 0304 05       		.uleb128 0x5
+ 771 0305 03       		.byte	0x3
+ 772 0306 00000000 		.4byte	.LC7
+ 773 030a 00       		.byte	0
+ 774 030b 0B       		.uleb128 0xb
+ 775 030c 12000000 		.4byte	.LVL26
+ 776 0310 BE000000 		.4byte	0xbe
+ 777 0314 09       		.uleb128 0x9
+ 778 0315 18000000 		.4byte	.LVL27
+ 779 0319 6E040000 		.4byte	0x46e
+ 780 031d 28030000 		.4byte	0x328
+ 781 0321 0A       		.uleb128 0xa
+ 782 0322 01       		.uleb128 0x1
+ 783 0323 50       		.byte	0x50
+ 784 0324 02       		.uleb128 0x2
+ 785 0325 08       		.byte	0x8
+ 786 0326 64       		.byte	0x64
+ 787 0327 00       		.byte	0
+ 788 0328 0B       		.uleb128 0xb
+ 789 0329 1C000000 		.4byte	.LVL28
+ 790 032d 4C020000 		.4byte	0x24c
+ 791 0331 00       		.byte	0
+ 792 0332 10       		.uleb128 0x10
+ 793 0333 B6010000 		.4byte	.LASF22
+ 794 0337 01       		.byte	0x1
+ 795 0338 0F       		.byte	0xf
+ 796 0339 43030000 		.4byte	0x343
+ 797 033d 05       		.uleb128 0x5
+ 798 033e 03       		.byte	0x3
+ 799 033f 00000000 		.4byte	acc_adr
+ 800 0343 11       		.uleb128 0x11
+ 801 0344 6B000000 		.4byte	0x6b
+ 802 0348 12       		.uleb128 0x12
+ 803 0349 61635800 		.ascii	"acX\000"
+ 804 034d 01       		.byte	0x1
+ 805 034e 11       		.byte	0x11
+ 806 034f AC000000 		.4byte	0xac
+ 807 0353 05       		.uleb128 0x5
+ARM GAS  C:\Users\Kombajny\AppData\Local\Temp\ccmjgWa6.s 			page 17
+
+
+ 808 0354 03       		.byte	0x3
+ 809 0355 00000000 		.4byte	acX
+ 810 0359 12       		.uleb128 0x12
+ 811 035a 61635900 		.ascii	"acY\000"
+ 812 035e 01       		.byte	0x1
+ 813 035f 12       		.byte	0x12
+ 814 0360 AC000000 		.4byte	0xac
+ 815 0364 05       		.uleb128 0x5
+ 816 0365 03       		.byte	0x3
+ 817 0366 00000000 		.4byte	acY
+ 818 036a 12       		.uleb128 0x12
+ 819 036b 61635A00 		.ascii	"acZ\000"
+ 820 036f 01       		.byte	0x1
+ 821 0370 13       		.byte	0x13
+ 822 0371 AC000000 		.4byte	0xac
+ 823 0375 05       		.uleb128 0x5
+ 824 0376 03       		.byte	0x3
+ 825 0377 00000000 		.4byte	acZ
+ 826 037b 0C       		.uleb128 0xc
+ 827 037c 6B000000 		.4byte	0x6b
+ 828 0380 8B030000 		.4byte	0x38b
+ 829 0384 0D       		.uleb128 0xd
+ 830 0385 B1000000 		.4byte	0xb1
+ 831 0389 01       		.byte	0x1
+ 832 038a 00       		.byte	0
+ 833 038b 12       		.uleb128 0x12
+ 834 038c 67795800 		.ascii	"gyX\000"
+ 835 0390 01       		.byte	0x1
+ 836 0391 15       		.byte	0x15
+ 837 0392 9C030000 		.4byte	0x39c
+ 838 0396 05       		.uleb128 0x5
+ 839 0397 03       		.byte	0x3
+ 840 0398 00000000 		.4byte	gyX
+ 841 039c 05       		.uleb128 0x5
+ 842 039d 7B030000 		.4byte	0x37b
+ 843 03a1 12       		.uleb128 0x12
+ 844 03a2 67795900 		.ascii	"gyY\000"
+ 845 03a6 01       		.byte	0x1
+ 846 03a7 16       		.byte	0x16
+ 847 03a8 B2030000 		.4byte	0x3b2
+ 848 03ac 05       		.uleb128 0x5
+ 849 03ad 03       		.byte	0x3
+ 850 03ae 00000000 		.4byte	gyY
+ 851 03b2 05       		.uleb128 0x5
+ 852 03b3 7B030000 		.4byte	0x37b
+ 853 03b7 12       		.uleb128 0x12
+ 854 03b8 67795A00 		.ascii	"gyZ\000"
+ 855 03bc 01       		.byte	0x1
+ 856 03bd 17       		.byte	0x17
+ 857 03be C8030000 		.4byte	0x3c8
+ 858 03c2 05       		.uleb128 0x5
+ 859 03c3 03       		.byte	0x3
+ 860 03c4 00000000 		.4byte	gyZ
+ 861 03c8 05       		.uleb128 0x5
+ 862 03c9 7B030000 		.4byte	0x37b
+ 863 03cd 13       		.uleb128 0x13
+ 864 03ce 00000000 		.4byte	.LASF23
+ARM GAS  C:\Users\Kombajny\AppData\Local\Temp\ccmjgWa6.s 			page 18
+
+
+ 865 03d2 03       		.byte	0x3
+ 866 03d3 CC       		.byte	0xcc
+ 867 03d4 81000000 		.4byte	0x81
+ 868 03d8 E7030000 		.4byte	0x3e7
+ 869 03dc 14       		.uleb128 0x14
+ 870 03dd 81000000 		.4byte	0x81
+ 871 03e1 14       		.uleb128 0x14
+ 872 03e2 81000000 		.4byte	0x81
+ 873 03e6 00       		.byte	0
+ 874 03e7 13       		.uleb128 0x13
+ 875 03e8 E9010000 		.4byte	.LASF24
+ 876 03ec 03       		.byte	0x3
+ 877 03ed CF       		.byte	0xcf
+ 878 03ee 81000000 		.4byte	0x81
+ 879 03f2 FC030000 		.4byte	0x3fc
+ 880 03f6 14       		.uleb128 0x14
+ 881 03f7 81000000 		.4byte	0x81
+ 882 03fb 00       		.byte	0
+ 883 03fc 15       		.uleb128 0x15
+ 884 03fd 8D020000 		.4byte	.LASF36
+ 885 0401 03       		.byte	0x3
+ 886 0402 CE       		.byte	0xce
+ 887 0403 81000000 		.4byte	0x81
+ 888 0407 13       		.uleb128 0x13
+ 889 0408 70020000 		.4byte	.LASF25
+ 890 040c 03       		.byte	0x3
+ 891 040d C5       		.byte	0xc5
+ 892 040e 81000000 		.4byte	0x81
+ 893 0412 2B040000 		.4byte	0x42b
+ 894 0416 14       		.uleb128 0x14
+ 895 0417 81000000 		.4byte	0x81
+ 896 041b 14       		.uleb128 0x14
+ 897 041c B8000000 		.4byte	0xb8
+ 898 0420 14       		.uleb128 0x14
+ 899 0421 81000000 		.4byte	0x81
+ 900 0425 14       		.uleb128 0x14
+ 901 0426 81000000 		.4byte	0x81
+ 902 042a 00       		.byte	0
+ 903 042b 16       		.uleb128 0x16
+ 904 042c BE010000 		.4byte	.LASF29
+ 905 0430 07       		.byte	0x7
+ 906 0431 1D       		.byte	0x1d
+ 907 0432 3C040000 		.4byte	0x43c
+ 908 0436 14       		.uleb128 0x14
+ 909 0437 6B000000 		.4byte	0x6b
+ 910 043b 00       		.byte	0
+ 911 043c 17       		.uleb128 0x17
+ 912 043d 3F000000 		.4byte	.LASF26
+ 913 0441 04       		.byte	0x4
+ 914 0442 68       		.byte	0x68
+ 915 0443 17       		.uleb128 0x17
+ 916 0444 55020000 		.4byte	.LASF27
+ 917 0448 05       		.byte	0x5
+ 918 0449 45       		.byte	0x45
+ 919 044a 17       		.uleb128 0x17
+ 920 044b 5E000000 		.4byte	.LASF28
+ 921 044f 06       		.byte	0x6
+ARM GAS  C:\Users\Kombajny\AppData\Local\Temp\ccmjgWa6.s 			page 19
+
+
+ 922 0450 68       		.byte	0x68
+ 923 0451 18       		.uleb128 0x18
+ 924 0452 A2010000 		.4byte	.LASF30
+ 925 0456 08       		.byte	0x8
+ 926 0457 7701     		.2byte	0x177
+ 927 0459 63040000 		.4byte	0x463
+ 928 045d 14       		.uleb128 0x14
+ 929 045e 63040000 		.4byte	0x463
+ 930 0462 00       		.byte	0
+ 931 0463 06       		.uleb128 0x6
+ 932 0464 04       		.byte	0x4
+ 933 0465 69040000 		.4byte	0x469
+ 934 0469 11       		.uleb128 0x11
+ 935 046a 9A000000 		.4byte	0x9a
+ 936 046e 19       		.uleb128 0x19
+ 937 046f 85020000 		.4byte	.LASF37
+ 938 0473 09       		.byte	0x9
+ 939 0474 57       		.byte	0x57
+ 940 0475 14       		.uleb128 0x14
+ 941 0476 81000000 		.4byte	0x81
+ 942 047a 00       		.byte	0
+ 943 047b 00       		.byte	0
+ 944              		.section	.debug_abbrev,"",%progbits
+ 945              	.Ldebug_abbrev0:
+ 946 0000 01       		.uleb128 0x1
+ 947 0001 11       		.uleb128 0x11
+ 948 0002 01       		.byte	0x1
+ 949 0003 25       		.uleb128 0x25
+ 950 0004 0E       		.uleb128 0xe
+ 951 0005 13       		.uleb128 0x13
+ 952 0006 0B       		.uleb128 0xb
+ 953 0007 03       		.uleb128 0x3
+ 954 0008 0E       		.uleb128 0xe
+ 955 0009 1B       		.uleb128 0x1b
+ 956 000a 0E       		.uleb128 0xe
+ 957 000b 55       		.uleb128 0x55
+ 958 000c 17       		.uleb128 0x17
+ 959 000d 11       		.uleb128 0x11
+ 960 000e 01       		.uleb128 0x1
+ 961 000f 10       		.uleb128 0x10
+ 962 0010 17       		.uleb128 0x17
+ 963 0011 00       		.byte	0
+ 964 0012 00       		.byte	0
+ 965 0013 02       		.uleb128 0x2
+ 966 0014 24       		.uleb128 0x24
+ 967 0015 00       		.byte	0
+ 968 0016 0B       		.uleb128 0xb
+ 969 0017 0B       		.uleb128 0xb
+ 970 0018 3E       		.uleb128 0x3e
+ 971 0019 0B       		.uleb128 0xb
+ 972 001a 03       		.uleb128 0x3
+ 973 001b 0E       		.uleb128 0xe
+ 974 001c 00       		.byte	0
+ 975 001d 00       		.byte	0
+ 976 001e 03       		.uleb128 0x3
+ 977 001f 24       		.uleb128 0x24
+ 978 0020 00       		.byte	0
+ARM GAS  C:\Users\Kombajny\AppData\Local\Temp\ccmjgWa6.s 			page 20
+
+
+ 979 0021 0B       		.uleb128 0xb
+ 980 0022 0B       		.uleb128 0xb
+ 981 0023 3E       		.uleb128 0x3e
+ 982 0024 0B       		.uleb128 0xb
+ 983 0025 03       		.uleb128 0x3
+ 984 0026 08       		.uleb128 0x8
+ 985 0027 00       		.byte	0
+ 986 0028 00       		.byte	0
+ 987 0029 04       		.uleb128 0x4
+ 988 002a 16       		.uleb128 0x16
+ 989 002b 00       		.byte	0
+ 990 002c 03       		.uleb128 0x3
+ 991 002d 0E       		.uleb128 0xe
+ 992 002e 3A       		.uleb128 0x3a
+ 993 002f 0B       		.uleb128 0xb
+ 994 0030 3B       		.uleb128 0x3b
+ 995 0031 0B       		.uleb128 0xb
+ 996 0032 49       		.uleb128 0x49
+ 997 0033 13       		.uleb128 0x13
+ 998 0034 00       		.byte	0
+ 999 0035 00       		.byte	0
+ 1000 0036 05       		.uleb128 0x5
+ 1001 0037 35       		.uleb128 0x35
+ 1002 0038 00       		.byte	0
+ 1003 0039 49       		.uleb128 0x49
+ 1004 003a 13       		.uleb128 0x13
+ 1005 003b 00       		.byte	0
+ 1006 003c 00       		.byte	0
+ 1007 003d 06       		.uleb128 0x6
+ 1008 003e 0F       		.uleb128 0xf
+ 1009 003f 00       		.byte	0
+ 1010 0040 0B       		.uleb128 0xb
+ 1011 0041 0B       		.uleb128 0xb
+ 1012 0042 49       		.uleb128 0x49
+ 1013 0043 13       		.uleb128 0x13
+ 1014 0044 00       		.byte	0
+ 1015 0045 00       		.byte	0
+ 1016 0046 07       		.uleb128 0x7
+ 1017 0047 2E       		.uleb128 0x2e
+ 1018 0048 01       		.byte	0x1
+ 1019 0049 3F       		.uleb128 0x3f
+ 1020 004a 19       		.uleb128 0x19
+ 1021 004b 03       		.uleb128 0x3
+ 1022 004c 0E       		.uleb128 0xe
+ 1023 004d 3A       		.uleb128 0x3a
+ 1024 004e 0B       		.uleb128 0xb
+ 1025 004f 3B       		.uleb128 0x3b
+ 1026 0050 0B       		.uleb128 0xb
+ 1027 0051 11       		.uleb128 0x11
+ 1028 0052 01       		.uleb128 0x1
+ 1029 0053 12       		.uleb128 0x12
+ 1030 0054 06       		.uleb128 0x6
+ 1031 0055 40       		.uleb128 0x40
+ 1032 0056 18       		.uleb128 0x18
+ 1033 0057 9742     		.uleb128 0x2117
+ 1034 0059 19       		.uleb128 0x19
+ 1035 005a 01       		.uleb128 0x1
+ARM GAS  C:\Users\Kombajny\AppData\Local\Temp\ccmjgWa6.s 			page 21
+
+
+ 1036 005b 13       		.uleb128 0x13
+ 1037 005c 00       		.byte	0
+ 1038 005d 00       		.byte	0
+ 1039 005e 08       		.uleb128 0x8
+ 1040 005f 34       		.uleb128 0x34
+ 1041 0060 00       		.byte	0
+ 1042 0061 03       		.uleb128 0x3
+ 1043 0062 08       		.uleb128 0x8
+ 1044 0063 3A       		.uleb128 0x3a
+ 1045 0064 0B       		.uleb128 0xb
+ 1046 0065 3B       		.uleb128 0x3b
+ 1047 0066 0B       		.uleb128 0xb
+ 1048 0067 49       		.uleb128 0x49
+ 1049 0068 13       		.uleb128 0x13
+ 1050 0069 02       		.uleb128 0x2
+ 1051 006a 18       		.uleb128 0x18
+ 1052 006b 00       		.byte	0
+ 1053 006c 00       		.byte	0
+ 1054 006d 09       		.uleb128 0x9
+ 1055 006e 898201   		.uleb128 0x4109
+ 1056 0071 01       		.byte	0x1
+ 1057 0072 11       		.uleb128 0x11
+ 1058 0073 01       		.uleb128 0x1
+ 1059 0074 31       		.uleb128 0x31
+ 1060 0075 13       		.uleb128 0x13
+ 1061 0076 01       		.uleb128 0x1
+ 1062 0077 13       		.uleb128 0x13
+ 1063 0078 00       		.byte	0
+ 1064 0079 00       		.byte	0
+ 1065 007a 0A       		.uleb128 0xa
+ 1066 007b 8A8201   		.uleb128 0x410a
+ 1067 007e 00       		.byte	0
+ 1068 007f 02       		.uleb128 0x2
+ 1069 0080 18       		.uleb128 0x18
+ 1070 0081 9142     		.uleb128 0x2111
+ 1071 0083 18       		.uleb128 0x18
+ 1072 0084 00       		.byte	0
+ 1073 0085 00       		.byte	0
+ 1074 0086 0B       		.uleb128 0xb
+ 1075 0087 898201   		.uleb128 0x4109
+ 1076 008a 00       		.byte	0
+ 1077 008b 11       		.uleb128 0x11
+ 1078 008c 01       		.uleb128 0x1
+ 1079 008d 31       		.uleb128 0x31
+ 1080 008e 13       		.uleb128 0x13
+ 1081 008f 00       		.byte	0
+ 1082 0090 00       		.byte	0
+ 1083 0091 0C       		.uleb128 0xc
+ 1084 0092 01       		.uleb128 0x1
+ 1085 0093 01       		.byte	0x1
+ 1086 0094 49       		.uleb128 0x49
+ 1087 0095 13       		.uleb128 0x13
+ 1088 0096 01       		.uleb128 0x1
+ 1089 0097 13       		.uleb128 0x13
+ 1090 0098 00       		.byte	0
+ 1091 0099 00       		.byte	0
+ 1092 009a 0D       		.uleb128 0xd
+ARM GAS  C:\Users\Kombajny\AppData\Local\Temp\ccmjgWa6.s 			page 22
+
+
+ 1093 009b 21       		.uleb128 0x21
+ 1094 009c 00       		.byte	0
+ 1095 009d 49       		.uleb128 0x49
+ 1096 009e 13       		.uleb128 0x13
+ 1097 009f 2F       		.uleb128 0x2f
+ 1098 00a0 0B       		.uleb128 0xb
+ 1099 00a1 00       		.byte	0
+ 1100 00a2 00       		.byte	0
+ 1101 00a3 0E       		.uleb128 0xe
+ 1102 00a4 2E       		.uleb128 0x2e
+ 1103 00a5 00       		.byte	0
+ 1104 00a6 3F       		.uleb128 0x3f
+ 1105 00a7 19       		.uleb128 0x19
+ 1106 00a8 03       		.uleb128 0x3
+ 1107 00a9 0E       		.uleb128 0xe
+ 1108 00aa 3A       		.uleb128 0x3a
+ 1109 00ab 0B       		.uleb128 0xb
+ 1110 00ac 3B       		.uleb128 0x3b
+ 1111 00ad 0B       		.uleb128 0xb
+ 1112 00ae 11       		.uleb128 0x11
+ 1113 00af 01       		.uleb128 0x1
+ 1114 00b0 12       		.uleb128 0x12
+ 1115 00b1 06       		.uleb128 0x6
+ 1116 00b2 40       		.uleb128 0x40
+ 1117 00b3 18       		.uleb128 0x18
+ 1118 00b4 9742     		.uleb128 0x2117
+ 1119 00b6 19       		.uleb128 0x19
+ 1120 00b7 00       		.byte	0
+ 1121 00b8 00       		.byte	0
+ 1122 00b9 0F       		.uleb128 0xf
+ 1123 00ba 2E       		.uleb128 0x2e
+ 1124 00bb 01       		.byte	0x1
+ 1125 00bc 3F       		.uleb128 0x3f
+ 1126 00bd 19       		.uleb128 0x19
+ 1127 00be 03       		.uleb128 0x3
+ 1128 00bf 0E       		.uleb128 0xe
+ 1129 00c0 3A       		.uleb128 0x3a
+ 1130 00c1 0B       		.uleb128 0xb
+ 1131 00c2 3B       		.uleb128 0x3b
+ 1132 00c3 0B       		.uleb128 0xb
+ 1133 00c4 49       		.uleb128 0x49
+ 1134 00c5 13       		.uleb128 0x13
+ 1135 00c6 11       		.uleb128 0x11
+ 1136 00c7 01       		.uleb128 0x1
+ 1137 00c8 12       		.uleb128 0x12
+ 1138 00c9 06       		.uleb128 0x6
+ 1139 00ca 40       		.uleb128 0x40
+ 1140 00cb 18       		.uleb128 0x18
+ 1141 00cc 9742     		.uleb128 0x2117
+ 1142 00ce 19       		.uleb128 0x19
+ 1143 00cf 01       		.uleb128 0x1
+ 1144 00d0 13       		.uleb128 0x13
+ 1145 00d1 00       		.byte	0
+ 1146 00d2 00       		.byte	0
+ 1147 00d3 10       		.uleb128 0x10
+ 1148 00d4 34       		.uleb128 0x34
+ 1149 00d5 00       		.byte	0
+ARM GAS  C:\Users\Kombajny\AppData\Local\Temp\ccmjgWa6.s 			page 23
+
+
+ 1150 00d6 03       		.uleb128 0x3
+ 1151 00d7 0E       		.uleb128 0xe
+ 1152 00d8 3A       		.uleb128 0x3a
+ 1153 00d9 0B       		.uleb128 0xb
+ 1154 00da 3B       		.uleb128 0x3b
+ 1155 00db 0B       		.uleb128 0xb
+ 1156 00dc 49       		.uleb128 0x49
+ 1157 00dd 13       		.uleb128 0x13
+ 1158 00de 3F       		.uleb128 0x3f
+ 1159 00df 19       		.uleb128 0x19
+ 1160 00e0 02       		.uleb128 0x2
+ 1161 00e1 18       		.uleb128 0x18
+ 1162 00e2 00       		.byte	0
+ 1163 00e3 00       		.byte	0
+ 1164 00e4 11       		.uleb128 0x11
+ 1165 00e5 26       		.uleb128 0x26
+ 1166 00e6 00       		.byte	0
+ 1167 00e7 49       		.uleb128 0x49
+ 1168 00e8 13       		.uleb128 0x13
+ 1169 00e9 00       		.byte	0
+ 1170 00ea 00       		.byte	0
+ 1171 00eb 12       		.uleb128 0x12
+ 1172 00ec 34       		.uleb128 0x34
+ 1173 00ed 00       		.byte	0
+ 1174 00ee 03       		.uleb128 0x3
+ 1175 00ef 08       		.uleb128 0x8
+ 1176 00f0 3A       		.uleb128 0x3a
+ 1177 00f1 0B       		.uleb128 0xb
+ 1178 00f2 3B       		.uleb128 0x3b
+ 1179 00f3 0B       		.uleb128 0xb
+ 1180 00f4 49       		.uleb128 0x49
+ 1181 00f5 13       		.uleb128 0x13
+ 1182 00f6 3F       		.uleb128 0x3f
+ 1183 00f7 19       		.uleb128 0x19
+ 1184 00f8 02       		.uleb128 0x2
+ 1185 00f9 18       		.uleb128 0x18
+ 1186 00fa 00       		.byte	0
+ 1187 00fb 00       		.byte	0
+ 1188 00fc 13       		.uleb128 0x13
+ 1189 00fd 2E       		.uleb128 0x2e
+ 1190 00fe 01       		.byte	0x1
+ 1191 00ff 3F       		.uleb128 0x3f
+ 1192 0100 19       		.uleb128 0x19
+ 1193 0101 03       		.uleb128 0x3
+ 1194 0102 0E       		.uleb128 0xe
+ 1195 0103 3A       		.uleb128 0x3a
+ 1196 0104 0B       		.uleb128 0xb
+ 1197 0105 3B       		.uleb128 0x3b
+ 1198 0106 0B       		.uleb128 0xb
+ 1199 0107 27       		.uleb128 0x27
+ 1200 0108 19       		.uleb128 0x19
+ 1201 0109 49       		.uleb128 0x49
+ 1202 010a 13       		.uleb128 0x13
+ 1203 010b 3C       		.uleb128 0x3c
+ 1204 010c 19       		.uleb128 0x19
+ 1205 010d 01       		.uleb128 0x1
+ 1206 010e 13       		.uleb128 0x13
+ARM GAS  C:\Users\Kombajny\AppData\Local\Temp\ccmjgWa6.s 			page 24
+
+
+ 1207 010f 00       		.byte	0
+ 1208 0110 00       		.byte	0
+ 1209 0111 14       		.uleb128 0x14
+ 1210 0112 05       		.uleb128 0x5
+ 1211 0113 00       		.byte	0
+ 1212 0114 49       		.uleb128 0x49
+ 1213 0115 13       		.uleb128 0x13
+ 1214 0116 00       		.byte	0
+ 1215 0117 00       		.byte	0
+ 1216 0118 15       		.uleb128 0x15
+ 1217 0119 2E       		.uleb128 0x2e
+ 1218 011a 00       		.byte	0
+ 1219 011b 3F       		.uleb128 0x3f
+ 1220 011c 19       		.uleb128 0x19
+ 1221 011d 03       		.uleb128 0x3
+ 1222 011e 0E       		.uleb128 0xe
+ 1223 011f 3A       		.uleb128 0x3a
+ 1224 0120 0B       		.uleb128 0xb
+ 1225 0121 3B       		.uleb128 0x3b
+ 1226 0122 0B       		.uleb128 0xb
+ 1227 0123 27       		.uleb128 0x27
+ 1228 0124 19       		.uleb128 0x19
+ 1229 0125 49       		.uleb128 0x49
+ 1230 0126 13       		.uleb128 0x13
+ 1231 0127 3C       		.uleb128 0x3c
+ 1232 0128 19       		.uleb128 0x19
+ 1233 0129 00       		.byte	0
+ 1234 012a 00       		.byte	0
+ 1235 012b 16       		.uleb128 0x16
+ 1236 012c 2E       		.uleb128 0x2e
+ 1237 012d 01       		.byte	0x1
+ 1238 012e 3F       		.uleb128 0x3f
+ 1239 012f 19       		.uleb128 0x19
+ 1240 0130 03       		.uleb128 0x3
+ 1241 0131 0E       		.uleb128 0xe
+ 1242 0132 3A       		.uleb128 0x3a
+ 1243 0133 0B       		.uleb128 0xb
+ 1244 0134 3B       		.uleb128 0x3b
+ 1245 0135 0B       		.uleb128 0xb
+ 1246 0136 27       		.uleb128 0x27
+ 1247 0137 19       		.uleb128 0x19
+ 1248 0138 3C       		.uleb128 0x3c
+ 1249 0139 19       		.uleb128 0x19
+ 1250 013a 01       		.uleb128 0x1
+ 1251 013b 13       		.uleb128 0x13
+ 1252 013c 00       		.byte	0
+ 1253 013d 00       		.byte	0
+ 1254 013e 17       		.uleb128 0x17
+ 1255 013f 2E       		.uleb128 0x2e
+ 1256 0140 00       		.byte	0
+ 1257 0141 3F       		.uleb128 0x3f
+ 1258 0142 19       		.uleb128 0x19
+ 1259 0143 03       		.uleb128 0x3
+ 1260 0144 0E       		.uleb128 0xe
+ 1261 0145 3A       		.uleb128 0x3a
+ 1262 0146 0B       		.uleb128 0xb
+ 1263 0147 3B       		.uleb128 0x3b
+ARM GAS  C:\Users\Kombajny\AppData\Local\Temp\ccmjgWa6.s 			page 25
+
+
+ 1264 0148 0B       		.uleb128 0xb
+ 1265 0149 27       		.uleb128 0x27
+ 1266 014a 19       		.uleb128 0x19
+ 1267 014b 3C       		.uleb128 0x3c
+ 1268 014c 19       		.uleb128 0x19
+ 1269 014d 00       		.byte	0
+ 1270 014e 00       		.byte	0
+ 1271 014f 18       		.uleb128 0x18
+ 1272 0150 2E       		.uleb128 0x2e
+ 1273 0151 01       		.byte	0x1
+ 1274 0152 3F       		.uleb128 0x3f
+ 1275 0153 19       		.uleb128 0x19
+ 1276 0154 03       		.uleb128 0x3
+ 1277 0155 0E       		.uleb128 0xe
+ 1278 0156 3A       		.uleb128 0x3a
+ 1279 0157 0B       		.uleb128 0xb
+ 1280 0158 3B       		.uleb128 0x3b
+ 1281 0159 05       		.uleb128 0x5
+ 1282 015a 27       		.uleb128 0x27
+ 1283 015b 19       		.uleb128 0x19
+ 1284 015c 3C       		.uleb128 0x3c
+ 1285 015d 19       		.uleb128 0x19
+ 1286 015e 01       		.uleb128 0x1
+ 1287 015f 13       		.uleb128 0x13
+ 1288 0160 00       		.byte	0
+ 1289 0161 00       		.byte	0
+ 1290 0162 19       		.uleb128 0x19
+ 1291 0163 2E       		.uleb128 0x2e
+ 1292 0164 01       		.byte	0x1
+ 1293 0165 3F       		.uleb128 0x3f
+ 1294 0166 19       		.uleb128 0x19
+ 1295 0167 03       		.uleb128 0x3
+ 1296 0168 0E       		.uleb128 0xe
+ 1297 0169 3A       		.uleb128 0x3a
+ 1298 016a 0B       		.uleb128 0xb
+ 1299 016b 3B       		.uleb128 0x3b
+ 1300 016c 0B       		.uleb128 0xb
+ 1301 016d 27       		.uleb128 0x27
+ 1302 016e 19       		.uleb128 0x19
+ 1303 016f 3C       		.uleb128 0x3c
+ 1304 0170 19       		.uleb128 0x19
+ 1305 0171 00       		.byte	0
+ 1306 0172 00       		.byte	0
+ 1307 0173 00       		.byte	0
+ 1308              		.section	.debug_aranges,"",%progbits
+ 1309 0000 4C000000 		.4byte	0x4c
+ 1310 0004 0200     		.2byte	0x2
+ 1311 0006 00000000 		.4byte	.Ldebug_info0
+ 1312 000a 04       		.byte	0x4
+ 1313 000b 00       		.byte	0
+ 1314 000c 0000     		.2byte	0
+ 1315 000e 0000     		.2byte	0
+ 1316 0010 00000000 		.4byte	.LFB35
+ 1317 0014 50000000 		.4byte	.LFE35-.LFB35
+ 1318 0018 00000000 		.4byte	.LFB36
+ 1319 001c 58000000 		.4byte	.LFE36-.LFB36
+ 1320 0020 00000000 		.4byte	.LFB37
+ARM GAS  C:\Users\Kombajny\AppData\Local\Temp\ccmjgWa6.s 			page 26
+
+
+ 1321 0024 1C000000 		.4byte	.LFE37-.LFB37
+ 1322 0028 00000000 		.4byte	.LFB38
+ 1323 002c 02000000 		.4byte	.LFE38-.LFB38
+ 1324 0030 00000000 		.4byte	.LFB39
+ 1325 0034 48000000 		.4byte	.LFE39-.LFB39
+ 1326 0038 00000000 		.4byte	.LFB40
+ 1327 003c 14000000 		.4byte	.LFE40-.LFB40
+ 1328 0040 00000000 		.4byte	.LFB41
+ 1329 0044 24000000 		.4byte	.LFE41-.LFB41
+ 1330 0048 00000000 		.4byte	0
+ 1331 004c 00000000 		.4byte	0
+ 1332              		.section	.debug_ranges,"",%progbits
+ 1333              	.Ldebug_ranges0:
+ 1334 0000 00000000 		.4byte	.LFB35
+ 1335 0004 50000000 		.4byte	.LFE35
+ 1336 0008 00000000 		.4byte	.LFB36
+ 1337 000c 58000000 		.4byte	.LFE36
+ 1338 0010 00000000 		.4byte	.LFB37
+ 1339 0014 1C000000 		.4byte	.LFE37
+ 1340 0018 00000000 		.4byte	.LFB38
+ 1341 001c 02000000 		.4byte	.LFE38
+ 1342 0020 00000000 		.4byte	.LFB39
+ 1343 0024 48000000 		.4byte	.LFE39
+ 1344 0028 00000000 		.4byte	.LFB40
+ 1345 002c 14000000 		.4byte	.LFE40
+ 1346 0030 00000000 		.4byte	.LFB41
+ 1347 0034 24000000 		.4byte	.LFE41
+ 1348 0038 00000000 		.4byte	0
+ 1349 003c 00000000 		.4byte	0
+ 1350              		.section	.debug_line,"",%progbits
+ 1351              	.Ldebug_line0:
+ 1352 0000 52010000 		.section	.debug_str,"MS",%progbits,1
+ 1352      0200A900 
+ 1352      00000201 
+ 1352      FB0E0D00 
+ 1352      01010101 
+ 1353              	.LASF23:
+ 1354 0000 4932435F 		.ascii	"I2C_I2CMasterSendStart\000"
+ 1354      4932434D 
+ 1354      61737465 
+ 1354      7253656E 
+ 1354      64537461 
+ 1355              	.LASF33:
+ 1356 0017 443A5C50 		.ascii	"D:\\PSOC\\Project1_acc\\Project1_acc.cydsn\000"
+ 1356      534F435C 
+ 1356      50726F6A 
+ 1356      65637431 
+ 1356      5F616363 
+ 1357              	.LASF26:
+ 1358 003f 44454255 		.ascii	"DEBUG_Start\000"
+ 1358      475F5374 
+ 1358      61727400 
+ 1359              	.LASF3:
+ 1360 004b 73686F72 		.ascii	"short unsigned int\000"
+ 1360      7420756E 
+ 1360      7369676E 
+ 1360      65642069 
+ARM GAS  C:\Users\Kombajny\AppData\Local\Temp\ccmjgWa6.s 			page 27
+
+
+ 1360      6E7400
+ 1361              	.LASF28:
+ 1362 005e 4932435F 		.ascii	"I2C_Start\000"
+ 1362      53746172 
+ 1362      7400
+ 1363              	.LASF12:
+ 1364 0068 666C6F61 		.ascii	"float\000"
+ 1364      7400
+ 1365              	.LASF1:
+ 1366 006e 756E7369 		.ascii	"unsigned char\000"
+ 1366      676E6564 
+ 1366      20636861 
+ 1366      7200
+ 1367              	.LASF14:
+ 1368 007c 63686172 		.ascii	"char8\000"
+ 1368      3800
+ 1369              	.LASF5:
+ 1370 0082 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1370      20756E73 
+ 1370      69676E65 
+ 1370      6420696E 
+ 1370      7400
+ 1371              	.LASF21:
+ 1372 0094 496E6974 		.ascii	"Initialize_System\000"
+ 1372      69616C69 
+ 1372      7A655F53 
+ 1372      79737465 
+ 1372      6D00
+ 1373              	.LASF18:
+ 1374 00a6 52656164 		.ascii	"Read_gyroscope_values\000"
+ 1374      5F677972 
+ 1374      6F73636F 
+ 1374      70655F76 
+ 1374      616C7565 
+ 1375              	.LASF17:
+ 1376 00bc 52656164 		.ascii	"Read_accelerometer_values\000"
+ 1376      5F616363 
+ 1376      656C6572 
+ 1376      6F6D6574 
+ 1376      65725F76 
+ 1377              	.LASF13:
+ 1378 00d6 646F7562 		.ascii	"double\000"
+ 1378      6C6500
+ 1379              	.LASF32:
+ 1380 00dd 2E5C6D61 		.ascii	".\\main.c\000"
+ 1380      696E2E63 
+ 1380      00
+ 1381              	.LASF10:
+ 1382 00e6 75696E74 		.ascii	"uint16\000"
+ 1382      313600
+ 1383              	.LASF11:
+ 1384 00ed 75696E74 		.ascii	"uint32\000"
+ 1384      333200
+ 1385              	.LASF35:
+ 1386 00f4 6D61696E 		.ascii	"main\000"
+ 1386      00
+ 1387              	.LASF8:
+ARM GAS  C:\Users\Kombajny\AppData\Local\Temp\ccmjgWa6.s 			page 28
+
+
+ 1388 00f9 756E7369 		.ascii	"unsigned int\000"
+ 1388      676E6564 
+ 1388      20696E74 
+ 1388      00
+ 1389              	.LASF7:
+ 1390 0106 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1390      206C6F6E 
+ 1390      6720756E 
+ 1390      7369676E 
+ 1390      65642069 
+ 1391              	.LASF19:
+ 1392 011d 496E6974 		.ascii	"Init_MPU\000"
+ 1392      5F4D5055 
+ 1392      00
+ 1393              	.LASF31:
+ 1394 0126 474E5520 		.ascii	"GNU C 4.8.4 20140526 (release) [ARM/embedded-4_8-br"
+ 1394      4320342E 
+ 1394      382E3420 
+ 1394      32303134 
+ 1394      30353236 
+ 1395 0159 616E6368 		.ascii	"anch revision 211358] -mcpu=cortex-m0 -mthumb -g -O"
+ 1395      20726576 
+ 1395      6973696F 
+ 1395      6E203231 
+ 1395      31333538 
+ 1396 018c 67202D66 		.ascii	"g -ffunction-sections\000"
+ 1396      66756E63 
+ 1396      74696F6E 
+ 1396      2D736563 
+ 1396      74696F6E 
+ 1397              	.LASF30:
+ 1398 01a2 44454255 		.ascii	"DEBUG_UartPutString\000"
+ 1398      475F5561 
+ 1398      72745075 
+ 1398      74537472 
+ 1398      696E6700 
+ 1399              	.LASF22:
+ 1400 01b6 6163635F 		.ascii	"acc_adr\000"
+ 1400      61647200 
+ 1401              	.LASF29:
+ 1402 01be 44454255 		.ascii	"DEBUG_tx_Write\000"
+ 1402      475F7478 
+ 1402      5F577269 
+ 1402      746500
+ 1403              	.LASF16:
+ 1404 01cd 73697A65 		.ascii	"sizetype\000"
+ 1404      74797065 
+ 1404      00
+ 1405              	.LASF6:
+ 1406 01d6 6C6F6E67 		.ascii	"long long int\000"
+ 1406      206C6F6E 
+ 1406      6720696E 
+ 1406      7400
+ 1407              	.LASF15:
+ 1408 01e4 63686172 		.ascii	"char\000"
+ 1408      00
+ 1409              	.LASF24:
+ARM GAS  C:\Users\Kombajny\AppData\Local\Temp\ccmjgWa6.s 			page 29
+
+
+ 1410 01e9 4932435F 		.ascii	"I2C_I2CMasterWriteByte\000"
+ 1410      4932434D 
+ 1410      61737465 
+ 1410      72577269 
+ 1410      74654279 
+ 1411              	.LASF2:
+ 1412 0200 73686F72 		.ascii	"short int\000"
+ 1412      7420696E 
+ 1412      7400
+ 1413              	.LASF20:
+ 1414 020a 44656275 		.ascii	"Debug_send_gyroscope_values\000"
+ 1414      675F7365 
+ 1414      6E645F67 
+ 1414      79726F73 
+ 1414      636F7065 
+ 1415              	.LASF9:
+ 1416 0226 75696E74 		.ascii	"uint8\000"
+ 1416      3800
+ 1417              	.LASF34:
+ 1418 022c 44656275 		.ascii	"Debug_send_accelerometer_values\000"
+ 1418      675F7365 
+ 1418      6E645F61 
+ 1418      6363656C 
+ 1418      65726F6D 
+ 1419              	.LASF4:
+ 1420 024c 6C6F6E67 		.ascii	"long int\000"
+ 1420      20696E74 
+ 1420      00
+ 1421              	.LASF27:
+ 1422 0255 44454255 		.ascii	"DEBUG_UartInit\000"
+ 1422      475F5561 
+ 1422      7274496E 
+ 1422      697400
+ 1423              	.LASF0:
+ 1424 0264 7369676E 		.ascii	"signed char\000"
+ 1424      65642063 
+ 1424      68617200 
+ 1425              	.LASF25:
+ 1426 0270 4932435F 		.ascii	"I2C_I2CMasterReadBuf\000"
+ 1426      4932434D 
+ 1426      61737465 
+ 1426      72526561 
+ 1426      64427566 
+ 1427              	.LASF37:
+ 1428 0285 43794465 		.ascii	"CyDelay\000"
+ 1428      6C617900 
+ 1429              	.LASF36:
+ 1430 028d 4932435F 		.ascii	"I2C_I2CMasterSendStop\000"
+ 1430      4932434D 
+ 1430      61737465 
+ 1430      7253656E 
+ 1430      6453746F 
+ 1431              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.4 20140526 (release) [ARM/embedded-4_8-br

@@ -1,0 +1,13 @@
+# Project1_acc
+# 2015-08-02 13:41:03Z
+
+# IO_2@[IOP=(3)][IoId=(2)] is reserved: SWDDebugEnabled
+dont_use_io iocell 3 2
+# IO_3@[IOP=(3)][IoId=(3)] is reserved: SWDDebugEnabled
+dont_use_io iocell 3 3
+dont_use_location 0 1
+dont_use_location 1 1
+set_location "ClockGenBlock" m0s8clockgenblockcell -1 -1 0
+set_io "\I2C:scl(0)\" iocell 0 4
+set_io "\I2C:sda(0)\" iocell 0 5
+set_io "mpu_int(0)" iocell 1 0

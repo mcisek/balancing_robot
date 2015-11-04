@@ -1,0 +1,6 @@
+D:\PSOC\Project1_acc\Project1_acc.cydsn\Project1_acc.cyprj|79fb06c3-9a2c-4649-9ecf-5486464f21a1
+C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|cb63abe1-12c1-44e9-98ca-fe845e815750
+C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|6621285e-6617-4a3d-a702-665929849bda
+C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|75ff89d1-ffe9-4be9-8553-5dbd56f48f14
+C:\Program Files (x86)\Cypress\PSoC Creator\3.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|6b03d71d-6516-44bf-8506-60c73dde074b
+D:\PSOC\PSoC\SmartCart_BLE_kpn_vebego.cydsn\SmartCart_BLE_kpn_vebego.cyprj|9ade0951-7c06-4dfb-a43c-9097db0b4c5f
