@@ -14963,10 +14963,10 @@ Source: www.kingbright.com</description>
 <instance part="GND11" gate="1" x="81.28" y="121.92"/>
 <instance part="JP2" gate="A" x="167.64" y="76.2" rot="R180"/>
 <instance part="JP3" gate="A" x="167.64" y="35.56" rot="R180"/>
-<instance part="LED1" gate="G$1" x="248.92" y="119.38"/>
-<instance part="R1" gate="G$1" x="248.92" y="129.54" rot="R90"/>
-<instance part="SUPPLY5" gate="G$1" x="248.92" y="139.7"/>
-<instance part="GND12" gate="1" x="248.92" y="109.22"/>
+<instance part="LED1" gate="G$1" x="220.98" y="114.3"/>
+<instance part="R1" gate="G$1" x="220.98" y="124.46" rot="R90"/>
+<instance part="SUPPLY5" gate="G$1" x="220.98" y="134.62"/>
+<instance part="GND12" gate="1" x="220.98" y="104.14"/>
 <instance part="C10" gate="G$1" x="30.48" y="58.42" rot="R180"/>
 <instance part="C12" gate="G$1" x="33.02" y="129.54" rot="R180"/>
 <instance part="GND13" gate="1" x="180.34" y="63.5"/>
@@ -15068,7 +15068,7 @@ Source: www.kingbright.com</description>
 <segment>
 <pinref part="LED1" gate="G$1" pin="C"/>
 <pinref part="GND12" gate="1" pin="GND"/>
-<wire x1="248.92" y1="114.3" x2="248.92" y2="111.76" width="0.1524" layer="91"/>
+<wire x1="220.98" y1="109.22" x2="220.98" y2="106.68" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="JP2" gate="A" pin="1"/>
@@ -15222,7 +15222,7 @@ Source: www.kingbright.com</description>
 <segment>
 <pinref part="SUPPLY5" gate="G$1" pin="VCC"/>
 <pinref part="R1" gate="G$1" pin="2"/>
-<wire x1="248.92" y1="137.16" x2="248.92" y2="134.62" width="0.1524" layer="91"/>
+<wire x1="220.98" y1="132.08" x2="220.98" y2="129.54" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="JP2" gate="A" pin="4"/>
@@ -15539,7 +15539,7 @@ Source: www.kingbright.com</description>
 <segment>
 <pinref part="R1" gate="G$1" pin="1"/>
 <pinref part="LED1" gate="G$1" pin="A"/>
-<wire x1="248.92" y1="124.46" x2="248.92" y2="121.92" width="0.1524" layer="91"/>
+<wire x1="220.98" y1="119.38" x2="220.98" y2="116.84" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
