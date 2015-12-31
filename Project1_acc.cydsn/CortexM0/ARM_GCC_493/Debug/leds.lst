@@ -1,0 +1,1632 @@
+ARM GAS  C:\Users\MCisek\AppData\Local\Temp\ccZZamMD.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 1
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"leds.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.turnLedsOff,"ax",%progbits
+  18              		.align	2
+  19              		.global	turnLedsOff
+  20              		.code	16
+  21              		.thumb_func
+  22              		.type	turnLedsOff, %function
+  23              	turnLedsOff:
+  24              	.LFB35:
+  25              		.file 1 ".\\leds.c"
+   1:.\leds.c      **** /* ========================================
+   2:.\leds.c      ****  *
+   3:.\leds.c      ****  * Copyright YOUR COMPANY, THE YEAR
+   4:.\leds.c      ****  * All Rights Reserved
+   5:.\leds.c      ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:.\leds.c      ****  *
+   7:.\leds.c      ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:.\leds.c      ****  * WHICH IS THE PROPERTY OF your company.
+   9:.\leds.c      ****  *
+  10:.\leds.c      ****  * ========================================
+  11:.\leds.c      **** */
+  12:.\leds.c      **** #include <project.h>
+  13:.\leds.c      **** #include <leds.h>
+  14:.\leds.c      **** 
+  15:.\leds.c      **** uint8 i = 0;
+  16:.\leds.c      **** 
+  17:.\leds.c      **** void turnLedsOff()
+  18:.\leds.c      **** {
+  26              		.loc 1 18 0
+  27              		.cfi_startproc
+  28 0000 08B5     		push	{r3, lr}
+  29              		.cfi_def_cfa_offset 8
+  30              		.cfi_offset 3, -8
+  31              		.cfi_offset 14, -4
+  19:.\leds.c      ****     LED0_Write(1u);
+  32              		.loc 1 19 0
+  33 0002 0120     		mov	r0, #1
+  34 0004 FFF7FEFF 		bl	LED0_Write
+  35              	.LVL0:
+  20:.\leds.c      ****     LED1_Write(1u);
+  36              		.loc 1 20 0
+  37 0008 0120     		mov	r0, #1
+ARM GAS  C:\Users\MCisek\AppData\Local\Temp\ccZZamMD.s 			page 2
+
+
+  38 000a FFF7FEFF 		bl	LED1_Write
+  39              	.LVL1:
+  21:.\leds.c      ****     LED2_Write(1u);
+  40              		.loc 1 21 0
+  41 000e 0120     		mov	r0, #1
+  42 0010 FFF7FEFF 		bl	LED2_Write
+  43              	.LVL2:
+  22:.\leds.c      ****     LED3_Write(1u);
+  44              		.loc 1 22 0
+  45 0014 0120     		mov	r0, #1
+  46 0016 FFF7FEFF 		bl	LED3_Write
+  47              	.LVL3:
+  23:.\leds.c      ****     LED4_Write(1u);
+  48              		.loc 1 23 0
+  49 001a 0120     		mov	r0, #1
+  50 001c FFF7FEFF 		bl	LED4_Write
+  51              	.LVL4:
+  24:.\leds.c      ****     LED5_Write(1u);
+  52              		.loc 1 24 0
+  53 0020 0120     		mov	r0, #1
+  54 0022 FFF7FEFF 		bl	LED5_Write
+  55              	.LVL5:
+  25:.\leds.c      ****     LED6_Write(1u);
+  56              		.loc 1 25 0
+  57 0026 0120     		mov	r0, #1
+  58 0028 FFF7FEFF 		bl	LED6_Write
+  59              	.LVL6:
+  26:.\leds.c      ****     GPIO_1_Write(1u);
+  60              		.loc 1 26 0
+  61 002c 0120     		mov	r0, #1
+  62 002e FFF7FEFF 		bl	GPIO_1_Write
+  63              	.LVL7:
+  27:.\leds.c      **** }
+  64              		.loc 1 27 0
+  65              		@ sp needed
+  66 0032 08BD     		pop	{r3, pc}
+  67              		.cfi_endproc
+  68              	.LFE35:
+  69              		.size	turnLedsOff, .-turnLedsOff
+  70              		.section	.text.turnLedsOn,"ax",%progbits
+  71              		.align	2
+  72              		.global	turnLedsOn
+  73              		.code	16
+  74              		.thumb_func
+  75              		.type	turnLedsOn, %function
+  76              	turnLedsOn:
+  77              	.LFB36:
+  28:.\leds.c      **** 
+  29:.\leds.c      **** void turnLedsOn()
+  30:.\leds.c      **** {
+  78              		.loc 1 30 0
+  79              		.cfi_startproc
+  80 0000 08B5     		push	{r3, lr}
+  81              		.cfi_def_cfa_offset 8
+  82              		.cfi_offset 3, -8
+  83              		.cfi_offset 14, -4
+  31:.\leds.c      ****     LED0_Write(0u);
+ARM GAS  C:\Users\MCisek\AppData\Local\Temp\ccZZamMD.s 			page 3
+
+
+  84              		.loc 1 31 0
+  85 0002 0020     		mov	r0, #0
+  86 0004 FFF7FEFF 		bl	LED0_Write
+  87              	.LVL8:
+  32:.\leds.c      ****     LED1_Write(0u);
+  88              		.loc 1 32 0
+  89 0008 0020     		mov	r0, #0
+  90 000a FFF7FEFF 		bl	LED1_Write
+  91              	.LVL9:
+  33:.\leds.c      ****     LED2_Write(0u);
+  92              		.loc 1 33 0
+  93 000e 0020     		mov	r0, #0
+  94 0010 FFF7FEFF 		bl	LED2_Write
+  95              	.LVL10:
+  34:.\leds.c      ****     LED3_Write(0u);
+  96              		.loc 1 34 0
+  97 0014 0020     		mov	r0, #0
+  98 0016 FFF7FEFF 		bl	LED3_Write
+  99              	.LVL11:
+  35:.\leds.c      ****     LED4_Write(0u);
+ 100              		.loc 1 35 0
+ 101 001a 0020     		mov	r0, #0
+ 102 001c FFF7FEFF 		bl	LED4_Write
+ 103              	.LVL12:
+  36:.\leds.c      ****     LED5_Write(0u);
+ 104              		.loc 1 36 0
+ 105 0020 0020     		mov	r0, #0
+ 106 0022 FFF7FEFF 		bl	LED5_Write
+ 107              	.LVL13:
+  37:.\leds.c      ****     LED6_Write(0u);
+ 108              		.loc 1 37 0
+ 109 0026 0020     		mov	r0, #0
+ 110 0028 FFF7FEFF 		bl	LED6_Write
+ 111              	.LVL14:
+  38:.\leds.c      ****     GPIO_1_Write(0u);
+ 112              		.loc 1 38 0
+ 113 002c 0020     		mov	r0, #0
+ 114 002e FFF7FEFF 		bl	GPIO_1_Write
+ 115              	.LVL15:
+  39:.\leds.c      **** }
+ 116              		.loc 1 39 0
+ 117              		@ sp needed
+ 118 0032 08BD     		pop	{r3, pc}
+ 119              		.cfi_endproc
+ 120              	.LFE36:
+ 121              		.size	turnLedsOn, .-turnLedsOn
+ 122              		.section	.text.LedInterruptHandler,"ax",%progbits
+ 123              		.align	2
+ 124              		.global	LedInterruptHandler
+ 125              		.code	16
+ 126              		.thumb_func
+ 127              		.type	LedInterruptHandler, %function
+ 128              	LedInterruptHandler:
+ 129              	.LFB38:
+  40:.\leds.c      **** 
+  41:.\leds.c      **** void nightRider(uint8 i)
+  42:.\leds.c      **** {
+ARM GAS  C:\Users\MCisek\AppData\Local\Temp\ccZZamMD.s 			page 4
+
+
+  43:.\leds.c      ****     turnLedsOff();
+  44:.\leds.c      ****     switch(i){
+  45:.\leds.c      ****         case 0: case 14:
+  46:.\leds.c      ****             LED0_Write(0u);
+  47:.\leds.c      ****             break;
+  48:.\leds.c      ****         case 1: case 13:
+  49:.\leds.c      ****             LED0_Write(0u);
+  50:.\leds.c      ****             LED1_Write(0u);
+  51:.\leds.c      ****             break;
+  52:.\leds.c      ****         case 2: case 12:
+  53:.\leds.c      ****             LED1_Write(0u);
+  54:.\leds.c      ****             LED2_Write(0u);
+  55:.\leds.c      ****             break;
+  56:.\leds.c      ****         case 3: case 11:
+  57:.\leds.c      ****             LED2_Write(0u);
+  58:.\leds.c      ****             LED3_Write(0u);
+  59:.\leds.c      ****             break;
+  60:.\leds.c      ****         case 4: case 10:
+  61:.\leds.c      ****             LED3_Write(0u);
+  62:.\leds.c      ****             LED4_Write(0u);
+  63:.\leds.c      ****             break;
+  64:.\leds.c      ****         case 5: case 9:
+  65:.\leds.c      ****             LED4_Write(0u);
+  66:.\leds.c      ****             LED5_Write(0u);
+  67:.\leds.c      ****             break;
+  68:.\leds.c      ****         case 6: case 8:
+  69:.\leds.c      ****             LED5_Write(0u);
+  70:.\leds.c      ****             LED6_Write(0u);
+  71:.\leds.c      ****             break;
+  72:.\leds.c      ****         case 7:
+  73:.\leds.c      ****             LED6_Write(0u);
+  74:.\leds.c      ****             break;
+  75:.\leds.c      ****         default:
+  76:.\leds.c      ****             break;
+  77:.\leds.c      ****     }
+  78:.\leds.c      **** }
+  79:.\leds.c      **** 
+  80:.\leds.c      **** CY_ISR(LedInterruptHandler)
+  81:.\leds.c      **** {
+ 130              		.loc 1 81 0
+ 131              		.cfi_startproc
+ 132 0000 08B5     		push	{r3, lr}
+ 133              		.cfi_def_cfa_offset 8
+ 134              		.cfi_offset 3, -8
+ 135              		.cfi_offset 14, -4
+  82:.\leds.c      ****     //i++;
+  83:.\leds.c      ****     //nightRider(i);
+  84:.\leds.c      ****     //if(i==14)
+  85:.\leds.c      ****     if(i==1)
+ 136              		.loc 1 85 0
+ 137 0002 0A4B     		ldr	r3, .L6
+ 138 0004 1B78     		ldrb	r3, [r3]
+ 139 0006 012B     		cmp	r3, #1
+ 140 0008 05D1     		bne	.L4
+  86:.\leds.c      ****     {
+  87:.\leds.c      ****         i=0;
+ 141              		.loc 1 87 0
+ARM GAS  C:\Users\MCisek\AppData\Local\Temp\ccZZamMD.s 			page 5
+
+
+ 142 000a 0022     		mov	r2, #0
+ 143 000c 074B     		ldr	r3, .L6
+ 144 000e 1A70     		strb	r2, [r3]
+  88:.\leds.c      ****         turnLedsOff();
+ 145              		.loc 1 88 0
+ 146 0010 FFF7FEFF 		bl	turnLedsOff
+ 147              	.LVL16:
+ 148 0014 01E0     		b	.L5
+ 149              	.L4:
+  89:.\leds.c      ****     }
+  90:.\leds.c      ****     else
+  91:.\leds.c      ****     {
+  92:.\leds.c      ****         turnLedsOn();
+ 150              		.loc 1 92 0
+ 151 0016 FFF7FEFF 		bl	turnLedsOn
+ 152              	.LVL17:
+ 153              	.L5:
+  93:.\leds.c      ****     }
+  94:.\leds.c      ****     i++;
+ 154              		.loc 1 94 0
+ 155 001a 044A     		ldr	r2, .L6
+ 156 001c 1378     		ldrb	r3, [r2]
+ 157 001e 0133     		add	r3, r3, #1
+ 158 0020 1370     		strb	r3, [r2]
+  95:.\leds.c      ****     //led_isr_ClearPending();
+  96:.\leds.c      ****     //Timer_I2C_SENSORS_ClearInterrupt(Timer_I2C_SENSORS_INTR_MASK_TC);
+  97:.\leds.c      ****     Timer_led_isr_ClearInterrupt(Timer_led_isr_INTR_MASK_TC);
+ 159              		.loc 1 97 0
+ 160 0022 0120     		mov	r0, #1
+ 161 0024 FFF7FEFF 		bl	Timer_led_isr_ClearInterrupt
+ 162              	.LVL18:
+  98:.\leds.c      **** }
+ 163              		.loc 1 98 0
+ 164              		@ sp needed
+ 165 0028 08BD     		pop	{r3, pc}
+ 166              	.L7:
+ 167 002a C046     		.align	2
+ 168              	.L6:
+ 169 002c 00000000 		.word	.LANCHOR0
+ 170              		.cfi_endproc
+ 171              	.LFE38:
+ 172              		.size	LedInterruptHandler, .-LedInterruptHandler
+ 173              		.section	.text.nightRider,"ax",%progbits
+ 174              		.align	2
+ 175              		.global	nightRider
+ 176              		.code	16
+ 177              		.thumb_func
+ 178              		.type	nightRider, %function
+ 179              	nightRider:
+ 180              	.LFB37:
+  42:.\leds.c      ****     turnLedsOff();
+ 181              		.loc 1 42 0
+ 182              		.cfi_startproc
+ 183              	.LVL19:
+ 184 0000 10B5     		push	{r4, lr}
+ 185              		.cfi_def_cfa_offset 8
+ 186              		.cfi_offset 4, -8
+ARM GAS  C:\Users\MCisek\AppData\Local\Temp\ccZZamMD.s 			page 6
+
+
+ 187              		.cfi_offset 14, -4
+ 188 0002 041C     		mov	r4, r0
+  43:.\leds.c      ****     switch(i){
+ 189              		.loc 1 43 0
+ 190 0004 FFF7FEFF 		bl	turnLedsOff
+ 191              	.LVL20:
+  44:.\leds.c      ****         case 0: case 14:
+ 192              		.loc 1 44 0
+ 193 0008 0E2C     		cmp	r4, #14
+ 194 000a 34D8     		bhi	.L8
+ 195 000c A400     		lsl	r4, r4, #2
+ 196 000e 1A4B     		ldr	r3, .L19
+ 197 0010 1B59     		ldr	r3, [r3, r4]
+ 198 0012 9F46     		mov	pc, r3
+ 199              		.section	.rodata
+ 200              		.align	2
+ 201              	.L11:
+ 202 0000 14000000 		.word	.L10
+ 203 0004 1C000000 		.word	.L12
+ 204 0008 2A000000 		.word	.L13
+ 205 000c 38000000 		.word	.L14
+ 206 0010 46000000 		.word	.L15
+ 207 0014 54000000 		.word	.L16
+ 208 0018 62000000 		.word	.L17
+ 209 001c 70000000 		.word	.L18
+ 210 0020 62000000 		.word	.L17
+ 211 0024 54000000 		.word	.L16
+ 212 0028 46000000 		.word	.L15
+ 213 002c 38000000 		.word	.L14
+ 214 0030 2A000000 		.word	.L13
+ 215 0034 1C000000 		.word	.L12
+ 216 0038 14000000 		.word	.L10
+ 217              		.section	.text.nightRider
+ 218              	.L10:
+  46:.\leds.c      ****             break;
+ 219              		.loc 1 46 0
+ 220 0014 0020     		mov	r0, #0
+ 221 0016 FFF7FEFF 		bl	LED0_Write
+ 222              	.LVL21:
+  47:.\leds.c      ****         case 1: case 13:
+ 223              		.loc 1 47 0
+ 224 001a 2CE0     		b	.L8
+ 225              	.L12:
+  49:.\leds.c      ****             LED1_Write(0u);
+ 226              		.loc 1 49 0
+ 227 001c 0020     		mov	r0, #0
+ 228 001e FFF7FEFF 		bl	LED0_Write
+ 229              	.LVL22:
+  50:.\leds.c      ****             break;
+ 230              		.loc 1 50 0
+ 231 0022 0020     		mov	r0, #0
+ 232 0024 FFF7FEFF 		bl	LED1_Write
+ 233              	.LVL23:
+  51:.\leds.c      ****         case 2: case 12:
+ 234              		.loc 1 51 0
+ 235 0028 25E0     		b	.L8
+ 236              	.L13:
+ARM GAS  C:\Users\MCisek\AppData\Local\Temp\ccZZamMD.s 			page 7
+
+
+  53:.\leds.c      ****             LED2_Write(0u);
+ 237              		.loc 1 53 0
+ 238 002a 0020     		mov	r0, #0
+ 239 002c FFF7FEFF 		bl	LED1_Write
+ 240              	.LVL24:
+  54:.\leds.c      ****             break;
+ 241              		.loc 1 54 0
+ 242 0030 0020     		mov	r0, #0
+ 243 0032 FFF7FEFF 		bl	LED2_Write
+ 244              	.LVL25:
+  55:.\leds.c      ****         case 3: case 11:
+ 245              		.loc 1 55 0
+ 246 0036 1EE0     		b	.L8
+ 247              	.L14:
+  57:.\leds.c      ****             LED3_Write(0u);
+ 248              		.loc 1 57 0
+ 249 0038 0020     		mov	r0, #0
+ 250 003a FFF7FEFF 		bl	LED2_Write
+ 251              	.LVL26:
+  58:.\leds.c      ****             break;
+ 252              		.loc 1 58 0
+ 253 003e 0020     		mov	r0, #0
+ 254 0040 FFF7FEFF 		bl	LED3_Write
+ 255              	.LVL27:
+  59:.\leds.c      ****         case 4: case 10:
+ 256              		.loc 1 59 0
+ 257 0044 17E0     		b	.L8
+ 258              	.L15:
+  61:.\leds.c      ****             LED4_Write(0u);
+ 259              		.loc 1 61 0
+ 260 0046 0020     		mov	r0, #0
+ 261 0048 FFF7FEFF 		bl	LED3_Write
+ 262              	.LVL28:
+  62:.\leds.c      ****             break;
+ 263              		.loc 1 62 0
+ 264 004c 0020     		mov	r0, #0
+ 265 004e FFF7FEFF 		bl	LED4_Write
+ 266              	.LVL29:
+  63:.\leds.c      ****         case 5: case 9:
+ 267              		.loc 1 63 0
+ 268 0052 10E0     		b	.L8
+ 269              	.L16:
+  65:.\leds.c      ****             LED5_Write(0u);
+ 270              		.loc 1 65 0
+ 271 0054 0020     		mov	r0, #0
+ 272 0056 FFF7FEFF 		bl	LED4_Write
+ 273              	.LVL30:
+  66:.\leds.c      ****             break;
+ 274              		.loc 1 66 0
+ 275 005a 0020     		mov	r0, #0
+ 276 005c FFF7FEFF 		bl	LED5_Write
+ 277              	.LVL31:
+  67:.\leds.c      ****         case 6: case 8:
+ 278              		.loc 1 67 0
+ 279 0060 09E0     		b	.L8
+ 280              	.L17:
+  69:.\leds.c      ****             LED6_Write(0u);
+ARM GAS  C:\Users\MCisek\AppData\Local\Temp\ccZZamMD.s 			page 8
+
+
+ 281              		.loc 1 69 0
+ 282 0062 0020     		mov	r0, #0
+ 283 0064 FFF7FEFF 		bl	LED5_Write
+ 284              	.LVL32:
+  70:.\leds.c      ****             break;
+ 285              		.loc 1 70 0
+ 286 0068 0020     		mov	r0, #0
+ 287 006a FFF7FEFF 		bl	LED6_Write
+ 288              	.LVL33:
+  71:.\leds.c      ****         case 7:
+ 289              		.loc 1 71 0
+ 290 006e 02E0     		b	.L8
+ 291              	.L18:
+  73:.\leds.c      ****             break;
+ 292              		.loc 1 73 0
+ 293 0070 0020     		mov	r0, #0
+ 294 0072 FFF7FEFF 		bl	LED6_Write
+ 295              	.LVL34:
+ 296              	.L8:
+  78:.\leds.c      **** 
+ 297              		.loc 1 78 0
+ 298              		@ sp needed
+ 299 0076 10BD     		pop	{r4, pc}
+ 300              	.L20:
+ 301              		.align	2
+ 302              	.L19:
+ 303 0078 00000000 		.word	.L11
+ 304              		.cfi_endproc
+ 305              	.LFE37:
+ 306              		.size	nightRider, .-nightRider
+ 307              		.section	.text.initLeds,"ax",%progbits
+ 308              		.align	2
+ 309              		.global	initLeds
+ 310              		.code	16
+ 311              		.thumb_func
+ 312              		.type	initLeds, %function
+ 313              	initLeds:
+ 314              	.LFB39:
+  99:.\leds.c      **** 
+ 100:.\leds.c      **** void initLeds()
+ 101:.\leds.c      **** {
+ 315              		.loc 1 101 0
+ 316              		.cfi_startproc
+ 317 0000 08B5     		push	{r3, lr}
+ 318              		.cfi_def_cfa_offset 8
+ 319              		.cfi_offset 3, -8
+ 320              		.cfi_offset 14, -4
+ 102:.\leds.c      ****     led_isr_StartEx(LedInterruptHandler);
+ 321              		.loc 1 102 0
+ 322 0002 0348     		ldr	r0, .L22
+ 323 0004 FFF7FEFF 		bl	led_isr_StartEx
+ 324              	.LVL35:
+ 103:.\leds.c      ****     Timer_led_isr_Start();
+ 325              		.loc 1 103 0
+ 326 0008 FFF7FEFF 		bl	Timer_led_isr_Start
+ 327              	.LVL36:
+ 104:.\leds.c      **** }
+ARM GAS  C:\Users\MCisek\AppData\Local\Temp\ccZZamMD.s 			page 9
+
+
+ 328              		.loc 1 104 0
+ 329              		@ sp needed
+ 330 000c 08BD     		pop	{r3, pc}
+ 331              	.L23:
+ 332 000e C046     		.align	2
+ 333              	.L22:
+ 334 0010 00000000 		.word	LedInterruptHandler
+ 335              		.cfi_endproc
+ 336              	.LFE39:
+ 337              		.size	initLeds, .-initLeds
+ 338              		.global	i
+ 339              		.bss
+ 340              		.set	.LANCHOR0,. + 0
+ 341              		.type	i, %object
+ 342              		.size	i, 1
+ 343              	i:
+ 344 0000 00       		.space	1
+ 345              		.text
+ 346              	.Letext0:
+ 347              		.file 2 "Generated_Source\\PSoC4/cytypes.h"
+ 348              		.file 3 "Generated_Source\\PSoC4/LED0.h"
+ 349              		.file 4 "Generated_Source\\PSoC4/LED1.h"
+ 350              		.file 5 "Generated_Source\\PSoC4/LED2.h"
+ 351              		.file 6 "Generated_Source\\PSoC4/LED3.h"
+ 352              		.file 7 "Generated_Source\\PSoC4/LED4.h"
+ 353              		.file 8 "Generated_Source\\PSoC4/LED5.h"
+ 354              		.file 9 "Generated_Source\\PSoC4/LED6.h"
+ 355              		.file 10 "Generated_Source\\PSoC4/GPIO_1.h"
+ 356              		.file 11 "Generated_Source\\PSoC4/Timer_led_isr.h"
+ 357              		.file 12 "Generated_Source\\PSoC4/led_isr.h"
+ 358              		.section	.debug_info,"",%progbits
+ 359              	.Ldebug_info0:
+ 360 0000 62040000 		.4byte	0x462
+ 361 0004 0400     		.2byte	0x4
+ 362 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 363 000a 04       		.byte	0x4
+ 364 000b 01       		.uleb128 0x1
+ 365 000c 99010000 		.4byte	.LASF31
+ 366 0010 01       		.byte	0x1
+ 367 0011 27020000 		.4byte	.LASF32
+ 368 0015 57010000 		.4byte	.LASF33
+ 369 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 370 001d 00000000 		.4byte	0
+ 371 0021 00000000 		.4byte	.Ldebug_line0
+ 372 0025 02       		.uleb128 0x2
+ 373 0026 01       		.byte	0x1
+ 374 0027 06       		.byte	0x6
+ 375 0028 50020000 		.4byte	.LASF0
+ 376 002c 02       		.uleb128 0x2
+ 377 002d 01       		.byte	0x1
+ 378 002e 08       		.byte	0x8
+ 379 002f 9A000000 		.4byte	.LASF1
+ 380 0033 02       		.uleb128 0x2
+ 381 0034 02       		.byte	0x2
+ 382 0035 05       		.byte	0x5
+ 383 0036 30020000 		.4byte	.LASF2
+ 384 003a 02       		.uleb128 0x2
+ARM GAS  C:\Users\MCisek\AppData\Local\Temp\ccZZamMD.s 			page 10
+
+
+ 385 003b 02       		.byte	0x2
+ 386 003c 07       		.byte	0x7
+ 387 003d 22000000 		.4byte	.LASF3
+ 388 0041 02       		.uleb128 0x2
+ 389 0042 04       		.byte	0x4
+ 390 0043 05       		.byte	0x5
+ 391 0044 47020000 		.4byte	.LASF4
+ 392 0048 02       		.uleb128 0x2
+ 393 0049 04       		.byte	0x4
+ 394 004a 07       		.byte	0x7
+ 395 004b 77000000 		.4byte	.LASF5
+ 396 004f 02       		.uleb128 0x2
+ 397 0050 08       		.byte	0x8
+ 398 0051 05       		.byte	0x5
+ 399 0052 49010000 		.4byte	.LASF6
+ 400 0056 02       		.uleb128 0x2
+ 401 0057 08       		.byte	0x8
+ 402 0058 07       		.byte	0x7
+ 403 0059 E2000000 		.4byte	.LASF7
+ 404 005d 03       		.uleb128 0x3
+ 405 005e 04       		.byte	0x4
+ 406 005f 05       		.byte	0x5
+ 407 0060 696E7400 		.ascii	"int\000"
+ 408 0064 02       		.uleb128 0x2
+ 409 0065 04       		.byte	0x4
+ 410 0066 07       		.byte	0x7
+ 411 0067 D5000000 		.4byte	.LASF8
+ 412 006b 04       		.uleb128 0x4
+ 413 006c 89000000 		.4byte	.LASF9
+ 414 0070 02       		.byte	0x2
+ 415 0071 B3       		.byte	0xb3
+ 416 0072 2C000000 		.4byte	0x2c
+ 417 0076 04       		.uleb128 0x4
+ 418 0077 CE000000 		.4byte	.LASF10
+ 419 007b 02       		.byte	0x2
+ 420 007c B5       		.byte	0xb5
+ 421 007d 48000000 		.4byte	0x48
+ 422 0081 02       		.uleb128 0x2
+ 423 0082 04       		.byte	0x4
+ 424 0083 04       		.byte	0x4
+ 425 0084 4B000000 		.4byte	.LASF11
+ 426 0088 02       		.uleb128 0x2
+ 427 0089 08       		.byte	0x8
+ 428 008a 04       		.byte	0x4
+ 429 008b A8000000 		.4byte	.LASF12
+ 430 008f 02       		.uleb128 0x2
+ 431 0090 01       		.byte	0x1
+ 432 0091 08       		.byte	0x8
+ 433 0092 94010000 		.4byte	.LASF13
+ 434 0096 05       		.uleb128 0x5
+ 435 0097 16010000 		.4byte	.LASF14
+ 436 009b 02       		.byte	0x2
+ 437 009c 6F01     		.2byte	0x16f
+ 438 009e A2000000 		.4byte	0xa2
+ 439 00a2 06       		.uleb128 0x6
+ 440 00a3 04       		.byte	0x4
+ 441 00a4 A8000000 		.4byte	0xa8
+ARM GAS  C:\Users\MCisek\AppData\Local\Temp\ccZZamMD.s 			page 11
+
+
+ 442 00a8 07       		.uleb128 0x7
+ 443 00a9 02       		.uleb128 0x2
+ 444 00aa 04       		.byte	0x4
+ 445 00ab 07       		.byte	0x7
+ 446 00ac 40010000 		.4byte	.LASF15
+ 447 00b0 08       		.uleb128 0x8
+ 448 00b1 0B000000 		.4byte	.LASF16
+ 449 00b5 01       		.byte	0x1
+ 450 00b6 11       		.byte	0x11
+ 451 00b7 00000000 		.4byte	.LFB35
+ 452 00bb 34000000 		.4byte	.LFE35-.LFB35
+ 453 00bf 01       		.uleb128 0x1
+ 454 00c0 9C       		.byte	0x9c
+ 455 00c1 5A010000 		.4byte	0x15a
+ 456 00c5 09       		.uleb128 0x9
+ 457 00c6 08000000 		.4byte	.LVL0
+ 458 00ca B2030000 		.4byte	0x3b2
+ 459 00ce D8000000 		.4byte	0xd8
+ 460 00d2 0A       		.uleb128 0xa
+ 461 00d3 01       		.uleb128 0x1
+ 462 00d4 50       		.byte	0x50
+ 463 00d5 01       		.uleb128 0x1
+ 464 00d6 31       		.byte	0x31
+ 465 00d7 00       		.byte	0
+ 466 00d8 09       		.uleb128 0x9
+ 467 00d9 0E000000 		.4byte	.LVL1
+ 468 00dd C3030000 		.4byte	0x3c3
+ 469 00e1 EB000000 		.4byte	0xeb
+ 470 00e5 0A       		.uleb128 0xa
+ 471 00e6 01       		.uleb128 0x1
+ 472 00e7 50       		.byte	0x50
+ 473 00e8 01       		.uleb128 0x1
+ 474 00e9 31       		.byte	0x31
+ 475 00ea 00       		.byte	0
+ 476 00eb 09       		.uleb128 0x9
+ 477 00ec 14000000 		.4byte	.LVL2
+ 478 00f0 D4030000 		.4byte	0x3d4
+ 479 00f4 FE000000 		.4byte	0xfe
+ 480 00f8 0A       		.uleb128 0xa
+ 481 00f9 01       		.uleb128 0x1
+ 482 00fa 50       		.byte	0x50
+ 483 00fb 01       		.uleb128 0x1
+ 484 00fc 31       		.byte	0x31
+ 485 00fd 00       		.byte	0
+ 486 00fe 09       		.uleb128 0x9
+ 487 00ff 1A000000 		.4byte	.LVL3
+ 488 0103 E5030000 		.4byte	0x3e5
+ 489 0107 11010000 		.4byte	0x111
+ 490 010b 0A       		.uleb128 0xa
+ 491 010c 01       		.uleb128 0x1
+ 492 010d 50       		.byte	0x50
+ 493 010e 01       		.uleb128 0x1
+ 494 010f 31       		.byte	0x31
+ 495 0110 00       		.byte	0
+ 496 0111 09       		.uleb128 0x9
+ 497 0112 20000000 		.4byte	.LVL4
+ 498 0116 F6030000 		.4byte	0x3f6
+ARM GAS  C:\Users\MCisek\AppData\Local\Temp\ccZZamMD.s 			page 12
+
+
+ 499 011a 24010000 		.4byte	0x124
+ 500 011e 0A       		.uleb128 0xa
+ 501 011f 01       		.uleb128 0x1
+ 502 0120 50       		.byte	0x50
+ 503 0121 01       		.uleb128 0x1
+ 504 0122 31       		.byte	0x31
+ 505 0123 00       		.byte	0
+ 506 0124 09       		.uleb128 0x9
+ 507 0125 26000000 		.4byte	.LVL5
+ 508 0129 07040000 		.4byte	0x407
+ 509 012d 37010000 		.4byte	0x137
+ 510 0131 0A       		.uleb128 0xa
+ 511 0132 01       		.uleb128 0x1
+ 512 0133 50       		.byte	0x50
+ 513 0134 01       		.uleb128 0x1
+ 514 0135 31       		.byte	0x31
+ 515 0136 00       		.byte	0
+ 516 0137 09       		.uleb128 0x9
+ 517 0138 2C000000 		.4byte	.LVL6
+ 518 013c 18040000 		.4byte	0x418
+ 519 0140 4A010000 		.4byte	0x14a
+ 520 0144 0A       		.uleb128 0xa
+ 521 0145 01       		.uleb128 0x1
+ 522 0146 50       		.byte	0x50
+ 523 0147 01       		.uleb128 0x1
+ 524 0148 31       		.byte	0x31
+ 525 0149 00       		.byte	0
+ 526 014a 0B       		.uleb128 0xb
+ 527 014b 32000000 		.4byte	.LVL7
+ 528 014f 29040000 		.4byte	0x429
+ 529 0153 0A       		.uleb128 0xa
+ 530 0154 01       		.uleb128 0x1
+ 531 0155 50       		.byte	0x50
+ 532 0156 01       		.uleb128 0x1
+ 533 0157 31       		.byte	0x31
+ 534 0158 00       		.byte	0
+ 535 0159 00       		.byte	0
+ 536 015a 08       		.uleb128 0x8
+ 537 015b 35000000 		.4byte	.LASF17
+ 538 015f 01       		.byte	0x1
+ 539 0160 1D       		.byte	0x1d
+ 540 0161 00000000 		.4byte	.LFB36
+ 541 0165 34000000 		.4byte	.LFE36-.LFB36
+ 542 0169 01       		.uleb128 0x1
+ 543 016a 9C       		.byte	0x9c
+ 544 016b 04020000 		.4byte	0x204
+ 545 016f 09       		.uleb128 0x9
+ 546 0170 08000000 		.4byte	.LVL8
+ 547 0174 B2030000 		.4byte	0x3b2
+ 548 0178 82010000 		.4byte	0x182
+ 549 017c 0A       		.uleb128 0xa
+ 550 017d 01       		.uleb128 0x1
+ 551 017e 50       		.byte	0x50
+ 552 017f 01       		.uleb128 0x1
+ 553 0180 30       		.byte	0x30
+ 554 0181 00       		.byte	0
+ 555 0182 09       		.uleb128 0x9
+ARM GAS  C:\Users\MCisek\AppData\Local\Temp\ccZZamMD.s 			page 13
+
+
+ 556 0183 0E000000 		.4byte	.LVL9
+ 557 0187 C3030000 		.4byte	0x3c3
+ 558 018b 95010000 		.4byte	0x195
+ 559 018f 0A       		.uleb128 0xa
+ 560 0190 01       		.uleb128 0x1
+ 561 0191 50       		.byte	0x50
+ 562 0192 01       		.uleb128 0x1
+ 563 0193 30       		.byte	0x30
+ 564 0194 00       		.byte	0
+ 565 0195 09       		.uleb128 0x9
+ 566 0196 14000000 		.4byte	.LVL10
+ 567 019a D4030000 		.4byte	0x3d4
+ 568 019e A8010000 		.4byte	0x1a8
+ 569 01a2 0A       		.uleb128 0xa
+ 570 01a3 01       		.uleb128 0x1
+ 571 01a4 50       		.byte	0x50
+ 572 01a5 01       		.uleb128 0x1
+ 573 01a6 30       		.byte	0x30
+ 574 01a7 00       		.byte	0
+ 575 01a8 09       		.uleb128 0x9
+ 576 01a9 1A000000 		.4byte	.LVL11
+ 577 01ad E5030000 		.4byte	0x3e5
+ 578 01b1 BB010000 		.4byte	0x1bb
+ 579 01b5 0A       		.uleb128 0xa
+ 580 01b6 01       		.uleb128 0x1
+ 581 01b7 50       		.byte	0x50
+ 582 01b8 01       		.uleb128 0x1
+ 583 01b9 30       		.byte	0x30
+ 584 01ba 00       		.byte	0
+ 585 01bb 09       		.uleb128 0x9
+ 586 01bc 20000000 		.4byte	.LVL12
+ 587 01c0 F6030000 		.4byte	0x3f6
+ 588 01c4 CE010000 		.4byte	0x1ce
+ 589 01c8 0A       		.uleb128 0xa
+ 590 01c9 01       		.uleb128 0x1
+ 591 01ca 50       		.byte	0x50
+ 592 01cb 01       		.uleb128 0x1
+ 593 01cc 30       		.byte	0x30
+ 594 01cd 00       		.byte	0
+ 595 01ce 09       		.uleb128 0x9
+ 596 01cf 26000000 		.4byte	.LVL13
+ 597 01d3 07040000 		.4byte	0x407
+ 598 01d7 E1010000 		.4byte	0x1e1
+ 599 01db 0A       		.uleb128 0xa
+ 600 01dc 01       		.uleb128 0x1
+ 601 01dd 50       		.byte	0x50
+ 602 01de 01       		.uleb128 0x1
+ 603 01df 30       		.byte	0x30
+ 604 01e0 00       		.byte	0
+ 605 01e1 09       		.uleb128 0x9
+ 606 01e2 2C000000 		.4byte	.LVL14
+ 607 01e6 18040000 		.4byte	0x418
+ 608 01ea F4010000 		.4byte	0x1f4
+ 609 01ee 0A       		.uleb128 0xa
+ 610 01ef 01       		.uleb128 0x1
+ 611 01f0 50       		.byte	0x50
+ 612 01f1 01       		.uleb128 0x1
+ARM GAS  C:\Users\MCisek\AppData\Local\Temp\ccZZamMD.s 			page 14
+
+
+ 613 01f2 30       		.byte	0x30
+ 614 01f3 00       		.byte	0
+ 615 01f4 0B       		.uleb128 0xb
+ 616 01f5 32000000 		.4byte	.LVL15
+ 617 01f9 29040000 		.4byte	0x429
+ 618 01fd 0A       		.uleb128 0xa
+ 619 01fe 01       		.uleb128 0x1
+ 620 01ff 50       		.byte	0x50
+ 621 0200 01       		.uleb128 0x1
+ 622 0201 30       		.byte	0x30
+ 623 0202 00       		.byte	0
+ 624 0203 00       		.byte	0
+ 625 0204 0C       		.uleb128 0xc
+ 626 0205 AF000000 		.4byte	.LASF18
+ 627 0209 01       		.byte	0x1
+ 628 020a 50       		.byte	0x50
+ 629 020b 00000000 		.4byte	.LFB38
+ 630 020f 30000000 		.4byte	.LFE38-.LFB38
+ 631 0213 01       		.uleb128 0x1
+ 632 0214 9C       		.byte	0x9c
+ 633 0215 3B020000 		.4byte	0x23b
+ 634 0219 0D       		.uleb128 0xd
+ 635 021a 14000000 		.4byte	.LVL16
+ 636 021e B0000000 		.4byte	0xb0
+ 637 0222 0D       		.uleb128 0xd
+ 638 0223 1A000000 		.4byte	.LVL17
+ 639 0227 5A010000 		.4byte	0x15a
+ 640 022b 0B       		.uleb128 0xb
+ 641 022c 28000000 		.4byte	.LVL18
+ 642 0230 3A040000 		.4byte	0x43a
+ 643 0234 0A       		.uleb128 0xa
+ 644 0235 01       		.uleb128 0x1
+ 645 0236 50       		.byte	0x50
+ 646 0237 01       		.uleb128 0x1
+ 647 0238 31       		.byte	0x31
+ 648 0239 00       		.byte	0
+ 649 023a 00       		.byte	0
+ 650 023b 0C       		.uleb128 0xc
+ 651 023c 6C000000 		.4byte	.LASF19
+ 652 0240 01       		.byte	0x1
+ 653 0241 29       		.byte	0x29
+ 654 0242 00000000 		.4byte	.LFB37
+ 655 0246 7C000000 		.4byte	.LFE37-.LFB37
+ 656 024a 01       		.uleb128 0x1
+ 657 024b 9C       		.byte	0x9c
+ 658 024c 6D030000 		.4byte	0x36d
+ 659 0250 0E       		.uleb128 0xe
+ 660 0251 6900     		.ascii	"i\000"
+ 661 0253 01       		.byte	0x1
+ 662 0254 29       		.byte	0x29
+ 663 0255 6B000000 		.4byte	0x6b
+ 664 0259 00000000 		.4byte	.LLST0
+ 665 025d 0D       		.uleb128 0xd
+ 666 025e 08000000 		.4byte	.LVL20
+ 667 0262 B0000000 		.4byte	0xb0
+ 668 0266 09       		.uleb128 0x9
+ 669 0267 1A000000 		.4byte	.LVL21
+ARM GAS  C:\Users\MCisek\AppData\Local\Temp\ccZZamMD.s 			page 15
+
+
+ 670 026b B2030000 		.4byte	0x3b2
+ 671 026f 79020000 		.4byte	0x279
+ 672 0273 0A       		.uleb128 0xa
+ 673 0274 01       		.uleb128 0x1
+ 674 0275 50       		.byte	0x50
+ 675 0276 01       		.uleb128 0x1
+ 676 0277 30       		.byte	0x30
+ 677 0278 00       		.byte	0
+ 678 0279 09       		.uleb128 0x9
+ 679 027a 22000000 		.4byte	.LVL22
+ 680 027e B2030000 		.4byte	0x3b2
+ 681 0282 8C020000 		.4byte	0x28c
+ 682 0286 0A       		.uleb128 0xa
+ 683 0287 01       		.uleb128 0x1
+ 684 0288 50       		.byte	0x50
+ 685 0289 01       		.uleb128 0x1
+ 686 028a 30       		.byte	0x30
+ 687 028b 00       		.byte	0
+ 688 028c 09       		.uleb128 0x9
+ 689 028d 28000000 		.4byte	.LVL23
+ 690 0291 C3030000 		.4byte	0x3c3
+ 691 0295 9F020000 		.4byte	0x29f
+ 692 0299 0A       		.uleb128 0xa
+ 693 029a 01       		.uleb128 0x1
+ 694 029b 50       		.byte	0x50
+ 695 029c 01       		.uleb128 0x1
+ 696 029d 30       		.byte	0x30
+ 697 029e 00       		.byte	0
+ 698 029f 09       		.uleb128 0x9
+ 699 02a0 30000000 		.4byte	.LVL24
+ 700 02a4 C3030000 		.4byte	0x3c3
+ 701 02a8 B2020000 		.4byte	0x2b2
+ 702 02ac 0A       		.uleb128 0xa
+ 703 02ad 01       		.uleb128 0x1
+ 704 02ae 50       		.byte	0x50
+ 705 02af 01       		.uleb128 0x1
+ 706 02b0 30       		.byte	0x30
+ 707 02b1 00       		.byte	0
+ 708 02b2 09       		.uleb128 0x9
+ 709 02b3 36000000 		.4byte	.LVL25
+ 710 02b7 D4030000 		.4byte	0x3d4
+ 711 02bb C5020000 		.4byte	0x2c5
+ 712 02bf 0A       		.uleb128 0xa
+ 713 02c0 01       		.uleb128 0x1
+ 714 02c1 50       		.byte	0x50
+ 715 02c2 01       		.uleb128 0x1
+ 716 02c3 30       		.byte	0x30
+ 717 02c4 00       		.byte	0
+ 718 02c5 09       		.uleb128 0x9
+ 719 02c6 3E000000 		.4byte	.LVL26
+ 720 02ca D4030000 		.4byte	0x3d4
+ 721 02ce D8020000 		.4byte	0x2d8
+ 722 02d2 0A       		.uleb128 0xa
+ 723 02d3 01       		.uleb128 0x1
+ 724 02d4 50       		.byte	0x50
+ 725 02d5 01       		.uleb128 0x1
+ 726 02d6 30       		.byte	0x30
+ARM GAS  C:\Users\MCisek\AppData\Local\Temp\ccZZamMD.s 			page 16
+
+
+ 727 02d7 00       		.byte	0
+ 728 02d8 09       		.uleb128 0x9
+ 729 02d9 44000000 		.4byte	.LVL27
+ 730 02dd E5030000 		.4byte	0x3e5
+ 731 02e1 EB020000 		.4byte	0x2eb
+ 732 02e5 0A       		.uleb128 0xa
+ 733 02e6 01       		.uleb128 0x1
+ 734 02e7 50       		.byte	0x50
+ 735 02e8 01       		.uleb128 0x1
+ 736 02e9 30       		.byte	0x30
+ 737 02ea 00       		.byte	0
+ 738 02eb 09       		.uleb128 0x9
+ 739 02ec 4C000000 		.4byte	.LVL28
+ 740 02f0 E5030000 		.4byte	0x3e5
+ 741 02f4 FE020000 		.4byte	0x2fe
+ 742 02f8 0A       		.uleb128 0xa
+ 743 02f9 01       		.uleb128 0x1
+ 744 02fa 50       		.byte	0x50
+ 745 02fb 01       		.uleb128 0x1
+ 746 02fc 30       		.byte	0x30
+ 747 02fd 00       		.byte	0
+ 748 02fe 09       		.uleb128 0x9
+ 749 02ff 52000000 		.4byte	.LVL29
+ 750 0303 F6030000 		.4byte	0x3f6
+ 751 0307 11030000 		.4byte	0x311
+ 752 030b 0A       		.uleb128 0xa
+ 753 030c 01       		.uleb128 0x1
+ 754 030d 50       		.byte	0x50
+ 755 030e 01       		.uleb128 0x1
+ 756 030f 30       		.byte	0x30
+ 757 0310 00       		.byte	0
+ 758 0311 09       		.uleb128 0x9
+ 759 0312 5A000000 		.4byte	.LVL30
+ 760 0316 F6030000 		.4byte	0x3f6
+ 761 031a 24030000 		.4byte	0x324
+ 762 031e 0A       		.uleb128 0xa
+ 763 031f 01       		.uleb128 0x1
+ 764 0320 50       		.byte	0x50
+ 765 0321 01       		.uleb128 0x1
+ 766 0322 30       		.byte	0x30
+ 767 0323 00       		.byte	0
+ 768 0324 09       		.uleb128 0x9
+ 769 0325 60000000 		.4byte	.LVL31
+ 770 0329 07040000 		.4byte	0x407
+ 771 032d 37030000 		.4byte	0x337
+ 772 0331 0A       		.uleb128 0xa
+ 773 0332 01       		.uleb128 0x1
+ 774 0333 50       		.byte	0x50
+ 775 0334 01       		.uleb128 0x1
+ 776 0335 30       		.byte	0x30
+ 777 0336 00       		.byte	0
+ 778 0337 09       		.uleb128 0x9
+ 779 0338 68000000 		.4byte	.LVL32
+ 780 033c 07040000 		.4byte	0x407
+ 781 0340 4A030000 		.4byte	0x34a
+ 782 0344 0A       		.uleb128 0xa
+ 783 0345 01       		.uleb128 0x1
+ARM GAS  C:\Users\MCisek\AppData\Local\Temp\ccZZamMD.s 			page 17
+
+
+ 784 0346 50       		.byte	0x50
+ 785 0347 01       		.uleb128 0x1
+ 786 0348 30       		.byte	0x30
+ 787 0349 00       		.byte	0
+ 788 034a 09       		.uleb128 0x9
+ 789 034b 6E000000 		.4byte	.LVL33
+ 790 034f 18040000 		.4byte	0x418
+ 791 0353 5D030000 		.4byte	0x35d
+ 792 0357 0A       		.uleb128 0xa
+ 793 0358 01       		.uleb128 0x1
+ 794 0359 50       		.byte	0x50
+ 795 035a 01       		.uleb128 0x1
+ 796 035b 30       		.byte	0x30
+ 797 035c 00       		.byte	0
+ 798 035d 0B       		.uleb128 0xb
+ 799 035e 76000000 		.4byte	.LVL34
+ 800 0362 18040000 		.4byte	0x418
+ 801 0366 0A       		.uleb128 0xa
+ 802 0367 01       		.uleb128 0x1
+ 803 0368 50       		.byte	0x50
+ 804 0369 01       		.uleb128 0x1
+ 805 036a 30       		.byte	0x30
+ 806 036b 00       		.byte	0
+ 807 036c 00       		.byte	0
+ 808 036d 08       		.uleb128 0x8
+ 809 036e 0D010000 		.4byte	.LASF20
+ 810 0372 01       		.byte	0x1
+ 811 0373 64       		.byte	0x64
+ 812 0374 00000000 		.4byte	.LFB39
+ 813 0378 14000000 		.4byte	.LFE39-.LFB39
+ 814 037c 01       		.uleb128 0x1
+ 815 037d 9C       		.byte	0x9c
+ 816 037e A3030000 		.4byte	0x3a3
+ 817 0382 09       		.uleb128 0x9
+ 818 0383 08000000 		.4byte	.LVL35
+ 819 0387 4C040000 		.4byte	0x44c
+ 820 038b 99030000 		.4byte	0x399
+ 821 038f 0A       		.uleb128 0xa
+ 822 0390 01       		.uleb128 0x1
+ 823 0391 50       		.byte	0x50
+ 824 0392 05       		.uleb128 0x5
+ 825 0393 03       		.byte	0x3
+ 826 0394 00000000 		.4byte	LedInterruptHandler
+ 827 0398 00       		.byte	0
+ 828 0399 0D       		.uleb128 0xd
+ 829 039a 0C000000 		.4byte	.LVL36
+ 830 039e 5D040000 		.4byte	0x45d
+ 831 03a2 00       		.byte	0
+ 832 03a3 0F       		.uleb128 0xf
+ 833 03a4 6900     		.ascii	"i\000"
+ 834 03a6 01       		.byte	0x1
+ 835 03a7 0F       		.byte	0xf
+ 836 03a8 6B000000 		.4byte	0x6b
+ 837 03ac 05       		.uleb128 0x5
+ 838 03ad 03       		.byte	0x3
+ 839 03ae 00000000 		.4byte	i
+ 840 03b2 10       		.uleb128 0x10
+ARM GAS  C:\Users\MCisek\AppData\Local\Temp\ccZZamMD.s 			page 18
+
+
+ 841 03b3 5C020000 		.4byte	.LASF21
+ 842 03b7 03       		.byte	0x3
+ 843 03b8 1D       		.byte	0x1d
+ 844 03b9 C3030000 		.4byte	0x3c3
+ 845 03bd 11       		.uleb128 0x11
+ 846 03be 6B000000 		.4byte	0x6b
+ 847 03c2 00       		.byte	0
+ 848 03c3 10       		.uleb128 0x10
+ 849 03c4 00000000 		.4byte	.LASF22
+ 850 03c8 04       		.byte	0x4
+ 851 03c9 1D       		.byte	0x1d
+ 852 03ca D4030000 		.4byte	0x3d4
+ 853 03ce 11       		.uleb128 0x11
+ 854 03cf 6B000000 		.4byte	0x6b
+ 855 03d3 00       		.byte	0
+ 856 03d4 10       		.uleb128 0x10
+ 857 03d5 17000000 		.4byte	.LASF23
+ 858 03d9 05       		.byte	0x5
+ 859 03da 1D       		.byte	0x1d
+ 860 03db E5030000 		.4byte	0x3e5
+ 861 03df 11       		.uleb128 0x11
+ 862 03e0 6B000000 		.4byte	0x6b
+ 863 03e4 00       		.byte	0
+ 864 03e5 10       		.uleb128 0x10
+ 865 03e6 40000000 		.4byte	.LASF24
+ 866 03ea 06       		.byte	0x6
+ 867 03eb 1D       		.byte	0x1d
+ 868 03ec F6030000 		.4byte	0x3f6
+ 869 03f0 11       		.uleb128 0x11
+ 870 03f1 6B000000 		.4byte	0x6b
+ 871 03f5 00       		.byte	0
+ 872 03f6 10       		.uleb128 0x10
+ 873 03f7 61000000 		.4byte	.LASF25
+ 874 03fb 07       		.byte	0x7
+ 875 03fc 1D       		.byte	0x1d
+ 876 03fd 07040000 		.4byte	0x407
+ 877 0401 11       		.uleb128 0x11
+ 878 0402 6B000000 		.4byte	0x6b
+ 879 0406 00       		.byte	0
+ 880 0407 10       		.uleb128 0x10
+ 881 0408 8F000000 		.4byte	.LASF26
+ 882 040c 08       		.byte	0x8
+ 883 040d 1D       		.byte	0x1d
+ 884 040e 18040000 		.4byte	0x418
+ 885 0412 11       		.uleb128 0x11
+ 886 0413 6B000000 		.4byte	0x6b
+ 887 0417 00       		.byte	0
+ 888 0418 10       		.uleb128 0x10
+ 889 0419 C3000000 		.4byte	.LASF27
+ 890 041d 09       		.byte	0x9
+ 891 041e 1D       		.byte	0x1d
+ 892 041f 29040000 		.4byte	0x429
+ 893 0423 11       		.uleb128 0x11
+ 894 0424 6B000000 		.4byte	0x6b
+ 895 0428 00       		.byte	0
+ 896 0429 10       		.uleb128 0x10
+ 897 042a 3A020000 		.4byte	.LASF28
+ARM GAS  C:\Users\MCisek\AppData\Local\Temp\ccZZamMD.s 			page 19
+
+
+ 898 042e 0A       		.byte	0xa
+ 899 042f 1D       		.byte	0x1d
+ 900 0430 3A040000 		.4byte	0x43a
+ 901 0434 11       		.uleb128 0x11
+ 902 0435 6B000000 		.4byte	0x6b
+ 903 0439 00       		.byte	0
+ 904 043a 12       		.uleb128 0x12
+ 905 043b 23010000 		.4byte	.LASF29
+ 906 043f 0B       		.byte	0xb
+ 907 0440 4601     		.2byte	0x146
+ 908 0442 4C040000 		.4byte	0x44c
+ 909 0446 11       		.uleb128 0x11
+ 910 0447 76000000 		.4byte	0x76
+ 911 044b 00       		.byte	0
+ 912 044c 10       		.uleb128 0x10
+ 913 044d 51000000 		.4byte	.LASF30
+ 914 0451 0C       		.byte	0xc
+ 915 0452 18       		.byte	0x18
+ 916 0453 5D040000 		.4byte	0x45d
+ 917 0457 11       		.uleb128 0x11
+ 918 0458 96000000 		.4byte	0x96
+ 919 045c 00       		.byte	0
+ 920 045d 13       		.uleb128 0x13
+ 921 045e F9000000 		.4byte	.LASF34
+ 922 0462 0B       		.byte	0xb
+ 923 0463 3101     		.2byte	0x131
+ 924 0465 00       		.byte	0
+ 925              		.section	.debug_abbrev,"",%progbits
+ 926              	.Ldebug_abbrev0:
+ 927 0000 01       		.uleb128 0x1
+ 928 0001 11       		.uleb128 0x11
+ 929 0002 01       		.byte	0x1
+ 930 0003 25       		.uleb128 0x25
+ 931 0004 0E       		.uleb128 0xe
+ 932 0005 13       		.uleb128 0x13
+ 933 0006 0B       		.uleb128 0xb
+ 934 0007 03       		.uleb128 0x3
+ 935 0008 0E       		.uleb128 0xe
+ 936 0009 1B       		.uleb128 0x1b
+ 937 000a 0E       		.uleb128 0xe
+ 938 000b 55       		.uleb128 0x55
+ 939 000c 17       		.uleb128 0x17
+ 940 000d 11       		.uleb128 0x11
+ 941 000e 01       		.uleb128 0x1
+ 942 000f 10       		.uleb128 0x10
+ 943 0010 17       		.uleb128 0x17
+ 944 0011 00       		.byte	0
+ 945 0012 00       		.byte	0
+ 946 0013 02       		.uleb128 0x2
+ 947 0014 24       		.uleb128 0x24
+ 948 0015 00       		.byte	0
+ 949 0016 0B       		.uleb128 0xb
+ 950 0017 0B       		.uleb128 0xb
+ 951 0018 3E       		.uleb128 0x3e
+ 952 0019 0B       		.uleb128 0xb
+ 953 001a 03       		.uleb128 0x3
+ 954 001b 0E       		.uleb128 0xe
+ARM GAS  C:\Users\MCisek\AppData\Local\Temp\ccZZamMD.s 			page 20
+
+
+ 955 001c 00       		.byte	0
+ 956 001d 00       		.byte	0
+ 957 001e 03       		.uleb128 0x3
+ 958 001f 24       		.uleb128 0x24
+ 959 0020 00       		.byte	0
+ 960 0021 0B       		.uleb128 0xb
+ 961 0022 0B       		.uleb128 0xb
+ 962 0023 3E       		.uleb128 0x3e
+ 963 0024 0B       		.uleb128 0xb
+ 964 0025 03       		.uleb128 0x3
+ 965 0026 08       		.uleb128 0x8
+ 966 0027 00       		.byte	0
+ 967 0028 00       		.byte	0
+ 968 0029 04       		.uleb128 0x4
+ 969 002a 16       		.uleb128 0x16
+ 970 002b 00       		.byte	0
+ 971 002c 03       		.uleb128 0x3
+ 972 002d 0E       		.uleb128 0xe
+ 973 002e 3A       		.uleb128 0x3a
+ 974 002f 0B       		.uleb128 0xb
+ 975 0030 3B       		.uleb128 0x3b
+ 976 0031 0B       		.uleb128 0xb
+ 977 0032 49       		.uleb128 0x49
+ 978 0033 13       		.uleb128 0x13
+ 979 0034 00       		.byte	0
+ 980 0035 00       		.byte	0
+ 981 0036 05       		.uleb128 0x5
+ 982 0037 16       		.uleb128 0x16
+ 983 0038 00       		.byte	0
+ 984 0039 03       		.uleb128 0x3
+ 985 003a 0E       		.uleb128 0xe
+ 986 003b 3A       		.uleb128 0x3a
+ 987 003c 0B       		.uleb128 0xb
+ 988 003d 3B       		.uleb128 0x3b
+ 989 003e 05       		.uleb128 0x5
+ 990 003f 49       		.uleb128 0x49
+ 991 0040 13       		.uleb128 0x13
+ 992 0041 00       		.byte	0
+ 993 0042 00       		.byte	0
+ 994 0043 06       		.uleb128 0x6
+ 995 0044 0F       		.uleb128 0xf
+ 996 0045 00       		.byte	0
+ 997 0046 0B       		.uleb128 0xb
+ 998 0047 0B       		.uleb128 0xb
+ 999 0048 49       		.uleb128 0x49
+ 1000 0049 13       		.uleb128 0x13
+ 1001 004a 00       		.byte	0
+ 1002 004b 00       		.byte	0
+ 1003 004c 07       		.uleb128 0x7
+ 1004 004d 15       		.uleb128 0x15
+ 1005 004e 00       		.byte	0
+ 1006 004f 27       		.uleb128 0x27
+ 1007 0050 19       		.uleb128 0x19
+ 1008 0051 00       		.byte	0
+ 1009 0052 00       		.byte	0
+ 1010 0053 08       		.uleb128 0x8
+ 1011 0054 2E       		.uleb128 0x2e
+ARM GAS  C:\Users\MCisek\AppData\Local\Temp\ccZZamMD.s 			page 21
+
+
+ 1012 0055 01       		.byte	0x1
+ 1013 0056 3F       		.uleb128 0x3f
+ 1014 0057 19       		.uleb128 0x19
+ 1015 0058 03       		.uleb128 0x3
+ 1016 0059 0E       		.uleb128 0xe
+ 1017 005a 3A       		.uleb128 0x3a
+ 1018 005b 0B       		.uleb128 0xb
+ 1019 005c 3B       		.uleb128 0x3b
+ 1020 005d 0B       		.uleb128 0xb
+ 1021 005e 11       		.uleb128 0x11
+ 1022 005f 01       		.uleb128 0x1
+ 1023 0060 12       		.uleb128 0x12
+ 1024 0061 06       		.uleb128 0x6
+ 1025 0062 40       		.uleb128 0x40
+ 1026 0063 18       		.uleb128 0x18
+ 1027 0064 9742     		.uleb128 0x2117
+ 1028 0066 19       		.uleb128 0x19
+ 1029 0067 01       		.uleb128 0x1
+ 1030 0068 13       		.uleb128 0x13
+ 1031 0069 00       		.byte	0
+ 1032 006a 00       		.byte	0
+ 1033 006b 09       		.uleb128 0x9
+ 1034 006c 898201   		.uleb128 0x4109
+ 1035 006f 01       		.byte	0x1
+ 1036 0070 11       		.uleb128 0x11
+ 1037 0071 01       		.uleb128 0x1
+ 1038 0072 31       		.uleb128 0x31
+ 1039 0073 13       		.uleb128 0x13
+ 1040 0074 01       		.uleb128 0x1
+ 1041 0075 13       		.uleb128 0x13
+ 1042 0076 00       		.byte	0
+ 1043 0077 00       		.byte	0
+ 1044 0078 0A       		.uleb128 0xa
+ 1045 0079 8A8201   		.uleb128 0x410a
+ 1046 007c 00       		.byte	0
+ 1047 007d 02       		.uleb128 0x2
+ 1048 007e 18       		.uleb128 0x18
+ 1049 007f 9142     		.uleb128 0x2111
+ 1050 0081 18       		.uleb128 0x18
+ 1051 0082 00       		.byte	0
+ 1052 0083 00       		.byte	0
+ 1053 0084 0B       		.uleb128 0xb
+ 1054 0085 898201   		.uleb128 0x4109
+ 1055 0088 01       		.byte	0x1
+ 1056 0089 11       		.uleb128 0x11
+ 1057 008a 01       		.uleb128 0x1
+ 1058 008b 31       		.uleb128 0x31
+ 1059 008c 13       		.uleb128 0x13
+ 1060 008d 00       		.byte	0
+ 1061 008e 00       		.byte	0
+ 1062 008f 0C       		.uleb128 0xc
+ 1063 0090 2E       		.uleb128 0x2e
+ 1064 0091 01       		.byte	0x1
+ 1065 0092 3F       		.uleb128 0x3f
+ 1066 0093 19       		.uleb128 0x19
+ 1067 0094 03       		.uleb128 0x3
+ 1068 0095 0E       		.uleb128 0xe
+ARM GAS  C:\Users\MCisek\AppData\Local\Temp\ccZZamMD.s 			page 22
+
+
+ 1069 0096 3A       		.uleb128 0x3a
+ 1070 0097 0B       		.uleb128 0xb
+ 1071 0098 3B       		.uleb128 0x3b
+ 1072 0099 0B       		.uleb128 0xb
+ 1073 009a 27       		.uleb128 0x27
+ 1074 009b 19       		.uleb128 0x19
+ 1075 009c 11       		.uleb128 0x11
+ 1076 009d 01       		.uleb128 0x1
+ 1077 009e 12       		.uleb128 0x12
+ 1078 009f 06       		.uleb128 0x6
+ 1079 00a0 40       		.uleb128 0x40
+ 1080 00a1 18       		.uleb128 0x18
+ 1081 00a2 9742     		.uleb128 0x2117
+ 1082 00a4 19       		.uleb128 0x19
+ 1083 00a5 01       		.uleb128 0x1
+ 1084 00a6 13       		.uleb128 0x13
+ 1085 00a7 00       		.byte	0
+ 1086 00a8 00       		.byte	0
+ 1087 00a9 0D       		.uleb128 0xd
+ 1088 00aa 898201   		.uleb128 0x4109
+ 1089 00ad 00       		.byte	0
+ 1090 00ae 11       		.uleb128 0x11
+ 1091 00af 01       		.uleb128 0x1
+ 1092 00b0 31       		.uleb128 0x31
+ 1093 00b1 13       		.uleb128 0x13
+ 1094 00b2 00       		.byte	0
+ 1095 00b3 00       		.byte	0
+ 1096 00b4 0E       		.uleb128 0xe
+ 1097 00b5 05       		.uleb128 0x5
+ 1098 00b6 00       		.byte	0
+ 1099 00b7 03       		.uleb128 0x3
+ 1100 00b8 08       		.uleb128 0x8
+ 1101 00b9 3A       		.uleb128 0x3a
+ 1102 00ba 0B       		.uleb128 0xb
+ 1103 00bb 3B       		.uleb128 0x3b
+ 1104 00bc 0B       		.uleb128 0xb
+ 1105 00bd 49       		.uleb128 0x49
+ 1106 00be 13       		.uleb128 0x13
+ 1107 00bf 02       		.uleb128 0x2
+ 1108 00c0 17       		.uleb128 0x17
+ 1109 00c1 00       		.byte	0
+ 1110 00c2 00       		.byte	0
+ 1111 00c3 0F       		.uleb128 0xf
+ 1112 00c4 34       		.uleb128 0x34
+ 1113 00c5 00       		.byte	0
+ 1114 00c6 03       		.uleb128 0x3
+ 1115 00c7 08       		.uleb128 0x8
+ 1116 00c8 3A       		.uleb128 0x3a
+ 1117 00c9 0B       		.uleb128 0xb
+ 1118 00ca 3B       		.uleb128 0x3b
+ 1119 00cb 0B       		.uleb128 0xb
+ 1120 00cc 49       		.uleb128 0x49
+ 1121 00cd 13       		.uleb128 0x13
+ 1122 00ce 3F       		.uleb128 0x3f
+ 1123 00cf 19       		.uleb128 0x19
+ 1124 00d0 02       		.uleb128 0x2
+ 1125 00d1 18       		.uleb128 0x18
+ARM GAS  C:\Users\MCisek\AppData\Local\Temp\ccZZamMD.s 			page 23
+
+
+ 1126 00d2 00       		.byte	0
+ 1127 00d3 00       		.byte	0
+ 1128 00d4 10       		.uleb128 0x10
+ 1129 00d5 2E       		.uleb128 0x2e
+ 1130 00d6 01       		.byte	0x1
+ 1131 00d7 3F       		.uleb128 0x3f
+ 1132 00d8 19       		.uleb128 0x19
+ 1133 00d9 03       		.uleb128 0x3
+ 1134 00da 0E       		.uleb128 0xe
+ 1135 00db 3A       		.uleb128 0x3a
+ 1136 00dc 0B       		.uleb128 0xb
+ 1137 00dd 3B       		.uleb128 0x3b
+ 1138 00de 0B       		.uleb128 0xb
+ 1139 00df 27       		.uleb128 0x27
+ 1140 00e0 19       		.uleb128 0x19
+ 1141 00e1 3C       		.uleb128 0x3c
+ 1142 00e2 19       		.uleb128 0x19
+ 1143 00e3 01       		.uleb128 0x1
+ 1144 00e4 13       		.uleb128 0x13
+ 1145 00e5 00       		.byte	0
+ 1146 00e6 00       		.byte	0
+ 1147 00e7 11       		.uleb128 0x11
+ 1148 00e8 05       		.uleb128 0x5
+ 1149 00e9 00       		.byte	0
+ 1150 00ea 49       		.uleb128 0x49
+ 1151 00eb 13       		.uleb128 0x13
+ 1152 00ec 00       		.byte	0
+ 1153 00ed 00       		.byte	0
+ 1154 00ee 12       		.uleb128 0x12
+ 1155 00ef 2E       		.uleb128 0x2e
+ 1156 00f0 01       		.byte	0x1
+ 1157 00f1 3F       		.uleb128 0x3f
+ 1158 00f2 19       		.uleb128 0x19
+ 1159 00f3 03       		.uleb128 0x3
+ 1160 00f4 0E       		.uleb128 0xe
+ 1161 00f5 3A       		.uleb128 0x3a
+ 1162 00f6 0B       		.uleb128 0xb
+ 1163 00f7 3B       		.uleb128 0x3b
+ 1164 00f8 05       		.uleb128 0x5
+ 1165 00f9 27       		.uleb128 0x27
+ 1166 00fa 19       		.uleb128 0x19
+ 1167 00fb 3C       		.uleb128 0x3c
+ 1168 00fc 19       		.uleb128 0x19
+ 1169 00fd 01       		.uleb128 0x1
+ 1170 00fe 13       		.uleb128 0x13
+ 1171 00ff 00       		.byte	0
+ 1172 0100 00       		.byte	0
+ 1173 0101 13       		.uleb128 0x13
+ 1174 0102 2E       		.uleb128 0x2e
+ 1175 0103 00       		.byte	0
+ 1176 0104 3F       		.uleb128 0x3f
+ 1177 0105 19       		.uleb128 0x19
+ 1178 0106 03       		.uleb128 0x3
+ 1179 0107 0E       		.uleb128 0xe
+ 1180 0108 3A       		.uleb128 0x3a
+ 1181 0109 0B       		.uleb128 0xb
+ 1182 010a 3B       		.uleb128 0x3b
+ARM GAS  C:\Users\MCisek\AppData\Local\Temp\ccZZamMD.s 			page 24
+
+
+ 1183 010b 05       		.uleb128 0x5
+ 1184 010c 27       		.uleb128 0x27
+ 1185 010d 19       		.uleb128 0x19
+ 1186 010e 3C       		.uleb128 0x3c
+ 1187 010f 19       		.uleb128 0x19
+ 1188 0110 00       		.byte	0
+ 1189 0111 00       		.byte	0
+ 1190 0112 00       		.byte	0
+ 1191              		.section	.debug_loc,"",%progbits
+ 1192              	.Ldebug_loc0:
+ 1193              	.LLST0:
+ 1194 0000 00000000 		.4byte	.LVL19
+ 1195 0004 07000000 		.4byte	.LVL20-1
+ 1196 0008 0100     		.2byte	0x1
+ 1197 000a 50       		.byte	0x50
+ 1198 000b 07000000 		.4byte	.LVL20-1
+ 1199 000f 7C000000 		.4byte	.LFE37
+ 1200 0013 0400     		.2byte	0x4
+ 1201 0015 F3       		.byte	0xf3
+ 1202 0016 01       		.uleb128 0x1
+ 1203 0017 50       		.byte	0x50
+ 1204 0018 9F       		.byte	0x9f
+ 1205 0019 00000000 		.4byte	0
+ 1206 001d 00000000 		.4byte	0
+ 1207              		.section	.debug_aranges,"",%progbits
+ 1208 0000 3C000000 		.4byte	0x3c
+ 1209 0004 0200     		.2byte	0x2
+ 1210 0006 00000000 		.4byte	.Ldebug_info0
+ 1211 000a 04       		.byte	0x4
+ 1212 000b 00       		.byte	0
+ 1213 000c 0000     		.2byte	0
+ 1214 000e 0000     		.2byte	0
+ 1215 0010 00000000 		.4byte	.LFB35
+ 1216 0014 34000000 		.4byte	.LFE35-.LFB35
+ 1217 0018 00000000 		.4byte	.LFB36
+ 1218 001c 34000000 		.4byte	.LFE36-.LFB36
+ 1219 0020 00000000 		.4byte	.LFB38
+ 1220 0024 30000000 		.4byte	.LFE38-.LFB38
+ 1221 0028 00000000 		.4byte	.LFB37
+ 1222 002c 7C000000 		.4byte	.LFE37-.LFB37
+ 1223 0030 00000000 		.4byte	.LFB39
+ 1224 0034 14000000 		.4byte	.LFE39-.LFB39
+ 1225 0038 00000000 		.4byte	0
+ 1226 003c 00000000 		.4byte	0
+ 1227              		.section	.debug_ranges,"",%progbits
+ 1228              	.Ldebug_ranges0:
+ 1229 0000 00000000 		.4byte	.LFB35
+ 1230 0004 34000000 		.4byte	.LFE35
+ 1231 0008 00000000 		.4byte	.LFB36
+ 1232 000c 34000000 		.4byte	.LFE36
+ 1233 0010 00000000 		.4byte	.LFB38
+ 1234 0014 30000000 		.4byte	.LFE38
+ 1235 0018 00000000 		.4byte	.LFB37
+ 1236 001c 7C000000 		.4byte	.LFE37
+ 1237 0020 00000000 		.4byte	.LFB39
+ 1238 0024 14000000 		.4byte	.LFE39
+ 1239 0028 00000000 		.4byte	0
+ARM GAS  C:\Users\MCisek\AppData\Local\Temp\ccZZamMD.s 			page 25
+
+
+ 1240 002c 00000000 		.4byte	0
+ 1241              		.section	.debug_line,"",%progbits
+ 1242              	.Ldebug_line0:
+ 1243 0000 3C010000 		.section	.debug_str,"MS",%progbits,1
+ 1243      0200B500 
+ 1243      00000201 
+ 1243      FB0E0D00 
+ 1243      01010101 
+ 1244              	.LASF22:
+ 1245 0000 4C454431 		.ascii	"LED1_Write\000"
+ 1245      5F577269 
+ 1245      746500
+ 1246              	.LASF16:
+ 1247 000b 7475726E 		.ascii	"turnLedsOff\000"
+ 1247      4C656473 
+ 1247      4F666600 
+ 1248              	.LASF23:
+ 1249 0017 4C454432 		.ascii	"LED2_Write\000"
+ 1249      5F577269 
+ 1249      746500
+ 1250              	.LASF3:
+ 1251 0022 73686F72 		.ascii	"short unsigned int\000"
+ 1251      7420756E 
+ 1251      7369676E 
+ 1251      65642069 
+ 1251      6E7400
+ 1252              	.LASF17:
+ 1253 0035 7475726E 		.ascii	"turnLedsOn\000"
+ 1253      4C656473 
+ 1253      4F6E00
+ 1254              	.LASF24:
+ 1255 0040 4C454433 		.ascii	"LED3_Write\000"
+ 1255      5F577269 
+ 1255      746500
+ 1256              	.LASF11:
+ 1257 004b 666C6F61 		.ascii	"float\000"
+ 1257      7400
+ 1258              	.LASF30:
+ 1259 0051 6C65645F 		.ascii	"led_isr_StartEx\000"
+ 1259      6973725F 
+ 1259      53746172 
+ 1259      74457800 
+ 1260              	.LASF25:
+ 1261 0061 4C454434 		.ascii	"LED4_Write\000"
+ 1261      5F577269 
+ 1261      746500
+ 1262              	.LASF19:
+ 1263 006c 6E696768 		.ascii	"nightRider\000"
+ 1263      74526964 
+ 1263      657200
+ 1264              	.LASF5:
+ 1265 0077 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1265      20756E73 
+ 1265      69676E65 
+ 1265      6420696E 
+ 1265      7400
+ 1266              	.LASF9:
+ARM GAS  C:\Users\MCisek\AppData\Local\Temp\ccZZamMD.s 			page 26
+
+
+ 1267 0089 75696E74 		.ascii	"uint8\000"
+ 1267      3800
+ 1268              	.LASF26:
+ 1269 008f 4C454435 		.ascii	"LED5_Write\000"
+ 1269      5F577269 
+ 1269      746500
+ 1270              	.LASF1:
+ 1271 009a 756E7369 		.ascii	"unsigned char\000"
+ 1271      676E6564 
+ 1271      20636861 
+ 1271      7200
+ 1272              	.LASF12:
+ 1273 00a8 646F7562 		.ascii	"double\000"
+ 1273      6C6500
+ 1274              	.LASF18:
+ 1275 00af 4C656449 		.ascii	"LedInterruptHandler\000"
+ 1275      6E746572 
+ 1275      72757074 
+ 1275      48616E64 
+ 1275      6C657200 
+ 1276              	.LASF27:
+ 1277 00c3 4C454436 		.ascii	"LED6_Write\000"
+ 1277      5F577269 
+ 1277      746500
+ 1278              	.LASF10:
+ 1279 00ce 75696E74 		.ascii	"uint32\000"
+ 1279      333200
+ 1280              	.LASF8:
+ 1281 00d5 756E7369 		.ascii	"unsigned int\000"
+ 1281      676E6564 
+ 1281      20696E74 
+ 1281      00
+ 1282              	.LASF7:
+ 1283 00e2 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1283      206C6F6E 
+ 1283      6720756E 
+ 1283      7369676E 
+ 1283      65642069 
+ 1284              	.LASF34:
+ 1285 00f9 54696D65 		.ascii	"Timer_led_isr_Start\000"
+ 1285      725F6C65 
+ 1285      645F6973 
+ 1285      725F5374 
+ 1285      61727400 
+ 1286              	.LASF20:
+ 1287 010d 696E6974 		.ascii	"initLeds\000"
+ 1287      4C656473 
+ 1287      00
+ 1288              	.LASF14:
+ 1289 0116 63796973 		.ascii	"cyisraddress\000"
+ 1289      72616464 
+ 1289      72657373 
+ 1289      00
+ 1290              	.LASF29:
+ 1291 0123 54696D65 		.ascii	"Timer_led_isr_ClearInterrupt\000"
+ 1291      725F6C65 
+ 1291      645F6973 
+ARM GAS  C:\Users\MCisek\AppData\Local\Temp\ccZZamMD.s 			page 27
+
+
+ 1291      725F436C 
+ 1291      65617249 
+ 1292              	.LASF15:
+ 1293 0140 73697A65 		.ascii	"sizetype\000"
+ 1293      74797065 
+ 1293      00
+ 1294              	.LASF6:
+ 1295 0149 6C6F6E67 		.ascii	"long long int\000"
+ 1295      206C6F6E 
+ 1295      6720696E 
+ 1295      7400
+ 1296              	.LASF33:
+ 1297 0157 433A5C55 		.ascii	"C:\\Users\\MCisek\\Documents\\balancing_robot\\Proj"
+ 1297      73657273 
+ 1297      5C4D4369 
+ 1297      73656B5C 
+ 1297      446F6375 
+ 1298 0185 65637431 		.ascii	"ect1_acc.cydsn\000"
+ 1298      5F616363 
+ 1298      2E637964 
+ 1298      736E00
+ 1299              	.LASF13:
+ 1300 0194 63686172 		.ascii	"char\000"
+ 1300      00
+ 1301              	.LASF31:
+ 1302 0199 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 1302      4320342E 
+ 1302      392E3320 
+ 1302      32303135 
+ 1302      30333033 
+ 1303 01cc 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m0 -mthumb -g -O"
+ 1303      20726576 
+ 1303      6973696F 
+ 1303      6E203232 
+ 1303      31323230 
+ 1304 01ff 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1304      66756E63 
+ 1304      74696F6E 
+ 1304      2D736563 
+ 1304      74696F6E 
+ 1305              	.LASF32:
+ 1306 0227 2E5C6C65 		.ascii	".\\leds.c\000"
+ 1306      64732E63 
+ 1306      00
+ 1307              	.LASF2:
+ 1308 0230 73686F72 		.ascii	"short int\000"
+ 1308      7420696E 
+ 1308      7400
+ 1309              	.LASF28:
+ 1310 023a 4750494F 		.ascii	"GPIO_1_Write\000"
+ 1310      5F315F57 
+ 1310      72697465 
+ 1310      00
+ 1311              	.LASF4:
+ 1312 0247 6C6F6E67 		.ascii	"long int\000"
+ 1312      20696E74 
+ 1312      00
+ARM GAS  C:\Users\MCisek\AppData\Local\Temp\ccZZamMD.s 			page 28
+
+
+ 1313              	.LASF0:
+ 1314 0250 7369676E 		.ascii	"signed char\000"
+ 1314      65642063 
+ 1314      68617200 
+ 1315              	.LASF21:
+ 1316 025c 4C454430 		.ascii	"LED0_Write\000"
+ 1316      5F577269 
+ 1316      746500
+ 1317              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

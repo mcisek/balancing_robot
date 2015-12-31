@@ -1,3 +1,3 @@
-# Component constraints for D:\PSOC\Project1_acc\Project1_acc.cydsn\TopDesign\TopDesign.cysch
-# Project: D:\PSOC\Project1_acc\Project1_acc.cydsn\Project1_acc.cyprj
-# Date: Sun, 02 Aug 2015 13:45:57 GMT
+# Component constraints for C:\Users\MCisek\Documents\balancing_robot\Project1_acc.cydsn\TopDesign\TopDesign.cysch
+# Project: C:\Users\MCisek\Documents\balancing_robot\Project1_acc.cydsn\Project1_acc.cyprj
+# Date: Wed, 30 Dec 2015 21:37:02 GMT

@@ -1,0 +1,795 @@
+ARM GAS  C:\Users\MCisek\AppData\Local\Temp\cc3AFWRX.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 1
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"main.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.Initialize_System,"ax",%progbits
+  18              		.align	2
+  19              		.global	Initialize_System
+  20              		.code	16
+  21              		.thumb_func
+  22              		.type	Initialize_System, %function
+  23              	Initialize_System:
+  24              	.LFB35:
+  25              		.file 1 ".\\main.c"
+   1:.\main.c      **** /* ========================================
+   2:.\main.c      ****  *
+   3:.\main.c      ****  * Copyright YOUR COMPANY, THE YEAR
+   4:.\main.c      ****  * All Rights Reserved
+   5:.\main.c      ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:.\main.c      ****  *
+   7:.\main.c      ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:.\main.c      ****  * WHICH IS THE PROPERTY OF your company.
+   9:.\main.c      ****  *
+  10:.\main.c      ****  * ========================================
+  11:.\main.c      **** */
+  12:.\main.c      **** #include <project.h>
+  13:.\main.c      **** #include <motor_control.h>
+  14:.\main.c      **** #include <mpu_i2c.h>
+  15:.\main.c      **** #include <leds_disp.h>
+  16:.\main.c      **** 
+  17:.\main.c      **** void Initialize_System()
+  18:.\main.c      **** {
+  26              		.loc 1 18 0
+  27              		.cfi_startproc
+  28 0000 08B5     		push	{r3, lr}
+  29              		.cfi_def_cfa_offset 8
+  30              		.cfi_offset 3, -8
+  31              		.cfi_offset 14, -4
+  19:.\main.c      ****     GPIO_0_Write(1);
+  32              		.loc 1 19 0
+  33 0002 0120     		mov	r0, #1
+  34 0004 FFF7FEFF 		bl	GPIO_0_Write
+  35              	.LVL0:
+  20:.\main.c      ****     CyDelay(1000u);
+  36              		.loc 1 20 0
+  37 0008 FA20     		mov	r0, #250
+ARM GAS  C:\Users\MCisek\AppData\Local\Temp\cc3AFWRX.s 			page 2
+
+
+  38 000a 8000     		lsl	r0, r0, #2
+  39 000c FFF7FEFF 		bl	CyDelay
+  40              	.LVL1:
+  21:.\main.c      ****     CyGlobalIntEnable;      /* Enable global interrupts */
+  41              		.loc 1 21 0
+  42              	@ 21 ".\main.c" 1
+  43 0010 62B6     		CPSIE   i
+  44              	@ 0 "" 2
+  22:.\main.c      ****     
+  23:.\main.c      ****     #ifdef DEBUG
+  24:.\main.c      ****         DEBUG_Start();
+  45              		.loc 1 24 0
+  46              		.code	16
+  47 0012 FFF7FEFF 		bl	DEBUG_Start
+  48              	.LVL2:
+  25:.\main.c      **** 		DEBUG_UartInit();
+  49              		.loc 1 25 0
+  50 0016 FFF7FEFF 		bl	DEBUG_UartInit
+  51              	.LVL3:
+  26:.\main.c      ****     #endif
+  27:.\main.c      **** 	
+  28:.\main.c      ****     //initMotorContol();
+  29:.\main.c      ****     //initLeds();
+  30:.\main.c      **** 	Init_MPU();
+  52              		.loc 1 30 0
+  53 001a FFF7FEFF 		bl	Init_MPU
+  54              	.LVL4:
+  31:.\main.c      ****     
+  32:.\main.c      **** 	//DEBUG_UartPutString("START");
+  33:.\main.c      **** }
+  55              		.loc 1 33 0
+  56              		@ sp needed
+  57 001e 08BD     		pop	{r3, pc}
+  58              		.cfi_endproc
+  59              	.LFE35:
+  60              		.size	Initialize_System, .-Initialize_System
+  61              		.section	.text.main,"ax",%progbits
+  62              		.align	2
+  63              		.global	main
+  64              		.code	16
+  65              		.thumb_func
+  66              		.type	main, %function
+  67              	main:
+  68              	.LFB36:
+  34:.\main.c      **** 
+  35:.\main.c      **** int main()
+  36:.\main.c      **** {    
+  69              		.loc 1 36 0
+  70              		.cfi_startproc
+  71 0000 08B5     		push	{r3, lr}
+  72              		.cfi_def_cfa_offset 8
+  73              		.cfi_offset 3, -8
+  74              		.cfi_offset 14, -4
+  37:.\main.c      ****     Initialize_System();
+  75              		.loc 1 37 0
+  76 0002 FFF7FEFF 		bl	Initialize_System
+  77              	.LVL5:
+ARM GAS  C:\Users\MCisek\AppData\Local\Temp\cc3AFWRX.s 			page 3
+
+
+  78              	.L3:
+  38:.\main.c      ****     
+  39:.\main.c      ****     for(;;)
+  40:.\main.c      ****     {
+  41:.\main.c      ****         if(get_i2c_flag() == 1)
+  79              		.loc 1 41 0
+  80 0006 FFF7FEFF 		bl	get_i2c_flag
+  81              	.LVL6:
+  82 000a 0128     		cmp	r0, #1
+  83 000c FBD1     		bne	.L3
+  42:.\main.c      ****         {
+  43:.\main.c      ****             set_i2c_flag(0u);
+  84              		.loc 1 43 0
+  85 000e 0020     		mov	r0, #0
+  86 0010 FFF7FEFF 		bl	set_i2c_flag
+  87              	.LVL7:
+  44:.\main.c      ****             Read_accelerometer_values();
+  88              		.loc 1 44 0
+  89 0014 FFF7FEFF 		bl	Read_accelerometer_values
+  90              	.LVL8:
+  91 0018 F5E7     		b	.L3
+  92              		.cfi_endproc
+  93              	.LFE36:
+  94              		.size	main, .-main
+  95 001a C046     		.text
+  96              	.Letext0:
+  97              		.file 2 "Generated_Source\\PSoC4/cytypes.h"
+  98              		.file 3 "Generated_Source\\PSoC4/GPIO_0.h"
+  99              		.file 4 "Generated_Source\\PSoC4/CyLib.h"
+ 100              		.file 5 "Generated_Source\\PSoC4/DEBUG.h"
+ 101              		.file 6 "Generated_Source\\PSoC4/DEBUG_SPI_UART_PVT.h"
+ 102              		.file 7 "./mpu_i2c.h"
+ 103              		.section	.debug_info,"",%progbits
+ 104              	.Ldebug_info0:
+ 105 0000 A3010000 		.4byte	0x1a3
+ 106 0004 0400     		.2byte	0x4
+ 107 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 108 000a 04       		.byte	0x4
+ 109 000b 01       		.uleb128 0x1
+ 110 000c 3D010000 		.4byte	.LASF21
+ 111 0010 01       		.byte	0x1
+ 112 0011 E5010000 		.4byte	.LASF22
+ 113 0015 62000000 		.4byte	.LASF23
+ 114 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 115 001d 00000000 		.4byte	0
+ 116 0021 00000000 		.4byte	.Ldebug_line0
+ 117 0025 02       		.uleb128 0x2
+ 118 0026 01       		.byte	0x1
+ 119 0027 06       		.byte	0x6
+ 120 0028 2C010000 		.4byte	.LASF0
+ 121 002c 02       		.uleb128 0x2
+ 122 002d 01       		.byte	0x1
+ 123 002e 08       		.byte	0x8
+ 124 002f 22000000 		.4byte	.LASF1
+ 125 0033 02       		.uleb128 0x2
+ 126 0034 02       		.byte	0x2
+ 127 0035 05       		.byte	0x5
+ARM GAS  C:\Users\MCisek\AppData\Local\Temp\cc3AFWRX.s 			page 4
+
+
+ 128 0036 EF000000 		.4byte	.LASF2
+ 129 003a 02       		.uleb128 0x2
+ 130 003b 02       		.byte	0x2
+ 131 003c 07       		.byte	0x7
+ 132 003d 19010000 		.4byte	.LASF3
+ 133 0041 02       		.uleb128 0x2
+ 134 0042 04       		.byte	0x4
+ 135 0043 05       		.byte	0x5
+ 136 0044 E6000000 		.4byte	.LASF4
+ 137 0048 02       		.uleb128 0x2
+ 138 0049 04       		.byte	0x4
+ 139 004a 07       		.byte	0x7
+ 140 004b 50000000 		.4byte	.LASF5
+ 141 004f 02       		.uleb128 0x2
+ 142 0050 08       		.byte	0x8
+ 143 0051 05       		.byte	0x5
+ 144 0052 00000000 		.4byte	.LASF6
+ 145 0056 02       		.uleb128 0x2
+ 146 0057 08       		.byte	0x8
+ 147 0058 07       		.byte	0x7
+ 148 0059 9F000000 		.4byte	.LASF7
+ 149 005d 03       		.uleb128 0x3
+ 150 005e 04       		.byte	0x4
+ 151 005f 05       		.byte	0x5
+ 152 0060 696E7400 		.ascii	"int\000"
+ 153 0064 02       		.uleb128 0x2
+ 154 0065 04       		.byte	0x4
+ 155 0066 07       		.byte	0x7
+ 156 0067 15000000 		.4byte	.LASF8
+ 157 006b 04       		.uleb128 0x4
+ 158 006c 4A000000 		.4byte	.LASF9
+ 159 0070 02       		.byte	0x2
+ 160 0071 B3       		.byte	0xb3
+ 161 0072 2C000000 		.4byte	0x2c
+ 162 0076 04       		.uleb128 0x4
+ 163 0077 0E000000 		.4byte	.LASF10
+ 164 007b 02       		.byte	0x2
+ 165 007c B5       		.byte	0xb5
+ 166 007d 48000000 		.4byte	0x48
+ 167 0081 02       		.uleb128 0x2
+ 168 0082 04       		.byte	0x4
+ 169 0083 04       		.byte	0x4
+ 170 0084 C3000000 		.4byte	.LASF11
+ 171 0088 02       		.uleb128 0x2
+ 172 0089 08       		.byte	0x8
+ 173 008a 04       		.byte	0x4
+ 174 008b F9000000 		.4byte	.LASF12
+ 175 008f 02       		.uleb128 0x2
+ 176 0090 01       		.byte	0x1
+ 177 0091 08       		.byte	0x8
+ 178 0092 E1000000 		.4byte	.LASF13
+ 179 0096 02       		.uleb128 0x2
+ 180 0097 04       		.byte	0x4
+ 181 0098 07       		.byte	0x7
+ 182 0099 EE010000 		.4byte	.LASF14
+ 183 009d 05       		.uleb128 0x5
+ 184 009e 30000000 		.4byte	.LASF24
+ARM GAS  C:\Users\MCisek\AppData\Local\Temp\cc3AFWRX.s 			page 5
+
+
+ 185 00a2 01       		.byte	0x1
+ 186 00a3 11       		.byte	0x11
+ 187 00a4 00000000 		.4byte	.LFB35
+ 188 00a8 20000000 		.4byte	.LFE35-.LFB35
+ 189 00ac 01       		.uleb128 0x1
+ 190 00ad 9C       		.byte	0x9c
+ 191 00ae F6000000 		.4byte	0xf6
+ 192 00b2 06       		.uleb128 0x6
+ 193 00b3 08000000 		.4byte	.LVL0
+ 194 00b7 3E010000 		.4byte	0x13e
+ 195 00bb C5000000 		.4byte	0xc5
+ 196 00bf 07       		.uleb128 0x7
+ 197 00c0 01       		.uleb128 0x1
+ 198 00c1 50       		.byte	0x50
+ 199 00c2 01       		.uleb128 0x1
+ 200 00c3 31       		.byte	0x31
+ 201 00c4 00       		.byte	0
+ 202 00c5 06       		.uleb128 0x6
+ 203 00c6 10000000 		.4byte	.LVL1
+ 204 00ca 4F010000 		.4byte	0x14f
+ 205 00ce DA000000 		.4byte	0xda
+ 206 00d2 07       		.uleb128 0x7
+ 207 00d3 01       		.uleb128 0x1
+ 208 00d4 50       		.byte	0x50
+ 209 00d5 03       		.uleb128 0x3
+ 210 00d6 0A       		.byte	0xa
+ 211 00d7 E803     		.2byte	0x3e8
+ 212 00d9 00       		.byte	0
+ 213 00da 08       		.uleb128 0x8
+ 214 00db 16000000 		.4byte	.LVL2
+ 215 00df 60010000 		.4byte	0x160
+ 216 00e3 08       		.uleb128 0x8
+ 217 00e4 1A000000 		.4byte	.LVL3
+ 218 00e8 67010000 		.4byte	0x167
+ 219 00ec 08       		.uleb128 0x8
+ 220 00ed 1E000000 		.4byte	.LVL4
+ 221 00f1 6E010000 		.4byte	0x16e
+ 222 00f5 00       		.byte	0
+ 223 00f6 09       		.uleb128 0x9
+ 224 00f7 38010000 		.4byte	.LASF25
+ 225 00fb 01       		.byte	0x1
+ 226 00fc 23       		.byte	0x23
+ 227 00fd 5D000000 		.4byte	0x5d
+ 228 0101 00000000 		.4byte	.LFB36
+ 229 0105 1A000000 		.4byte	.LFE36-.LFB36
+ 230 0109 01       		.uleb128 0x1
+ 231 010a 9C       		.byte	0x9c
+ 232 010b 3E010000 		.4byte	0x13e
+ 233 010f 08       		.uleb128 0x8
+ 234 0110 06000000 		.4byte	.LVL5
+ 235 0114 9D000000 		.4byte	0x9d
+ 236 0118 08       		.uleb128 0x8
+ 237 0119 0A000000 		.4byte	.LVL6
+ 238 011d 7B010000 		.4byte	0x17b
+ 239 0121 06       		.uleb128 0x6
+ 240 0122 14000000 		.4byte	.LVL7
+ 241 0126 8C010000 		.4byte	0x18c
+ARM GAS  C:\Users\MCisek\AppData\Local\Temp\cc3AFWRX.s 			page 6
+
+
+ 242 012a 34010000 		.4byte	0x134
+ 243 012e 07       		.uleb128 0x7
+ 244 012f 01       		.uleb128 0x1
+ 245 0130 50       		.byte	0x50
+ 246 0131 01       		.uleb128 0x1
+ 247 0132 30       		.byte	0x30
+ 248 0133 00       		.byte	0
+ 249 0134 08       		.uleb128 0x8
+ 250 0135 18000000 		.4byte	.LVL8
+ 251 0139 9D010000 		.4byte	0x19d
+ 252 013d 00       		.byte	0
+ 253 013e 0A       		.uleb128 0xa
+ 254 013f F7010000 		.4byte	.LASF15
+ 255 0143 03       		.byte	0x3
+ 256 0144 1D       		.byte	0x1d
+ 257 0145 4F010000 		.4byte	0x14f
+ 258 0149 0B       		.uleb128 0xb
+ 259 014a 6B000000 		.4byte	0x6b
+ 260 014e 00       		.byte	0
+ 261 014f 0A       		.uleb128 0xa
+ 262 0150 42000000 		.4byte	.LASF16
+ 263 0154 04       		.byte	0x4
+ 264 0155 57       		.byte	0x57
+ 265 0156 60010000 		.4byte	0x160
+ 266 015a 0B       		.uleb128 0xb
+ 267 015b 76000000 		.4byte	0x76
+ 268 015f 00       		.byte	0
+ 269 0160 0C       		.uleb128 0xc
+ 270 0161 0D010000 		.4byte	.LASF17
+ 271 0165 05       		.byte	0x5
+ 272 0166 68       		.byte	0x68
+ 273 0167 0C       		.uleb128 0xc
+ 274 0168 D2000000 		.4byte	.LASF18
+ 275 016c 06       		.byte	0x6
+ 276 016d 45       		.byte	0x45
+ 277 016e 0D       		.uleb128 0xd
+ 278 016f C9000000 		.4byte	.LASF26
+ 279 0173 07       		.byte	0x7
+ 280 0174 10       		.byte	0x10
+ 281 0175 7B010000 		.4byte	0x17b
+ 282 0179 0E       		.uleb128 0xe
+ 283 017a 00       		.byte	0
+ 284 017b 0F       		.uleb128 0xf
+ 285 017c 00010000 		.4byte	.LASF19
+ 286 0180 07       		.byte	0x7
+ 287 0181 11       		.byte	0x11
+ 288 0182 6B000000 		.4byte	0x6b
+ 289 0186 8C010000 		.4byte	0x18c
+ 290 018a 0E       		.uleb128 0xe
+ 291 018b 00       		.byte	0
+ 292 018c 0A       		.uleb128 0xa
+ 293 018d B6000000 		.4byte	.LASF20
+ 294 0191 07       		.byte	0x7
+ 295 0192 12       		.byte	0x12
+ 296 0193 9D010000 		.4byte	0x19d
+ 297 0197 0B       		.uleb128 0xb
+ 298 0198 6B000000 		.4byte	0x6b
+ARM GAS  C:\Users\MCisek\AppData\Local\Temp\cc3AFWRX.s 			page 7
+
+
+ 299 019c 00       		.byte	0
+ 300 019d 10       		.uleb128 0x10
+ 301 019e CB010000 		.4byte	.LASF27
+ 302 01a2 07       		.byte	0x7
+ 303 01a3 0E       		.byte	0xe
+ 304 01a4 0E       		.uleb128 0xe
+ 305 01a5 00       		.byte	0
+ 306 01a6 00       		.byte	0
+ 307              		.section	.debug_abbrev,"",%progbits
+ 308              	.Ldebug_abbrev0:
+ 309 0000 01       		.uleb128 0x1
+ 310 0001 11       		.uleb128 0x11
+ 311 0002 01       		.byte	0x1
+ 312 0003 25       		.uleb128 0x25
+ 313 0004 0E       		.uleb128 0xe
+ 314 0005 13       		.uleb128 0x13
+ 315 0006 0B       		.uleb128 0xb
+ 316 0007 03       		.uleb128 0x3
+ 317 0008 0E       		.uleb128 0xe
+ 318 0009 1B       		.uleb128 0x1b
+ 319 000a 0E       		.uleb128 0xe
+ 320 000b 55       		.uleb128 0x55
+ 321 000c 17       		.uleb128 0x17
+ 322 000d 11       		.uleb128 0x11
+ 323 000e 01       		.uleb128 0x1
+ 324 000f 10       		.uleb128 0x10
+ 325 0010 17       		.uleb128 0x17
+ 326 0011 00       		.byte	0
+ 327 0012 00       		.byte	0
+ 328 0013 02       		.uleb128 0x2
+ 329 0014 24       		.uleb128 0x24
+ 330 0015 00       		.byte	0
+ 331 0016 0B       		.uleb128 0xb
+ 332 0017 0B       		.uleb128 0xb
+ 333 0018 3E       		.uleb128 0x3e
+ 334 0019 0B       		.uleb128 0xb
+ 335 001a 03       		.uleb128 0x3
+ 336 001b 0E       		.uleb128 0xe
+ 337 001c 00       		.byte	0
+ 338 001d 00       		.byte	0
+ 339 001e 03       		.uleb128 0x3
+ 340 001f 24       		.uleb128 0x24
+ 341 0020 00       		.byte	0
+ 342 0021 0B       		.uleb128 0xb
+ 343 0022 0B       		.uleb128 0xb
+ 344 0023 3E       		.uleb128 0x3e
+ 345 0024 0B       		.uleb128 0xb
+ 346 0025 03       		.uleb128 0x3
+ 347 0026 08       		.uleb128 0x8
+ 348 0027 00       		.byte	0
+ 349 0028 00       		.byte	0
+ 350 0029 04       		.uleb128 0x4
+ 351 002a 16       		.uleb128 0x16
+ 352 002b 00       		.byte	0
+ 353 002c 03       		.uleb128 0x3
+ 354 002d 0E       		.uleb128 0xe
+ 355 002e 3A       		.uleb128 0x3a
+ARM GAS  C:\Users\MCisek\AppData\Local\Temp\cc3AFWRX.s 			page 8
+
+
+ 356 002f 0B       		.uleb128 0xb
+ 357 0030 3B       		.uleb128 0x3b
+ 358 0031 0B       		.uleb128 0xb
+ 359 0032 49       		.uleb128 0x49
+ 360 0033 13       		.uleb128 0x13
+ 361 0034 00       		.byte	0
+ 362 0035 00       		.byte	0
+ 363 0036 05       		.uleb128 0x5
+ 364 0037 2E       		.uleb128 0x2e
+ 365 0038 01       		.byte	0x1
+ 366 0039 3F       		.uleb128 0x3f
+ 367 003a 19       		.uleb128 0x19
+ 368 003b 03       		.uleb128 0x3
+ 369 003c 0E       		.uleb128 0xe
+ 370 003d 3A       		.uleb128 0x3a
+ 371 003e 0B       		.uleb128 0xb
+ 372 003f 3B       		.uleb128 0x3b
+ 373 0040 0B       		.uleb128 0xb
+ 374 0041 11       		.uleb128 0x11
+ 375 0042 01       		.uleb128 0x1
+ 376 0043 12       		.uleb128 0x12
+ 377 0044 06       		.uleb128 0x6
+ 378 0045 40       		.uleb128 0x40
+ 379 0046 18       		.uleb128 0x18
+ 380 0047 9742     		.uleb128 0x2117
+ 381 0049 19       		.uleb128 0x19
+ 382 004a 01       		.uleb128 0x1
+ 383 004b 13       		.uleb128 0x13
+ 384 004c 00       		.byte	0
+ 385 004d 00       		.byte	0
+ 386 004e 06       		.uleb128 0x6
+ 387 004f 898201   		.uleb128 0x4109
+ 388 0052 01       		.byte	0x1
+ 389 0053 11       		.uleb128 0x11
+ 390 0054 01       		.uleb128 0x1
+ 391 0055 31       		.uleb128 0x31
+ 392 0056 13       		.uleb128 0x13
+ 393 0057 01       		.uleb128 0x1
+ 394 0058 13       		.uleb128 0x13
+ 395 0059 00       		.byte	0
+ 396 005a 00       		.byte	0
+ 397 005b 07       		.uleb128 0x7
+ 398 005c 8A8201   		.uleb128 0x410a
+ 399 005f 00       		.byte	0
+ 400 0060 02       		.uleb128 0x2
+ 401 0061 18       		.uleb128 0x18
+ 402 0062 9142     		.uleb128 0x2111
+ 403 0064 18       		.uleb128 0x18
+ 404 0065 00       		.byte	0
+ 405 0066 00       		.byte	0
+ 406 0067 08       		.uleb128 0x8
+ 407 0068 898201   		.uleb128 0x4109
+ 408 006b 00       		.byte	0
+ 409 006c 11       		.uleb128 0x11
+ 410 006d 01       		.uleb128 0x1
+ 411 006e 31       		.uleb128 0x31
+ 412 006f 13       		.uleb128 0x13
+ARM GAS  C:\Users\MCisek\AppData\Local\Temp\cc3AFWRX.s 			page 9
+
+
+ 413 0070 00       		.byte	0
+ 414 0071 00       		.byte	0
+ 415 0072 09       		.uleb128 0x9
+ 416 0073 2E       		.uleb128 0x2e
+ 417 0074 01       		.byte	0x1
+ 418 0075 3F       		.uleb128 0x3f
+ 419 0076 19       		.uleb128 0x19
+ 420 0077 03       		.uleb128 0x3
+ 421 0078 0E       		.uleb128 0xe
+ 422 0079 3A       		.uleb128 0x3a
+ 423 007a 0B       		.uleb128 0xb
+ 424 007b 3B       		.uleb128 0x3b
+ 425 007c 0B       		.uleb128 0xb
+ 426 007d 49       		.uleb128 0x49
+ 427 007e 13       		.uleb128 0x13
+ 428 007f 11       		.uleb128 0x11
+ 429 0080 01       		.uleb128 0x1
+ 430 0081 12       		.uleb128 0x12
+ 431 0082 06       		.uleb128 0x6
+ 432 0083 40       		.uleb128 0x40
+ 433 0084 18       		.uleb128 0x18
+ 434 0085 9742     		.uleb128 0x2117
+ 435 0087 19       		.uleb128 0x19
+ 436 0088 01       		.uleb128 0x1
+ 437 0089 13       		.uleb128 0x13
+ 438 008a 00       		.byte	0
+ 439 008b 00       		.byte	0
+ 440 008c 0A       		.uleb128 0xa
+ 441 008d 2E       		.uleb128 0x2e
+ 442 008e 01       		.byte	0x1
+ 443 008f 3F       		.uleb128 0x3f
+ 444 0090 19       		.uleb128 0x19
+ 445 0091 03       		.uleb128 0x3
+ 446 0092 0E       		.uleb128 0xe
+ 447 0093 3A       		.uleb128 0x3a
+ 448 0094 0B       		.uleb128 0xb
+ 449 0095 3B       		.uleb128 0x3b
+ 450 0096 0B       		.uleb128 0xb
+ 451 0097 27       		.uleb128 0x27
+ 452 0098 19       		.uleb128 0x19
+ 453 0099 3C       		.uleb128 0x3c
+ 454 009a 19       		.uleb128 0x19
+ 455 009b 01       		.uleb128 0x1
+ 456 009c 13       		.uleb128 0x13
+ 457 009d 00       		.byte	0
+ 458 009e 00       		.byte	0
+ 459 009f 0B       		.uleb128 0xb
+ 460 00a0 05       		.uleb128 0x5
+ 461 00a1 00       		.byte	0
+ 462 00a2 49       		.uleb128 0x49
+ 463 00a3 13       		.uleb128 0x13
+ 464 00a4 00       		.byte	0
+ 465 00a5 00       		.byte	0
+ 466 00a6 0C       		.uleb128 0xc
+ 467 00a7 2E       		.uleb128 0x2e
+ 468 00a8 00       		.byte	0
+ 469 00a9 3F       		.uleb128 0x3f
+ARM GAS  C:\Users\MCisek\AppData\Local\Temp\cc3AFWRX.s 			page 10
+
+
+ 470 00aa 19       		.uleb128 0x19
+ 471 00ab 03       		.uleb128 0x3
+ 472 00ac 0E       		.uleb128 0xe
+ 473 00ad 3A       		.uleb128 0x3a
+ 474 00ae 0B       		.uleb128 0xb
+ 475 00af 3B       		.uleb128 0x3b
+ 476 00b0 0B       		.uleb128 0xb
+ 477 00b1 27       		.uleb128 0x27
+ 478 00b2 19       		.uleb128 0x19
+ 479 00b3 3C       		.uleb128 0x3c
+ 480 00b4 19       		.uleb128 0x19
+ 481 00b5 00       		.byte	0
+ 482 00b6 00       		.byte	0
+ 483 00b7 0D       		.uleb128 0xd
+ 484 00b8 2E       		.uleb128 0x2e
+ 485 00b9 01       		.byte	0x1
+ 486 00ba 3F       		.uleb128 0x3f
+ 487 00bb 19       		.uleb128 0x19
+ 488 00bc 03       		.uleb128 0x3
+ 489 00bd 0E       		.uleb128 0xe
+ 490 00be 3A       		.uleb128 0x3a
+ 491 00bf 0B       		.uleb128 0xb
+ 492 00c0 3B       		.uleb128 0x3b
+ 493 00c1 0B       		.uleb128 0xb
+ 494 00c2 3C       		.uleb128 0x3c
+ 495 00c3 19       		.uleb128 0x19
+ 496 00c4 01       		.uleb128 0x1
+ 497 00c5 13       		.uleb128 0x13
+ 498 00c6 00       		.byte	0
+ 499 00c7 00       		.byte	0
+ 500 00c8 0E       		.uleb128 0xe
+ 501 00c9 18       		.uleb128 0x18
+ 502 00ca 00       		.byte	0
+ 503 00cb 00       		.byte	0
+ 504 00cc 00       		.byte	0
+ 505 00cd 0F       		.uleb128 0xf
+ 506 00ce 2E       		.uleb128 0x2e
+ 507 00cf 01       		.byte	0x1
+ 508 00d0 3F       		.uleb128 0x3f
+ 509 00d1 19       		.uleb128 0x19
+ 510 00d2 03       		.uleb128 0x3
+ 511 00d3 0E       		.uleb128 0xe
+ 512 00d4 3A       		.uleb128 0x3a
+ 513 00d5 0B       		.uleb128 0xb
+ 514 00d6 3B       		.uleb128 0x3b
+ 515 00d7 0B       		.uleb128 0xb
+ 516 00d8 49       		.uleb128 0x49
+ 517 00d9 13       		.uleb128 0x13
+ 518 00da 3C       		.uleb128 0x3c
+ 519 00db 19       		.uleb128 0x19
+ 520 00dc 01       		.uleb128 0x1
+ 521 00dd 13       		.uleb128 0x13
+ 522 00de 00       		.byte	0
+ 523 00df 00       		.byte	0
+ 524 00e0 10       		.uleb128 0x10
+ 525 00e1 2E       		.uleb128 0x2e
+ 526 00e2 01       		.byte	0x1
+ARM GAS  C:\Users\MCisek\AppData\Local\Temp\cc3AFWRX.s 			page 11
+
+
+ 527 00e3 3F       		.uleb128 0x3f
+ 528 00e4 19       		.uleb128 0x19
+ 529 00e5 03       		.uleb128 0x3
+ 530 00e6 0E       		.uleb128 0xe
+ 531 00e7 3A       		.uleb128 0x3a
+ 532 00e8 0B       		.uleb128 0xb
+ 533 00e9 3B       		.uleb128 0x3b
+ 534 00ea 0B       		.uleb128 0xb
+ 535 00eb 3C       		.uleb128 0x3c
+ 536 00ec 19       		.uleb128 0x19
+ 537 00ed 00       		.byte	0
+ 538 00ee 00       		.byte	0
+ 539 00ef 00       		.byte	0
+ 540              		.section	.debug_aranges,"",%progbits
+ 541 0000 24000000 		.4byte	0x24
+ 542 0004 0200     		.2byte	0x2
+ 543 0006 00000000 		.4byte	.Ldebug_info0
+ 544 000a 04       		.byte	0x4
+ 545 000b 00       		.byte	0
+ 546 000c 0000     		.2byte	0
+ 547 000e 0000     		.2byte	0
+ 548 0010 00000000 		.4byte	.LFB35
+ 549 0014 20000000 		.4byte	.LFE35-.LFB35
+ 550 0018 00000000 		.4byte	.LFB36
+ 551 001c 1A000000 		.4byte	.LFE36-.LFB36
+ 552 0020 00000000 		.4byte	0
+ 553 0024 00000000 		.4byte	0
+ 554              		.section	.debug_ranges,"",%progbits
+ 555              	.Ldebug_ranges0:
+ 556 0000 00000000 		.4byte	.LFB35
+ 557 0004 20000000 		.4byte	.LFE35
+ 558 0008 00000000 		.4byte	.LFB36
+ 559 000c 1A000000 		.4byte	.LFE36
+ 560 0010 00000000 		.4byte	0
+ 561 0014 00000000 		.4byte	0
+ 562              		.section	.debug_line,"",%progbits
+ 563              	.Ldebug_line0:
+ 564 0000 BB000000 		.section	.debug_str,"MS",%progbits,1
+ 564      02008C00 
+ 564      00000201 
+ 564      FB0E0D00 
+ 564      01010101 
+ 565              	.LASF6:
+ 566 0000 6C6F6E67 		.ascii	"long long int\000"
+ 566      206C6F6E 
+ 566      6720696E 
+ 566      7400
+ 567              	.LASF10:
+ 568 000e 75696E74 		.ascii	"uint32\000"
+ 568      333200
+ 569              	.LASF8:
+ 570 0015 756E7369 		.ascii	"unsigned int\000"
+ 570      676E6564 
+ 570      20696E74 
+ 570      00
+ 571              	.LASF1:
+ 572 0022 756E7369 		.ascii	"unsigned char\000"
+ARM GAS  C:\Users\MCisek\AppData\Local\Temp\cc3AFWRX.s 			page 12
+
+
+ 572      676E6564 
+ 572      20636861 
+ 572      7200
+ 573              	.LASF24:
+ 574 0030 496E6974 		.ascii	"Initialize_System\000"
+ 574      69616C69 
+ 574      7A655F53 
+ 574      79737465 
+ 574      6D00
+ 575              	.LASF16:
+ 576 0042 43794465 		.ascii	"CyDelay\000"
+ 576      6C617900 
+ 577              	.LASF9:
+ 578 004a 75696E74 		.ascii	"uint8\000"
+ 578      3800
+ 579              	.LASF5:
+ 580 0050 6C6F6E67 		.ascii	"long unsigned int\000"
+ 580      20756E73 
+ 580      69676E65 
+ 580      6420696E 
+ 580      7400
+ 581              	.LASF23:
+ 582 0062 433A5C55 		.ascii	"C:\\Users\\MCisek\\Documents\\balancing_robot\\Proj"
+ 582      73657273 
+ 582      5C4D4369 
+ 582      73656B5C 
+ 582      446F6375 
+ 583 0090 65637431 		.ascii	"ect1_acc.cydsn\000"
+ 583      5F616363 
+ 583      2E637964 
+ 583      736E00
+ 584              	.LASF7:
+ 585 009f 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 585      206C6F6E 
+ 585      6720756E 
+ 585      7369676E 
+ 585      65642069 
+ 586              	.LASF20:
+ 587 00b6 7365745F 		.ascii	"set_i2c_flag\000"
+ 587      6932635F 
+ 587      666C6167 
+ 587      00
+ 588              	.LASF11:
+ 589 00c3 666C6F61 		.ascii	"float\000"
+ 589      7400
+ 590              	.LASF26:
+ 591 00c9 496E6974 		.ascii	"Init_MPU\000"
+ 591      5F4D5055 
+ 591      00
+ 592              	.LASF18:
+ 593 00d2 44454255 		.ascii	"DEBUG_UartInit\000"
+ 593      475F5561 
+ 593      7274496E 
+ 593      697400
+ 594              	.LASF13:
+ 595 00e1 63686172 		.ascii	"char\000"
+ 595      00
+ARM GAS  C:\Users\MCisek\AppData\Local\Temp\cc3AFWRX.s 			page 13
+
+
+ 596              	.LASF4:
+ 597 00e6 6C6F6E67 		.ascii	"long int\000"
+ 597      20696E74 
+ 597      00
+ 598              	.LASF2:
+ 599 00ef 73686F72 		.ascii	"short int\000"
+ 599      7420696E 
+ 599      7400
+ 600              	.LASF12:
+ 601 00f9 646F7562 		.ascii	"double\000"
+ 601      6C6500
+ 602              	.LASF19:
+ 603 0100 6765745F 		.ascii	"get_i2c_flag\000"
+ 603      6932635F 
+ 603      666C6167 
+ 603      00
+ 604              	.LASF17:
+ 605 010d 44454255 		.ascii	"DEBUG_Start\000"
+ 605      475F5374 
+ 605      61727400 
+ 606              	.LASF3:
+ 607 0119 73686F72 		.ascii	"short unsigned int\000"
+ 607      7420756E 
+ 607      7369676E 
+ 607      65642069 
+ 607      6E7400
+ 608              	.LASF0:
+ 609 012c 7369676E 		.ascii	"signed char\000"
+ 609      65642063 
+ 609      68617200 
+ 610              	.LASF25:
+ 611 0138 6D61696E 		.ascii	"main\000"
+ 611      00
+ 612              	.LASF21:
+ 613 013d 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 613      4320342E 
+ 613      392E3320 
+ 613      32303135 
+ 613      30333033 
+ 614 0170 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m0 -mthumb -g -O"
+ 614      20726576 
+ 614      6973696F 
+ 614      6E203232 
+ 614      31323230 
+ 615 01a3 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 615      66756E63 
+ 615      74696F6E 
+ 615      2D736563 
+ 615      74696F6E 
+ 616              	.LASF27:
+ 617 01cb 52656164 		.ascii	"Read_accelerometer_values\000"
+ 617      5F616363 
+ 617      656C6572 
+ 617      6F6D6574 
+ 617      65725F76 
+ 618              	.LASF22:
+ 619 01e5 2E5C6D61 		.ascii	".\\main.c\000"
+ARM GAS  C:\Users\MCisek\AppData\Local\Temp\cc3AFWRX.s 			page 14
+
+
+ 619      696E2E63 
+ 619      00
+ 620              	.LASF14:
+ 621 01ee 73697A65 		.ascii	"sizetype\000"
+ 621      74797065 
+ 621      00
+ 622              	.LASF15:
+ 623 01f7 4750494F 		.ascii	"GPIO_0_Write\000"
+ 623      5F305F57 
+ 623      72697465 
+ 623      00
+ 624              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

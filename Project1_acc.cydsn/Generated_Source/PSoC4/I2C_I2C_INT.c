@@ -19,6 +19,7 @@
 #include "I2C_I2C_PVT.h"
 
 
+
 /*******************************************************************************
 * Function Name: I2C_I2C_ISR
 ********************************************************************************
@@ -38,6 +39,10 @@ CY_ISR(I2C_I2C_ISR)
     uint32 diffCount;
     uint32 endTransfer;
 
+#ifdef I2C_I2C_ISR_ENTRY_CALLBACK
+    I2C_I2C_ISR_EntryCallback();
+#endif /* I2C_I2C_ISR_ENTRY_CALLBACK */
+    
 #if (I2C_I2C_CUSTOM_ADDRESS_HANDLER_CONST)
     uint32 response;
 
@@ -836,6 +841,11 @@ CY_ISR(I2C_I2C_ISR)
 
         I2C_CTRL_REG |= (uint32) I2C_CTRL_ENABLED;  /* Enable scb IP */
     }
+
+#ifdef I2C_I2C_ISR_EXIT_CALLBACK
+    I2C_I2C_ISR_ExitCallback();
+#endif /* I2C_I2C_ISR_EXIT_CALLBACK */
+    
 }
 
 

@@ -1,0 +1,1255 @@
+ARM GAS  C:\Users\MCisek\AppData\Local\Temp\ccpo7JeI.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 1
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"motor_control.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.initMotorContol,"ax",%progbits
+  18              		.align	2
+  19              		.global	initMotorContol
+  20              		.code	16
+  21              		.thumb_func
+  22              		.type	initMotorContol, %function
+  23              	initMotorContol:
+  24              	.LFB35:
+  25              		.file 1 ".\\motor_control.c"
+   1:.\motor_control.c **** /* ========================================
+   2:.\motor_control.c ****  *
+   3:.\motor_control.c ****  * Copyright YOUR COMPANY, THE YEAR
+   4:.\motor_control.c ****  * All Rights Reserved
+   5:.\motor_control.c ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:.\motor_control.c ****  *
+   7:.\motor_control.c ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:.\motor_control.c ****  * WHICH IS THE PROPERTY OF your company.
+   9:.\motor_control.c ****  *
+  10:.\motor_control.c ****  * ========================================
+  11:.\motor_control.c **** */
+  12:.\motor_control.c **** 
+  13:.\motor_control.c **** #include <project.h>
+  14:.\motor_control.c **** #include <motor_control.h>
+  15:.\motor_control.c **** 
+  16:.\motor_control.c **** void initMotorContol()
+  17:.\motor_control.c **** {
+  26              		.loc 1 17 0
+  27              		.cfi_startproc
+  28 0000 08B5     		push	{r3, lr}
+  29              		.cfi_def_cfa_offset 8
+  30              		.cfi_offset 3, -8
+  31              		.cfi_offset 14, -4
+  18:.\motor_control.c ****     PWM_MOTOR_Start();
+  32              		.loc 1 18 0
+  33 0002 FFF7FEFF 		bl	PWM_MOTOR_Start
+  34              	.LVL0:
+  19:.\motor_control.c ****     PWM_MOTOR_WritePeriod(255);
+  35              		.loc 1 19 0
+  36 0006 FF20     		mov	r0, #255
+  37 0008 FFF7FEFF 		bl	PWM_MOTOR_WritePeriod
+  38              	.LVL1:
+ARM GAS  C:\Users\MCisek\AppData\Local\Temp\ccpo7JeI.s 			page 2
+
+
+  20:.\motor_control.c **** }
+  39              		.loc 1 20 0
+  40              		@ sp needed
+  41 000c 08BD     		pop	{r3, pc}
+  42              		.cfi_endproc
+  43              	.LFE35:
+  44              		.size	initMotorContol, .-initMotorContol
+  45 000e C046     		.section	.text.setMotor1,"ax",%progbits
+  46              		.align	2
+  47              		.global	setMotor1
+  48              		.code	16
+  49              		.thumb_func
+  50              		.type	setMotor1, %function
+  51              	setMotor1:
+  52              	.LFB36:
+  21:.\motor_control.c **** 
+  22:.\motor_control.c **** void setMotor1(int direction, uint8 pwm)
+  23:.\motor_control.c **** {
+  53              		.loc 1 23 0
+  54              		.cfi_startproc
+  55              	.LVL2:
+  56 0000 10B5     		push	{r4, lr}
+  57              		.cfi_def_cfa_offset 8
+  58              		.cfi_offset 4, -8
+  59              		.cfi_offset 14, -4
+  60 0002 0C1C     		mov	r4, r1
+  24:.\motor_control.c ****     if(direction == -1)
+  61              		.loc 1 24 0
+  62 0004 431C     		add	r3, r0, #1
+  63 0006 09D1     		bne	.L3
+  25:.\motor_control.c ****     {
+  26:.\motor_control.c ****         MOTOR1_1_Write(1u);
+  64              		.loc 1 26 0
+  65 0008 0230     		add	r0, r0, #2
+  66              	.LVL3:
+  67 000a FFF7FEFF 		bl	MOTOR1_1_Write
+  68              	.LVL4:
+  27:.\motor_control.c ****         MOTOR1_2_Write(0u);
+  69              		.loc 1 27 0
+  70 000e 0020     		mov	r0, #0
+  71 0010 FFF7FEFF 		bl	MOTOR1_2_Write
+  72              	.LVL5:
+  28:.\motor_control.c ****         PWM_MOTOR_WriteCompare1(pwm);
+  73              		.loc 1 28 0
+  74 0014 201C     		mov	r0, r4
+  75 0016 FFF7FEFF 		bl	PWM_MOTOR_WriteCompare1
+  76              	.LVL6:
+  77 001a 12E0     		b	.L2
+  78              	.LVL7:
+  79              	.L3:
+  29:.\motor_control.c ****     }
+  30:.\motor_control.c ****     else if(direction == 1)
+  80              		.loc 1 30 0
+  81 001c 0128     		cmp	r0, #1
+  82 001e 09D1     		bne	.L5
+  31:.\motor_control.c ****     {
+  32:.\motor_control.c ****         MOTOR1_1_Write(0u);
+ARM GAS  C:\Users\MCisek\AppData\Local\Temp\ccpo7JeI.s 			page 3
+
+
+  83              		.loc 1 32 0
+  84 0020 0020     		mov	r0, #0
+  85              	.LVL8:
+  86 0022 FFF7FEFF 		bl	MOTOR1_1_Write
+  87              	.LVL9:
+  33:.\motor_control.c ****         MOTOR1_2_Write(1u);
+  88              		.loc 1 33 0
+  89 0026 0120     		mov	r0, #1
+  90 0028 FFF7FEFF 		bl	MOTOR1_2_Write
+  91              	.LVL10:
+  34:.\motor_control.c ****         PWM_MOTOR_WriteCompare1(pwm);
+  92              		.loc 1 34 0
+  93 002c 201C     		mov	r0, r4
+  94 002e FFF7FEFF 		bl	PWM_MOTOR_WriteCompare1
+  95              	.LVL11:
+  96 0032 06E0     		b	.L2
+  97              	.LVL12:
+  98              	.L5:
+  35:.\motor_control.c ****     }
+  36:.\motor_control.c ****     else if(direction == 0)
+  99              		.loc 1 36 0
+ 100 0034 0028     		cmp	r0, #0
+ 101 0036 04D1     		bne	.L2
+  37:.\motor_control.c ****     {
+  38:.\motor_control.c ****         MOTOR1_1_Write(0u);
+ 102              		.loc 1 38 0
+ 103 0038 FFF7FEFF 		bl	MOTOR1_1_Write
+ 104              	.LVL13:
+  39:.\motor_control.c ****         MOTOR1_2_Write(0u);
+ 105              		.loc 1 39 0
+ 106 003c 0020     		mov	r0, #0
+ 107 003e FFF7FEFF 		bl	MOTOR1_2_Write
+ 108              	.LVL14:
+ 109              	.L2:
+  40:.\motor_control.c ****     } 
+  41:.\motor_control.c **** }
+ 110              		.loc 1 41 0
+ 111              		@ sp needed
+ 112 0042 10BD     		pop	{r4, pc}
+ 113              		.cfi_endproc
+ 114              	.LFE36:
+ 115              		.size	setMotor1, .-setMotor1
+ 116              		.section	.text.setMotor2,"ax",%progbits
+ 117              		.align	2
+ 118              		.global	setMotor2
+ 119              		.code	16
+ 120              		.thumb_func
+ 121              		.type	setMotor2, %function
+ 122              	setMotor2:
+ 123              	.LFB37:
+  42:.\motor_control.c **** 
+  43:.\motor_control.c **** void setMotor2(int direction, uint8 pwm)
+  44:.\motor_control.c **** {
+ 124              		.loc 1 44 0
+ 125              		.cfi_startproc
+ 126              	.LVL15:
+ 127 0000 10B5     		push	{r4, lr}
+ARM GAS  C:\Users\MCisek\AppData\Local\Temp\ccpo7JeI.s 			page 4
+
+
+ 128              		.cfi_def_cfa_offset 8
+ 129              		.cfi_offset 4, -8
+ 130              		.cfi_offset 14, -4
+ 131 0002 0C1C     		mov	r4, r1
+  45:.\motor_control.c ****     if(direction == -1)
+ 132              		.loc 1 45 0
+ 133 0004 431C     		add	r3, r0, #1
+ 134 0006 09D1     		bne	.L7
+  46:.\motor_control.c ****     {
+  47:.\motor_control.c ****         MOTOR2_1_Write(1u);
+ 135              		.loc 1 47 0
+ 136 0008 0230     		add	r0, r0, #2
+ 137              	.LVL16:
+ 138 000a FFF7FEFF 		bl	MOTOR2_1_Write
+ 139              	.LVL17:
+  48:.\motor_control.c ****         MOTOR2_2_Write(0u);
+ 140              		.loc 1 48 0
+ 141 000e 0020     		mov	r0, #0
+ 142 0010 FFF7FEFF 		bl	MOTOR2_2_Write
+ 143              	.LVL18:
+  49:.\motor_control.c ****         PWM_MOTOR_WriteCompare2(pwm);
+ 144              		.loc 1 49 0
+ 145 0014 201C     		mov	r0, r4
+ 146 0016 FFF7FEFF 		bl	PWM_MOTOR_WriteCompare2
+ 147              	.LVL19:
+ 148 001a 12E0     		b	.L6
+ 149              	.LVL20:
+ 150              	.L7:
+  50:.\motor_control.c ****     }
+  51:.\motor_control.c ****     else if(direction == 1)
+ 151              		.loc 1 51 0
+ 152 001c 0128     		cmp	r0, #1
+ 153 001e 09D1     		bne	.L9
+  52:.\motor_control.c ****     {
+  53:.\motor_control.c ****         MOTOR2_1_Write(0u);
+ 154              		.loc 1 53 0
+ 155 0020 0020     		mov	r0, #0
+ 156              	.LVL21:
+ 157 0022 FFF7FEFF 		bl	MOTOR2_1_Write
+ 158              	.LVL22:
+  54:.\motor_control.c ****         MOTOR2_2_Write(1u);
+ 159              		.loc 1 54 0
+ 160 0026 0120     		mov	r0, #1
+ 161 0028 FFF7FEFF 		bl	MOTOR2_2_Write
+ 162              	.LVL23:
+  55:.\motor_control.c ****         PWM_MOTOR_WriteCompare2(pwm);
+ 163              		.loc 1 55 0
+ 164 002c 201C     		mov	r0, r4
+ 165 002e FFF7FEFF 		bl	PWM_MOTOR_WriteCompare2
+ 166              	.LVL24:
+ 167 0032 06E0     		b	.L6
+ 168              	.LVL25:
+ 169              	.L9:
+  56:.\motor_control.c ****     }
+  57:.\motor_control.c ****     else if(direction == 0)
+ 170              		.loc 1 57 0
+ 171 0034 0028     		cmp	r0, #0
+ARM GAS  C:\Users\MCisek\AppData\Local\Temp\ccpo7JeI.s 			page 5
+
+
+ 172 0036 04D1     		bne	.L6
+  58:.\motor_control.c ****     {
+  59:.\motor_control.c ****         MOTOR2_1_Write(0u);
+ 173              		.loc 1 59 0
+ 174 0038 FFF7FEFF 		bl	MOTOR2_1_Write
+ 175              	.LVL26:
+  60:.\motor_control.c ****         MOTOR2_2_Write(0u);
+ 176              		.loc 1 60 0
+ 177 003c 0020     		mov	r0, #0
+ 178 003e FFF7FEFF 		bl	MOTOR2_2_Write
+ 179              	.LVL27:
+ 180              	.L6:
+  61:.\motor_control.c ****     } 
+  62:.\motor_control.c **** }
+ 181              		.loc 1 62 0
+ 182              		@ sp needed
+ 183 0042 10BD     		pop	{r4, pc}
+ 184              		.cfi_endproc
+ 185              	.LFE37:
+ 186              		.size	setMotor2, .-setMotor2
+ 187              		.text
+ 188              	.Letext0:
+ 189              		.file 2 "Generated_Source\\PSoC4/PWM_MOTOR.h"
+ 190              		.file 3 "Generated_Source\\PSoC4/MOTOR1_1.h"
+ 191              		.file 4 "Generated_Source\\PSoC4/MOTOR1_2.h"
+ 192              		.file 5 "Generated_Source\\PSoC4/MOTOR2_1.h"
+ 193              		.file 6 "Generated_Source\\PSoC4/MOTOR2_2.h"
+ 194              		.file 7 "Generated_Source\\PSoC4/cytypes.h"
+ 195              		.section	.debug_info,"",%progbits
+ 196              	.Ldebug_info0:
+ 197 0000 C0020000 		.4byte	0x2c0
+ 198 0004 0400     		.2byte	0x4
+ 199 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 200 000a 04       		.byte	0x4
+ 201 000b 01       		.uleb128 0x1
+ 202 000c 86010000 		.4byte	.LASF22
+ 203 0010 01       		.byte	0x1
+ 204 0011 4D000000 		.4byte	.LASF23
+ 205 0015 2E010000 		.4byte	.LASF24
+ 206 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 207 001d 00000000 		.4byte	0
+ 208 0021 00000000 		.4byte	.Ldebug_line0
+ 209 0025 02       		.uleb128 0x2
+ 210 0026 01       		.byte	0x1
+ 211 0027 06       		.byte	0x6
+ 212 0028 27020000 		.4byte	.LASF0
+ 213 002c 02       		.uleb128 0x2
+ 214 002d 01       		.byte	0x1
+ 215 002e 08       		.byte	0x8
+ 216 002f 3F000000 		.4byte	.LASF1
+ 217 0033 02       		.uleb128 0x2
+ 218 0034 02       		.byte	0x2
+ 219 0035 05       		.byte	0x5
+ 220 0036 14020000 		.4byte	.LASF2
+ 221 003a 02       		.uleb128 0x2
+ 222 003b 02       		.byte	0x2
+ 223 003c 07       		.byte	0x7
+ARM GAS  C:\Users\MCisek\AppData\Local\Temp\ccpo7JeI.s 			page 6
+
+
+ 224 003d 0F000000 		.4byte	.LASF3
+ 225 0041 02       		.uleb128 0x2
+ 226 0042 04       		.byte	0x4
+ 227 0043 05       		.byte	0x5
+ 228 0044 1E020000 		.4byte	.LASF4
+ 229 0048 02       		.uleb128 0x2
+ 230 0049 04       		.byte	0x4
+ 231 004a 07       		.byte	0x7
+ 232 004b 5F000000 		.4byte	.LASF5
+ 233 004f 02       		.uleb128 0x2
+ 234 0050 08       		.byte	0x8
+ 235 0051 05       		.byte	0x5
+ 236 0052 20010000 		.4byte	.LASF6
+ 237 0056 02       		.uleb128 0x2
+ 238 0057 08       		.byte	0x8
+ 239 0058 07       		.byte	0x7
+ 240 0059 F1000000 		.4byte	.LASF7
+ 241 005d 03       		.uleb128 0x3
+ 242 005e 04       		.byte	0x4
+ 243 005f 05       		.byte	0x5
+ 244 0060 696E7400 		.ascii	"int\000"
+ 245 0064 02       		.uleb128 0x2
+ 246 0065 04       		.byte	0x4
+ 247 0066 07       		.byte	0x7
+ 248 0067 22000000 		.4byte	.LASF8
+ 249 006b 04       		.uleb128 0x4
+ 250 006c 71000000 		.4byte	.LASF25
+ 251 0070 07       		.byte	0x7
+ 252 0071 B3       		.byte	0xb3
+ 253 0072 2C000000 		.4byte	0x2c
+ 254 0076 02       		.uleb128 0x2
+ 255 0077 04       		.byte	0x4
+ 256 0078 04       		.byte	0x4
+ 257 0079 39000000 		.4byte	.LASF9
+ 258 007d 02       		.uleb128 0x2
+ 259 007e 08       		.byte	0x8
+ 260 007f 04       		.byte	0x4
+ 261 0080 77000000 		.4byte	.LASF10
+ 262 0084 02       		.uleb128 0x2
+ 263 0085 01       		.byte	0x1
+ 264 0086 08       		.byte	0x8
+ 265 0087 6B010000 		.4byte	.LASF11
+ 266 008b 02       		.uleb128 0x2
+ 267 008c 04       		.byte	0x4
+ 268 008d 07       		.byte	0x7
+ 269 008e 17010000 		.4byte	.LASF12
+ 270 0092 05       		.uleb128 0x5
+ 271 0093 E1000000 		.4byte	.LASF26
+ 272 0097 01       		.byte	0x1
+ 273 0098 10       		.byte	0x10
+ 274 0099 00000000 		.4byte	.LFB35
+ 275 009d 0E000000 		.4byte	.LFE35-.LFB35
+ 276 00a1 01       		.uleb128 0x1
+ 277 00a2 9C       		.byte	0x9c
+ 278 00a3 C1000000 		.4byte	0xc1
+ 279 00a7 06       		.uleb128 0x6
+ 280 00a8 06000000 		.4byte	.LVL0
+ARM GAS  C:\Users\MCisek\AppData\Local\Temp\ccpo7JeI.s 			page 7
+
+
+ 281 00ac 49020000 		.4byte	0x249
+ 282 00b0 07       		.uleb128 0x7
+ 283 00b1 0C000000 		.4byte	.LVL1
+ 284 00b5 50020000 		.4byte	0x250
+ 285 00b9 08       		.uleb128 0x8
+ 286 00ba 01       		.uleb128 0x1
+ 287 00bb 50       		.byte	0x50
+ 288 00bc 02       		.uleb128 0x2
+ 289 00bd 09       		.byte	0x9
+ 290 00be FF       		.byte	0xff
+ 291 00bf 00       		.byte	0
+ 292 00c0 00       		.byte	0
+ 293 00c1 09       		.uleb128 0x9
+ 294 00c2 7E000000 		.4byte	.LASF14
+ 295 00c6 01       		.byte	0x1
+ 296 00c7 16       		.byte	0x16
+ 297 00c8 00000000 		.4byte	.LFB36
+ 298 00cc 44000000 		.4byte	.LFE36-.LFB36
+ 299 00d0 01       		.uleb128 0x1
+ 300 00d1 9C       		.byte	0x9c
+ 301 00d2 85010000 		.4byte	0x185
+ 302 00d6 0A       		.uleb128 0xa
+ 303 00d7 2F000000 		.4byte	.LASF13
+ 304 00db 01       		.byte	0x1
+ 305 00dc 16       		.byte	0x16
+ 306 00dd 5D000000 		.4byte	0x5d
+ 307 00e1 00000000 		.4byte	.LLST0
+ 308 00e5 0B       		.uleb128 0xb
+ 309 00e6 70776D00 		.ascii	"pwm\000"
+ 310 00ea 01       		.byte	0x1
+ 311 00eb 16       		.byte	0x16
+ 312 00ec 6B000000 		.4byte	0x6b
+ 313 00f0 60000000 		.4byte	.LLST1
+ 314 00f4 0C       		.uleb128 0xc
+ 315 00f5 0E000000 		.4byte	.LVL4
+ 316 00f9 61020000 		.4byte	0x261
+ 317 00fd 0B010000 		.4byte	0x10b
+ 318 0101 08       		.uleb128 0x8
+ 319 0102 01       		.uleb128 0x1
+ 320 0103 50       		.byte	0x50
+ 321 0104 05       		.uleb128 0x5
+ 322 0105 F3       		.byte	0xf3
+ 323 0106 01       		.uleb128 0x1
+ 324 0107 50       		.byte	0x50
+ 325 0108 23       		.byte	0x23
+ 326 0109 02       		.uleb128 0x2
+ 327 010a 00       		.byte	0
+ 328 010b 0C       		.uleb128 0xc
+ 329 010c 14000000 		.4byte	.LVL5
+ 330 0110 72020000 		.4byte	0x272
+ 331 0114 1E010000 		.4byte	0x11e
+ 332 0118 08       		.uleb128 0x8
+ 333 0119 01       		.uleb128 0x1
+ 334 011a 50       		.byte	0x50
+ 335 011b 01       		.uleb128 0x1
+ 336 011c 30       		.byte	0x30
+ 337 011d 00       		.byte	0
+ARM GAS  C:\Users\MCisek\AppData\Local\Temp\ccpo7JeI.s 			page 8
+
+
+ 338 011e 0C       		.uleb128 0xc
+ 339 011f 1A000000 		.4byte	.LVL6
+ 340 0123 83020000 		.4byte	0x283
+ 341 0127 32010000 		.4byte	0x132
+ 342 012b 08       		.uleb128 0x8
+ 343 012c 01       		.uleb128 0x1
+ 344 012d 50       		.byte	0x50
+ 345 012e 02       		.uleb128 0x2
+ 346 012f 74       		.byte	0x74
+ 347 0130 00       		.sleb128 0
+ 348 0131 00       		.byte	0
+ 349 0132 0C       		.uleb128 0xc
+ 350 0133 26000000 		.4byte	.LVL9
+ 351 0137 61020000 		.4byte	0x261
+ 352 013b 45010000 		.4byte	0x145
+ 353 013f 08       		.uleb128 0x8
+ 354 0140 01       		.uleb128 0x1
+ 355 0141 50       		.byte	0x50
+ 356 0142 01       		.uleb128 0x1
+ 357 0143 30       		.byte	0x30
+ 358 0144 00       		.byte	0
+ 359 0145 0C       		.uleb128 0xc
+ 360 0146 2C000000 		.4byte	.LVL10
+ 361 014a 72020000 		.4byte	0x272
+ 362 014e 58010000 		.4byte	0x158
+ 363 0152 08       		.uleb128 0x8
+ 364 0153 01       		.uleb128 0x1
+ 365 0154 50       		.byte	0x50
+ 366 0155 01       		.uleb128 0x1
+ 367 0156 31       		.byte	0x31
+ 368 0157 00       		.byte	0
+ 369 0158 0C       		.uleb128 0xc
+ 370 0159 32000000 		.4byte	.LVL11
+ 371 015d 83020000 		.4byte	0x283
+ 372 0161 6C010000 		.4byte	0x16c
+ 373 0165 08       		.uleb128 0x8
+ 374 0166 01       		.uleb128 0x1
+ 375 0167 50       		.byte	0x50
+ 376 0168 02       		.uleb128 0x2
+ 377 0169 74       		.byte	0x74
+ 378 016a 00       		.sleb128 0
+ 379 016b 00       		.byte	0
+ 380 016c 06       		.uleb128 0x6
+ 381 016d 3C000000 		.4byte	.LVL13
+ 382 0171 61020000 		.4byte	0x261
+ 383 0175 07       		.uleb128 0x7
+ 384 0176 42000000 		.4byte	.LVL14
+ 385 017a 72020000 		.4byte	0x272
+ 386 017e 08       		.uleb128 0x8
+ 387 017f 01       		.uleb128 0x1
+ 388 0180 50       		.byte	0x50
+ 389 0181 01       		.uleb128 0x1
+ 390 0182 30       		.byte	0x30
+ 391 0183 00       		.byte	0
+ 392 0184 00       		.byte	0
+ 393 0185 09       		.uleb128 0x9
+ 394 0186 88000000 		.4byte	.LASF15
+ARM GAS  C:\Users\MCisek\AppData\Local\Temp\ccpo7JeI.s 			page 9
+
+
+ 395 018a 01       		.byte	0x1
+ 396 018b 2B       		.byte	0x2b
+ 397 018c 00000000 		.4byte	.LFB37
+ 398 0190 44000000 		.4byte	.LFE37-.LFB37
+ 399 0194 01       		.uleb128 0x1
+ 400 0195 9C       		.byte	0x9c
+ 401 0196 49020000 		.4byte	0x249
+ 402 019a 0A       		.uleb128 0xa
+ 403 019b 2F000000 		.4byte	.LASF13
+ 404 019f 01       		.byte	0x1
+ 405 01a0 2B       		.byte	0x2b
+ 406 01a1 5D000000 		.4byte	0x5d
+ 407 01a5 B3000000 		.4byte	.LLST2
+ 408 01a9 0B       		.uleb128 0xb
+ 409 01aa 70776D00 		.ascii	"pwm\000"
+ 410 01ae 01       		.byte	0x1
+ 411 01af 2B       		.byte	0x2b
+ 412 01b0 6B000000 		.4byte	0x6b
+ 413 01b4 13010000 		.4byte	.LLST3
+ 414 01b8 0C       		.uleb128 0xc
+ 415 01b9 0E000000 		.4byte	.LVL17
+ 416 01bd 94020000 		.4byte	0x294
+ 417 01c1 CF010000 		.4byte	0x1cf
+ 418 01c5 08       		.uleb128 0x8
+ 419 01c6 01       		.uleb128 0x1
+ 420 01c7 50       		.byte	0x50
+ 421 01c8 05       		.uleb128 0x5
+ 422 01c9 F3       		.byte	0xf3
+ 423 01ca 01       		.uleb128 0x1
+ 424 01cb 50       		.byte	0x50
+ 425 01cc 23       		.byte	0x23
+ 426 01cd 02       		.uleb128 0x2
+ 427 01ce 00       		.byte	0
+ 428 01cf 0C       		.uleb128 0xc
+ 429 01d0 14000000 		.4byte	.LVL18
+ 430 01d4 A5020000 		.4byte	0x2a5
+ 431 01d8 E2010000 		.4byte	0x1e2
+ 432 01dc 08       		.uleb128 0x8
+ 433 01dd 01       		.uleb128 0x1
+ 434 01de 50       		.byte	0x50
+ 435 01df 01       		.uleb128 0x1
+ 436 01e0 30       		.byte	0x30
+ 437 01e1 00       		.byte	0
+ 438 01e2 0C       		.uleb128 0xc
+ 439 01e3 1A000000 		.4byte	.LVL19
+ 440 01e7 B6020000 		.4byte	0x2b6
+ 441 01eb F6010000 		.4byte	0x1f6
+ 442 01ef 08       		.uleb128 0x8
+ 443 01f0 01       		.uleb128 0x1
+ 444 01f1 50       		.byte	0x50
+ 445 01f2 02       		.uleb128 0x2
+ 446 01f3 74       		.byte	0x74
+ 447 01f4 00       		.sleb128 0
+ 448 01f5 00       		.byte	0
+ 449 01f6 0C       		.uleb128 0xc
+ 450 01f7 26000000 		.4byte	.LVL22
+ 451 01fb 94020000 		.4byte	0x294
+ARM GAS  C:\Users\MCisek\AppData\Local\Temp\ccpo7JeI.s 			page 10
+
+
+ 452 01ff 09020000 		.4byte	0x209
+ 453 0203 08       		.uleb128 0x8
+ 454 0204 01       		.uleb128 0x1
+ 455 0205 50       		.byte	0x50
+ 456 0206 01       		.uleb128 0x1
+ 457 0207 30       		.byte	0x30
+ 458 0208 00       		.byte	0
+ 459 0209 0C       		.uleb128 0xc
+ 460 020a 2C000000 		.4byte	.LVL23
+ 461 020e A5020000 		.4byte	0x2a5
+ 462 0212 1C020000 		.4byte	0x21c
+ 463 0216 08       		.uleb128 0x8
+ 464 0217 01       		.uleb128 0x1
+ 465 0218 50       		.byte	0x50
+ 466 0219 01       		.uleb128 0x1
+ 467 021a 31       		.byte	0x31
+ 468 021b 00       		.byte	0
+ 469 021c 0C       		.uleb128 0xc
+ 470 021d 32000000 		.4byte	.LVL24
+ 471 0221 B6020000 		.4byte	0x2b6
+ 472 0225 30020000 		.4byte	0x230
+ 473 0229 08       		.uleb128 0x8
+ 474 022a 01       		.uleb128 0x1
+ 475 022b 50       		.byte	0x50
+ 476 022c 02       		.uleb128 0x2
+ 477 022d 74       		.byte	0x74
+ 478 022e 00       		.sleb128 0
+ 479 022f 00       		.byte	0
+ 480 0230 06       		.uleb128 0x6
+ 481 0231 3C000000 		.4byte	.LVL26
+ 482 0235 94020000 		.4byte	0x294
+ 483 0239 07       		.uleb128 0x7
+ 484 023a 42000000 		.4byte	.LVL27
+ 485 023e A5020000 		.4byte	0x2a5
+ 486 0242 08       		.uleb128 0x8
+ 487 0243 01       		.uleb128 0x1
+ 488 0244 50       		.byte	0x50
+ 489 0245 01       		.uleb128 0x1
+ 490 0246 30       		.byte	0x30
+ 491 0247 00       		.byte	0
+ 492 0248 00       		.byte	0
+ 493 0249 0D       		.uleb128 0xd
+ 494 024a 92000000 		.4byte	.LASF27
+ 495 024e 02       		.byte	0x2
+ 496 024f 92       		.byte	0x92
+ 497 0250 0E       		.uleb128 0xe
+ 498 0251 70010000 		.4byte	.LASF16
+ 499 0255 02       		.byte	0x2
+ 500 0256 BE       		.byte	0xbe
+ 501 0257 61020000 		.4byte	0x261
+ 502 025b 0F       		.uleb128 0xf
+ 503 025c 6B000000 		.4byte	0x6b
+ 504 0260 00       		.byte	0
+ 505 0261 0E       		.uleb128 0xe
+ 506 0262 D2000000 		.4byte	.LASF17
+ 507 0266 03       		.byte	0x3
+ 508 0267 1D       		.byte	0x1d
+ARM GAS  C:\Users\MCisek\AppData\Local\Temp\ccpo7JeI.s 			page 11
+
+
+ 509 0268 72020000 		.4byte	0x272
+ 510 026c 0F       		.uleb128 0xf
+ 511 026d 6B000000 		.4byte	0x6b
+ 512 0271 00       		.byte	0
+ 513 0272 0E       		.uleb128 0xe
+ 514 0273 08010000 		.4byte	.LASF18
+ 515 0277 04       		.byte	0x4
+ 516 0278 1D       		.byte	0x1d
+ 517 0279 83020000 		.4byte	0x283
+ 518 027d 0F       		.uleb128 0xf
+ 519 027e 6B000000 		.4byte	0x6b
+ 520 0282 00       		.byte	0
+ 521 0283 0E       		.uleb128 0xe
+ 522 0284 A2000000 		.4byte	.LASF19
+ 523 0288 02       		.byte	0x2
+ 524 0289 C7       		.byte	0xc7
+ 525 028a 94020000 		.4byte	0x294
+ 526 028e 0F       		.uleb128 0xf
+ 527 028f 6B000000 		.4byte	0x6b
+ 528 0293 00       		.byte	0
+ 529 0294 0E       		.uleb128 0xe
+ 530 0295 33020000 		.4byte	.LASF20
+ 531 0299 05       		.byte	0x5
+ 532 029a 1D       		.byte	0x1d
+ 533 029b A5020000 		.4byte	0x2a5
+ 534 029f 0F       		.uleb128 0xf
+ 535 02a0 6B000000 		.4byte	0x6b
+ 536 02a4 00       		.byte	0
+ 537 02a5 0E       		.uleb128 0xe
+ 538 02a6 00000000 		.4byte	.LASF21
+ 539 02aa 06       		.byte	0x6
+ 540 02ab 1D       		.byte	0x1d
+ 541 02ac B6020000 		.4byte	0x2b6
+ 542 02b0 0F       		.uleb128 0xf
+ 543 02b1 6B000000 		.4byte	0x6b
+ 544 02b5 00       		.byte	0
+ 545 02b6 10       		.uleb128 0x10
+ 546 02b7 BA000000 		.4byte	.LASF28
+ 547 02bb 02       		.byte	0x2
+ 548 02bc CA       		.byte	0xca
+ 549 02bd 0F       		.uleb128 0xf
+ 550 02be 6B000000 		.4byte	0x6b
+ 551 02c2 00       		.byte	0
+ 552 02c3 00       		.byte	0
+ 553              		.section	.debug_abbrev,"",%progbits
+ 554              	.Ldebug_abbrev0:
+ 555 0000 01       		.uleb128 0x1
+ 556 0001 11       		.uleb128 0x11
+ 557 0002 01       		.byte	0x1
+ 558 0003 25       		.uleb128 0x25
+ 559 0004 0E       		.uleb128 0xe
+ 560 0005 13       		.uleb128 0x13
+ 561 0006 0B       		.uleb128 0xb
+ 562 0007 03       		.uleb128 0x3
+ 563 0008 0E       		.uleb128 0xe
+ 564 0009 1B       		.uleb128 0x1b
+ 565 000a 0E       		.uleb128 0xe
+ARM GAS  C:\Users\MCisek\AppData\Local\Temp\ccpo7JeI.s 			page 12
+
+
+ 566 000b 55       		.uleb128 0x55
+ 567 000c 17       		.uleb128 0x17
+ 568 000d 11       		.uleb128 0x11
+ 569 000e 01       		.uleb128 0x1
+ 570 000f 10       		.uleb128 0x10
+ 571 0010 17       		.uleb128 0x17
+ 572 0011 00       		.byte	0
+ 573 0012 00       		.byte	0
+ 574 0013 02       		.uleb128 0x2
+ 575 0014 24       		.uleb128 0x24
+ 576 0015 00       		.byte	0
+ 577 0016 0B       		.uleb128 0xb
+ 578 0017 0B       		.uleb128 0xb
+ 579 0018 3E       		.uleb128 0x3e
+ 580 0019 0B       		.uleb128 0xb
+ 581 001a 03       		.uleb128 0x3
+ 582 001b 0E       		.uleb128 0xe
+ 583 001c 00       		.byte	0
+ 584 001d 00       		.byte	0
+ 585 001e 03       		.uleb128 0x3
+ 586 001f 24       		.uleb128 0x24
+ 587 0020 00       		.byte	0
+ 588 0021 0B       		.uleb128 0xb
+ 589 0022 0B       		.uleb128 0xb
+ 590 0023 3E       		.uleb128 0x3e
+ 591 0024 0B       		.uleb128 0xb
+ 592 0025 03       		.uleb128 0x3
+ 593 0026 08       		.uleb128 0x8
+ 594 0027 00       		.byte	0
+ 595 0028 00       		.byte	0
+ 596 0029 04       		.uleb128 0x4
+ 597 002a 16       		.uleb128 0x16
+ 598 002b 00       		.byte	0
+ 599 002c 03       		.uleb128 0x3
+ 600 002d 0E       		.uleb128 0xe
+ 601 002e 3A       		.uleb128 0x3a
+ 602 002f 0B       		.uleb128 0xb
+ 603 0030 3B       		.uleb128 0x3b
+ 604 0031 0B       		.uleb128 0xb
+ 605 0032 49       		.uleb128 0x49
+ 606 0033 13       		.uleb128 0x13
+ 607 0034 00       		.byte	0
+ 608 0035 00       		.byte	0
+ 609 0036 05       		.uleb128 0x5
+ 610 0037 2E       		.uleb128 0x2e
+ 611 0038 01       		.byte	0x1
+ 612 0039 3F       		.uleb128 0x3f
+ 613 003a 19       		.uleb128 0x19
+ 614 003b 03       		.uleb128 0x3
+ 615 003c 0E       		.uleb128 0xe
+ 616 003d 3A       		.uleb128 0x3a
+ 617 003e 0B       		.uleb128 0xb
+ 618 003f 3B       		.uleb128 0x3b
+ 619 0040 0B       		.uleb128 0xb
+ 620 0041 11       		.uleb128 0x11
+ 621 0042 01       		.uleb128 0x1
+ 622 0043 12       		.uleb128 0x12
+ARM GAS  C:\Users\MCisek\AppData\Local\Temp\ccpo7JeI.s 			page 13
+
+
+ 623 0044 06       		.uleb128 0x6
+ 624 0045 40       		.uleb128 0x40
+ 625 0046 18       		.uleb128 0x18
+ 626 0047 9742     		.uleb128 0x2117
+ 627 0049 19       		.uleb128 0x19
+ 628 004a 01       		.uleb128 0x1
+ 629 004b 13       		.uleb128 0x13
+ 630 004c 00       		.byte	0
+ 631 004d 00       		.byte	0
+ 632 004e 06       		.uleb128 0x6
+ 633 004f 898201   		.uleb128 0x4109
+ 634 0052 00       		.byte	0
+ 635 0053 11       		.uleb128 0x11
+ 636 0054 01       		.uleb128 0x1
+ 637 0055 31       		.uleb128 0x31
+ 638 0056 13       		.uleb128 0x13
+ 639 0057 00       		.byte	0
+ 640 0058 00       		.byte	0
+ 641 0059 07       		.uleb128 0x7
+ 642 005a 898201   		.uleb128 0x4109
+ 643 005d 01       		.byte	0x1
+ 644 005e 11       		.uleb128 0x11
+ 645 005f 01       		.uleb128 0x1
+ 646 0060 31       		.uleb128 0x31
+ 647 0061 13       		.uleb128 0x13
+ 648 0062 00       		.byte	0
+ 649 0063 00       		.byte	0
+ 650 0064 08       		.uleb128 0x8
+ 651 0065 8A8201   		.uleb128 0x410a
+ 652 0068 00       		.byte	0
+ 653 0069 02       		.uleb128 0x2
+ 654 006a 18       		.uleb128 0x18
+ 655 006b 9142     		.uleb128 0x2111
+ 656 006d 18       		.uleb128 0x18
+ 657 006e 00       		.byte	0
+ 658 006f 00       		.byte	0
+ 659 0070 09       		.uleb128 0x9
+ 660 0071 2E       		.uleb128 0x2e
+ 661 0072 01       		.byte	0x1
+ 662 0073 3F       		.uleb128 0x3f
+ 663 0074 19       		.uleb128 0x19
+ 664 0075 03       		.uleb128 0x3
+ 665 0076 0E       		.uleb128 0xe
+ 666 0077 3A       		.uleb128 0x3a
+ 667 0078 0B       		.uleb128 0xb
+ 668 0079 3B       		.uleb128 0x3b
+ 669 007a 0B       		.uleb128 0xb
+ 670 007b 27       		.uleb128 0x27
+ 671 007c 19       		.uleb128 0x19
+ 672 007d 11       		.uleb128 0x11
+ 673 007e 01       		.uleb128 0x1
+ 674 007f 12       		.uleb128 0x12
+ 675 0080 06       		.uleb128 0x6
+ 676 0081 40       		.uleb128 0x40
+ 677 0082 18       		.uleb128 0x18
+ 678 0083 9742     		.uleb128 0x2117
+ 679 0085 19       		.uleb128 0x19
+ARM GAS  C:\Users\MCisek\AppData\Local\Temp\ccpo7JeI.s 			page 14
+
+
+ 680 0086 01       		.uleb128 0x1
+ 681 0087 13       		.uleb128 0x13
+ 682 0088 00       		.byte	0
+ 683 0089 00       		.byte	0
+ 684 008a 0A       		.uleb128 0xa
+ 685 008b 05       		.uleb128 0x5
+ 686 008c 00       		.byte	0
+ 687 008d 03       		.uleb128 0x3
+ 688 008e 0E       		.uleb128 0xe
+ 689 008f 3A       		.uleb128 0x3a
+ 690 0090 0B       		.uleb128 0xb
+ 691 0091 3B       		.uleb128 0x3b
+ 692 0092 0B       		.uleb128 0xb
+ 693 0093 49       		.uleb128 0x49
+ 694 0094 13       		.uleb128 0x13
+ 695 0095 02       		.uleb128 0x2
+ 696 0096 17       		.uleb128 0x17
+ 697 0097 00       		.byte	0
+ 698 0098 00       		.byte	0
+ 699 0099 0B       		.uleb128 0xb
+ 700 009a 05       		.uleb128 0x5
+ 701 009b 00       		.byte	0
+ 702 009c 03       		.uleb128 0x3
+ 703 009d 08       		.uleb128 0x8
+ 704 009e 3A       		.uleb128 0x3a
+ 705 009f 0B       		.uleb128 0xb
+ 706 00a0 3B       		.uleb128 0x3b
+ 707 00a1 0B       		.uleb128 0xb
+ 708 00a2 49       		.uleb128 0x49
+ 709 00a3 13       		.uleb128 0x13
+ 710 00a4 02       		.uleb128 0x2
+ 711 00a5 17       		.uleb128 0x17
+ 712 00a6 00       		.byte	0
+ 713 00a7 00       		.byte	0
+ 714 00a8 0C       		.uleb128 0xc
+ 715 00a9 898201   		.uleb128 0x4109
+ 716 00ac 01       		.byte	0x1
+ 717 00ad 11       		.uleb128 0x11
+ 718 00ae 01       		.uleb128 0x1
+ 719 00af 31       		.uleb128 0x31
+ 720 00b0 13       		.uleb128 0x13
+ 721 00b1 01       		.uleb128 0x1
+ 722 00b2 13       		.uleb128 0x13
+ 723 00b3 00       		.byte	0
+ 724 00b4 00       		.byte	0
+ 725 00b5 0D       		.uleb128 0xd
+ 726 00b6 2E       		.uleb128 0x2e
+ 727 00b7 00       		.byte	0
+ 728 00b8 3F       		.uleb128 0x3f
+ 729 00b9 19       		.uleb128 0x19
+ 730 00ba 03       		.uleb128 0x3
+ 731 00bb 0E       		.uleb128 0xe
+ 732 00bc 3A       		.uleb128 0x3a
+ 733 00bd 0B       		.uleb128 0xb
+ 734 00be 3B       		.uleb128 0x3b
+ 735 00bf 0B       		.uleb128 0xb
+ 736 00c0 27       		.uleb128 0x27
+ARM GAS  C:\Users\MCisek\AppData\Local\Temp\ccpo7JeI.s 			page 15
+
+
+ 737 00c1 19       		.uleb128 0x19
+ 738 00c2 3C       		.uleb128 0x3c
+ 739 00c3 19       		.uleb128 0x19
+ 740 00c4 00       		.byte	0
+ 741 00c5 00       		.byte	0
+ 742 00c6 0E       		.uleb128 0xe
+ 743 00c7 2E       		.uleb128 0x2e
+ 744 00c8 01       		.byte	0x1
+ 745 00c9 3F       		.uleb128 0x3f
+ 746 00ca 19       		.uleb128 0x19
+ 747 00cb 03       		.uleb128 0x3
+ 748 00cc 0E       		.uleb128 0xe
+ 749 00cd 3A       		.uleb128 0x3a
+ 750 00ce 0B       		.uleb128 0xb
+ 751 00cf 3B       		.uleb128 0x3b
+ 752 00d0 0B       		.uleb128 0xb
+ 753 00d1 27       		.uleb128 0x27
+ 754 00d2 19       		.uleb128 0x19
+ 755 00d3 3C       		.uleb128 0x3c
+ 756 00d4 19       		.uleb128 0x19
+ 757 00d5 01       		.uleb128 0x1
+ 758 00d6 13       		.uleb128 0x13
+ 759 00d7 00       		.byte	0
+ 760 00d8 00       		.byte	0
+ 761 00d9 0F       		.uleb128 0xf
+ 762 00da 05       		.uleb128 0x5
+ 763 00db 00       		.byte	0
+ 764 00dc 49       		.uleb128 0x49
+ 765 00dd 13       		.uleb128 0x13
+ 766 00de 00       		.byte	0
+ 767 00df 00       		.byte	0
+ 768 00e0 10       		.uleb128 0x10
+ 769 00e1 2E       		.uleb128 0x2e
+ 770 00e2 01       		.byte	0x1
+ 771 00e3 3F       		.uleb128 0x3f
+ 772 00e4 19       		.uleb128 0x19
+ 773 00e5 03       		.uleb128 0x3
+ 774 00e6 0E       		.uleb128 0xe
+ 775 00e7 3A       		.uleb128 0x3a
+ 776 00e8 0B       		.uleb128 0xb
+ 777 00e9 3B       		.uleb128 0x3b
+ 778 00ea 0B       		.uleb128 0xb
+ 779 00eb 27       		.uleb128 0x27
+ 780 00ec 19       		.uleb128 0x19
+ 781 00ed 3C       		.uleb128 0x3c
+ 782 00ee 19       		.uleb128 0x19
+ 783 00ef 00       		.byte	0
+ 784 00f0 00       		.byte	0
+ 785 00f1 00       		.byte	0
+ 786              		.section	.debug_loc,"",%progbits
+ 787              	.Ldebug_loc0:
+ 788              	.LLST0:
+ 789 0000 00000000 		.4byte	.LVL2
+ 790 0004 0A000000 		.4byte	.LVL3
+ 791 0008 0100     		.2byte	0x1
+ 792 000a 50       		.byte	0x50
+ 793 000b 0A000000 		.4byte	.LVL3
+ARM GAS  C:\Users\MCisek\AppData\Local\Temp\ccpo7JeI.s 			page 16
+
+
+ 794 000f 0D000000 		.4byte	.LVL4-1
+ 795 0013 0300     		.2byte	0x3
+ 796 0015 70       		.byte	0x70
+ 797 0016 7E       		.sleb128 -2
+ 798 0017 9F       		.byte	0x9f
+ 799 0018 0D000000 		.4byte	.LVL4-1
+ 800 001c 1C000000 		.4byte	.LVL7
+ 801 0020 0400     		.2byte	0x4
+ 802 0022 F3       		.byte	0xf3
+ 803 0023 01       		.uleb128 0x1
+ 804 0024 50       		.byte	0x50
+ 805 0025 9F       		.byte	0x9f
+ 806 0026 1C000000 		.4byte	.LVL7
+ 807 002a 22000000 		.4byte	.LVL8
+ 808 002e 0100     		.2byte	0x1
+ 809 0030 50       		.byte	0x50
+ 810 0031 22000000 		.4byte	.LVL8
+ 811 0035 34000000 		.4byte	.LVL12
+ 812 0039 0400     		.2byte	0x4
+ 813 003b F3       		.byte	0xf3
+ 814 003c 01       		.uleb128 0x1
+ 815 003d 50       		.byte	0x50
+ 816 003e 9F       		.byte	0x9f
+ 817 003f 34000000 		.4byte	.LVL12
+ 818 0043 3B000000 		.4byte	.LVL13-1
+ 819 0047 0100     		.2byte	0x1
+ 820 0049 50       		.byte	0x50
+ 821 004a 3B000000 		.4byte	.LVL13-1
+ 822 004e 44000000 		.4byte	.LFE36
+ 823 0052 0400     		.2byte	0x4
+ 824 0054 F3       		.byte	0xf3
+ 825 0055 01       		.uleb128 0x1
+ 826 0056 50       		.byte	0x50
+ 827 0057 9F       		.byte	0x9f
+ 828 0058 00000000 		.4byte	0
+ 829 005c 00000000 		.4byte	0
+ 830              	.LLST1:
+ 831 0060 00000000 		.4byte	.LVL2
+ 832 0064 0D000000 		.4byte	.LVL4-1
+ 833 0068 0100     		.2byte	0x1
+ 834 006a 51       		.byte	0x51
+ 835 006b 0D000000 		.4byte	.LVL4-1
+ 836 006f 1C000000 		.4byte	.LVL7
+ 837 0073 0400     		.2byte	0x4
+ 838 0075 F3       		.byte	0xf3
+ 839 0076 01       		.uleb128 0x1
+ 840 0077 51       		.byte	0x51
+ 841 0078 9F       		.byte	0x9f
+ 842 0079 1C000000 		.4byte	.LVL7
+ 843 007d 25000000 		.4byte	.LVL9-1
+ 844 0081 0100     		.2byte	0x1
+ 845 0083 51       		.byte	0x51
+ 846 0084 25000000 		.4byte	.LVL9-1
+ 847 0088 34000000 		.4byte	.LVL12
+ 848 008c 0400     		.2byte	0x4
+ 849 008e F3       		.byte	0xf3
+ 850 008f 01       		.uleb128 0x1
+ARM GAS  C:\Users\MCisek\AppData\Local\Temp\ccpo7JeI.s 			page 17
+
+
+ 851 0090 51       		.byte	0x51
+ 852 0091 9F       		.byte	0x9f
+ 853 0092 34000000 		.4byte	.LVL12
+ 854 0096 3B000000 		.4byte	.LVL13-1
+ 855 009a 0100     		.2byte	0x1
+ 856 009c 51       		.byte	0x51
+ 857 009d 3B000000 		.4byte	.LVL13-1
+ 858 00a1 44000000 		.4byte	.LFE36
+ 859 00a5 0400     		.2byte	0x4
+ 860 00a7 F3       		.byte	0xf3
+ 861 00a8 01       		.uleb128 0x1
+ 862 00a9 51       		.byte	0x51
+ 863 00aa 9F       		.byte	0x9f
+ 864 00ab 00000000 		.4byte	0
+ 865 00af 00000000 		.4byte	0
+ 866              	.LLST2:
+ 867 00b3 00000000 		.4byte	.LVL15
+ 868 00b7 0A000000 		.4byte	.LVL16
+ 869 00bb 0100     		.2byte	0x1
+ 870 00bd 50       		.byte	0x50
+ 871 00be 0A000000 		.4byte	.LVL16
+ 872 00c2 0D000000 		.4byte	.LVL17-1
+ 873 00c6 0300     		.2byte	0x3
+ 874 00c8 70       		.byte	0x70
+ 875 00c9 7E       		.sleb128 -2
+ 876 00ca 9F       		.byte	0x9f
+ 877 00cb 0D000000 		.4byte	.LVL17-1
+ 878 00cf 1C000000 		.4byte	.LVL20
+ 879 00d3 0400     		.2byte	0x4
+ 880 00d5 F3       		.byte	0xf3
+ 881 00d6 01       		.uleb128 0x1
+ 882 00d7 50       		.byte	0x50
+ 883 00d8 9F       		.byte	0x9f
+ 884 00d9 1C000000 		.4byte	.LVL20
+ 885 00dd 22000000 		.4byte	.LVL21
+ 886 00e1 0100     		.2byte	0x1
+ 887 00e3 50       		.byte	0x50
+ 888 00e4 22000000 		.4byte	.LVL21
+ 889 00e8 34000000 		.4byte	.LVL25
+ 890 00ec 0400     		.2byte	0x4
+ 891 00ee F3       		.byte	0xf3
+ 892 00ef 01       		.uleb128 0x1
+ 893 00f0 50       		.byte	0x50
+ 894 00f1 9F       		.byte	0x9f
+ 895 00f2 34000000 		.4byte	.LVL25
+ 896 00f6 3B000000 		.4byte	.LVL26-1
+ 897 00fa 0100     		.2byte	0x1
+ 898 00fc 50       		.byte	0x50
+ 899 00fd 3B000000 		.4byte	.LVL26-1
+ 900 0101 44000000 		.4byte	.LFE37
+ 901 0105 0400     		.2byte	0x4
+ 902 0107 F3       		.byte	0xf3
+ 903 0108 01       		.uleb128 0x1
+ 904 0109 50       		.byte	0x50
+ 905 010a 9F       		.byte	0x9f
+ 906 010b 00000000 		.4byte	0
+ 907 010f 00000000 		.4byte	0
+ARM GAS  C:\Users\MCisek\AppData\Local\Temp\ccpo7JeI.s 			page 18
+
+
+ 908              	.LLST3:
+ 909 0113 00000000 		.4byte	.LVL15
+ 910 0117 0D000000 		.4byte	.LVL17-1
+ 911 011b 0100     		.2byte	0x1
+ 912 011d 51       		.byte	0x51
+ 913 011e 0D000000 		.4byte	.LVL17-1
+ 914 0122 1C000000 		.4byte	.LVL20
+ 915 0126 0400     		.2byte	0x4
+ 916 0128 F3       		.byte	0xf3
+ 917 0129 01       		.uleb128 0x1
+ 918 012a 51       		.byte	0x51
+ 919 012b 9F       		.byte	0x9f
+ 920 012c 1C000000 		.4byte	.LVL20
+ 921 0130 25000000 		.4byte	.LVL22-1
+ 922 0134 0100     		.2byte	0x1
+ 923 0136 51       		.byte	0x51
+ 924 0137 25000000 		.4byte	.LVL22-1
+ 925 013b 34000000 		.4byte	.LVL25
+ 926 013f 0400     		.2byte	0x4
+ 927 0141 F3       		.byte	0xf3
+ 928 0142 01       		.uleb128 0x1
+ 929 0143 51       		.byte	0x51
+ 930 0144 9F       		.byte	0x9f
+ 931 0145 34000000 		.4byte	.LVL25
+ 932 0149 3B000000 		.4byte	.LVL26-1
+ 933 014d 0100     		.2byte	0x1
+ 934 014f 51       		.byte	0x51
+ 935 0150 3B000000 		.4byte	.LVL26-1
+ 936 0154 44000000 		.4byte	.LFE37
+ 937 0158 0400     		.2byte	0x4
+ 938 015a F3       		.byte	0xf3
+ 939 015b 01       		.uleb128 0x1
+ 940 015c 51       		.byte	0x51
+ 941 015d 9F       		.byte	0x9f
+ 942 015e 00000000 		.4byte	0
+ 943 0162 00000000 		.4byte	0
+ 944              		.section	.debug_aranges,"",%progbits
+ 945 0000 2C000000 		.4byte	0x2c
+ 946 0004 0200     		.2byte	0x2
+ 947 0006 00000000 		.4byte	.Ldebug_info0
+ 948 000a 04       		.byte	0x4
+ 949 000b 00       		.byte	0
+ 950 000c 0000     		.2byte	0
+ 951 000e 0000     		.2byte	0
+ 952 0010 00000000 		.4byte	.LFB35
+ 953 0014 0E000000 		.4byte	.LFE35-.LFB35
+ 954 0018 00000000 		.4byte	.LFB36
+ 955 001c 44000000 		.4byte	.LFE36-.LFB36
+ 956 0020 00000000 		.4byte	.LFB37
+ 957 0024 44000000 		.4byte	.LFE37-.LFB37
+ 958 0028 00000000 		.4byte	0
+ 959 002c 00000000 		.4byte	0
+ 960              		.section	.debug_ranges,"",%progbits
+ 961              	.Ldebug_ranges0:
+ 962 0000 00000000 		.4byte	.LFB35
+ 963 0004 0E000000 		.4byte	.LFE35
+ 964 0008 00000000 		.4byte	.LFB36
+ARM GAS  C:\Users\MCisek\AppData\Local\Temp\ccpo7JeI.s 			page 19
+
+
+ 965 000c 44000000 		.4byte	.LFE36
+ 966 0010 00000000 		.4byte	.LFB37
+ 967 0014 44000000 		.4byte	.LFE37
+ 968 0018 00000000 		.4byte	0
+ 969 001c 00000000 		.4byte	0
+ 970              		.section	.debug_line,"",%progbits
+ 971              	.Ldebug_line0:
+ 972 0000 E1000000 		.section	.debug_str,"MS",%progbits,1
+ 972      02009300 
+ 972      00000201 
+ 972      FB0E0D00 
+ 972      01010101 
+ 973              	.LASF21:
+ 974 0000 4D4F544F 		.ascii	"MOTOR2_2_Write\000"
+ 974      52325F32 
+ 974      5F577269 
+ 974      746500
+ 975              	.LASF3:
+ 976 000f 73686F72 		.ascii	"short unsigned int\000"
+ 976      7420756E 
+ 976      7369676E 
+ 976      65642069 
+ 976      6E7400
+ 977              	.LASF8:
+ 978 0022 756E7369 		.ascii	"unsigned int\000"
+ 978      676E6564 
+ 978      20696E74 
+ 978      00
+ 979              	.LASF13:
+ 980 002f 64697265 		.ascii	"direction\000"
+ 980      6374696F 
+ 980      6E00
+ 981              	.LASF9:
+ 982 0039 666C6F61 		.ascii	"float\000"
+ 982      7400
+ 983              	.LASF1:
+ 984 003f 756E7369 		.ascii	"unsigned char\000"
+ 984      676E6564 
+ 984      20636861 
+ 984      7200
+ 985              	.LASF23:
+ 986 004d 2E5C6D6F 		.ascii	".\\motor_control.c\000"
+ 986      746F725F 
+ 986      636F6E74 
+ 986      726F6C2E 
+ 986      6300
+ 987              	.LASF5:
+ 988 005f 6C6F6E67 		.ascii	"long unsigned int\000"
+ 988      20756E73 
+ 988      69676E65 
+ 988      6420696E 
+ 988      7400
+ 989              	.LASF25:
+ 990 0071 75696E74 		.ascii	"uint8\000"
+ 990      3800
+ 991              	.LASF10:
+ 992 0077 646F7562 		.ascii	"double\000"
+ARM GAS  C:\Users\MCisek\AppData\Local\Temp\ccpo7JeI.s 			page 20
+
+
+ 992      6C6500
+ 993              	.LASF14:
+ 994 007e 7365744D 		.ascii	"setMotor1\000"
+ 994      6F746F72 
+ 994      3100
+ 995              	.LASF15:
+ 996 0088 7365744D 		.ascii	"setMotor2\000"
+ 996      6F746F72 
+ 996      3200
+ 997              	.LASF27:
+ 998 0092 50574D5F 		.ascii	"PWM_MOTOR_Start\000"
+ 998      4D4F544F 
+ 998      525F5374 
+ 998      61727400 
+ 999              	.LASF19:
+ 1000 00a2 50574D5F 		.ascii	"PWM_MOTOR_WriteCompare1\000"
+ 1000      4D4F544F 
+ 1000      525F5772 
+ 1000      69746543 
+ 1000      6F6D7061 
+ 1001              	.LASF28:
+ 1002 00ba 50574D5F 		.ascii	"PWM_MOTOR_WriteCompare2\000"
+ 1002      4D4F544F 
+ 1002      525F5772 
+ 1002      69746543 
+ 1002      6F6D7061 
+ 1003              	.LASF17:
+ 1004 00d2 4D4F544F 		.ascii	"MOTOR1_1_Write\000"
+ 1004      52315F31 
+ 1004      5F577269 
+ 1004      746500
+ 1005              	.LASF26:
+ 1006 00e1 696E6974 		.ascii	"initMotorContol\000"
+ 1006      4D6F746F 
+ 1006      72436F6E 
+ 1006      746F6C00 
+ 1007              	.LASF7:
+ 1008 00f1 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1008      206C6F6E 
+ 1008      6720756E 
+ 1008      7369676E 
+ 1008      65642069 
+ 1009              	.LASF18:
+ 1010 0108 4D4F544F 		.ascii	"MOTOR1_2_Write\000"
+ 1010      52315F32 
+ 1010      5F577269 
+ 1010      746500
+ 1011              	.LASF12:
+ 1012 0117 73697A65 		.ascii	"sizetype\000"
+ 1012      74797065 
+ 1012      00
+ 1013              	.LASF6:
+ 1014 0120 6C6F6E67 		.ascii	"long long int\000"
+ 1014      206C6F6E 
+ 1014      6720696E 
+ 1014      7400
+ 1015              	.LASF24:
+ARM GAS  C:\Users\MCisek\AppData\Local\Temp\ccpo7JeI.s 			page 21
+
+
+ 1016 012e 433A5C55 		.ascii	"C:\\Users\\MCisek\\Documents\\balancing_robot\\Proj"
+ 1016      73657273 
+ 1016      5C4D4369 
+ 1016      73656B5C 
+ 1016      446F6375 
+ 1017 015c 65637431 		.ascii	"ect1_acc.cydsn\000"
+ 1017      5F616363 
+ 1017      2E637964 
+ 1017      736E00
+ 1018              	.LASF11:
+ 1019 016b 63686172 		.ascii	"char\000"
+ 1019      00
+ 1020              	.LASF16:
+ 1021 0170 50574D5F 		.ascii	"PWM_MOTOR_WritePeriod\000"
+ 1021      4D4F544F 
+ 1021      525F5772 
+ 1021      69746550 
+ 1021      6572696F 
+ 1022              	.LASF22:
+ 1023 0186 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 1023      4320342E 
+ 1023      392E3320 
+ 1023      32303135 
+ 1023      30333033 
+ 1024 01b9 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m0 -mthumb -g -O"
+ 1024      20726576 
+ 1024      6973696F 
+ 1024      6E203232 
+ 1024      31323230 
+ 1025 01ec 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1025      66756E63 
+ 1025      74696F6E 
+ 1025      2D736563 
+ 1025      74696F6E 
+ 1026              	.LASF2:
+ 1027 0214 73686F72 		.ascii	"short int\000"
+ 1027      7420696E 
+ 1027      7400
+ 1028              	.LASF4:
+ 1029 021e 6C6F6E67 		.ascii	"long int\000"
+ 1029      20696E74 
+ 1029      00
+ 1030              	.LASF0:
+ 1031 0227 7369676E 		.ascii	"signed char\000"
+ 1031      65642063 
+ 1031      68617200 
+ 1032              	.LASF20:
+ 1033 0233 4D4F544F 		.ascii	"MOTOR2_1_Write\000"
+ 1033      52325F31 
+ 1033      5F577269 
+ 1033      746500
+ 1034              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

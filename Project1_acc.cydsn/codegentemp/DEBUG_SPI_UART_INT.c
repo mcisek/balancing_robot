@@ -18,6 +18,7 @@
 #include "DEBUG_PVT.h"
 #include "DEBUG_SPI_UART_PVT.h"
 
+
 #if (DEBUG_SCB_IRQ_INTERNAL)
 /*******************************************************************************
 * Function Name: DEBUG_SPI_UART_ISR
@@ -42,6 +43,10 @@ CY_ISR(DEBUG_SPI_UART_ISR)
 #if (DEBUG_INTERNAL_TX_SW_BUFFER_CONST)
     uint32 locTail;
 #endif /* (DEBUG_INTERNAL_TX_SW_BUFFER_CONST) */
+
+#ifdef DEBUG_SPI_UART_ISR_ENTRY_CALLBACK
+    DEBUG_SPI_UART_ISR_EntryCallback();
+#endif /* DEBUG_SPI_UART_ISR_ENTRY_CALLBACK */
 
     if (NULL != DEBUG_customIntrHandler)
     {
@@ -146,6 +151,11 @@ CY_ISR(DEBUG_SPI_UART_ISR)
         }
     }
     #endif
+    
+#ifdef DEBUG_SPI_UART_ISR_EXIT_CALLBACK
+    DEBUG_SPI_UART_ISR_ExitCallback();
+#endif /* DEBUG_SPI_UART_ISR_EXIT_CALLBACK */
+    
 }
 
 #endif /* (DEBUG_SCB_IRQ_INTERNAL) */
